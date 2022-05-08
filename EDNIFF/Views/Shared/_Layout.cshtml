@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -24,6 +28,20 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Administrator" asp-action="ListUsers">
+                                Manage Users
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Administrator" asp-action="ListRoles">
+                                Manage Roles
+                            </a>
+                        </li>
+
+
                     </ul>
                 </div>
             </div>

@@ -7,6 +7,7 @@ namespace EDNIFF.APIModels
 {
     public class vwAuthToken
     {
+
     }
     public class AuthDetails
     {

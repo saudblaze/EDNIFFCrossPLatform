@@ -1,11 +1,18 @@
 ﻿@model EDNIFF.ViewModel.EmployeeCreateVM
 
 
-
+@{
+    Layout = null;
+}
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EDNIFF</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
     <style type="text/css">
         html, body {
             height: 100%;
@@ -63,7 +70,7 @@
                     <form asp-controller="Login" asp-action="Login" method="post">
 
                         <div class="form-group">
-                            <label asp-for="LoginURL" >Login Here</label>
+                            <label asp-for="LoginURL">Login Here</label>
                             <select asp-for="LoginURL" class="form-control form-control-sm">
                                 <option value="1">Live Mode</option>
                                 <option value="2">Test Mode</option>
@@ -74,17 +81,17 @@
                         <!-- to error: add class "has-danger" -->
                         <div class="form-group">
                             <label asp-for="Username">Username</label>
-                            <input type="text" asp-for="Username" class="form-control form-control-sm" >
+                            <input type="text" asp-for="Username" class="form-control form-control-sm">
                         </div>
                         <div class="form-group">
                             <label asp-for="Password">Password</label>
                             @*<a href="#" style="float:right;font-size:12px;">Forgot password?</a>*@
-                            <input type="password" asp-for="Password" class="form-control form-control-sm" >
+                            <input type="password" asp-for="Password" class="form-control form-control-sm">
                         </div>
 
                         <div class="form-group">
                             <label class="checkbox" asp-for="RememberMe">
-                                <input type="checkbox" asp-for="RememberMe" > Remember me
+                                <input type="checkbox" asp-for="RememberMe"> Remember me
                             </label>
                         </div>
 

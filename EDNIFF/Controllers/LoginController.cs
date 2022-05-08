@@ -41,11 +41,27 @@ namespace EDNIFF.Controllers
                 if (response.hasError)
                 {
                     //alert("123");
+
+
+
                     return View("Index.cshtml");
                 }
                 else
                 {
-                    return View();
+
+                    Global.access_token = response.successData.access_token;
+                    Global.token_type = response.successData.token_type;
+                    Global.expires_in = response.successData.expires_in;
+
+                    Global.displayName = response.successData.displayName;
+                    Global.userName = response.successData.userName;
+                    Global.userid = response.successData.userid;
+
+                    Global.lastLogin = response.successData.lastLogin;
+                    Global.expires = response.successData.expires;
+
+                    return RedirectToAction("Index", "Dashboard");                    
+
                 }
             }
             catch (Exception ex)
