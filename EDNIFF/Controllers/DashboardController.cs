@@ -34,23 +34,24 @@ namespace EDNIFF.Controllers
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             process.StartInfo.FileName = "cmd.exe";
+            System.Diagnostics.Process.Start(@"/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal", @"system_profiler SPHardwareDataType");
             process.StartInfo.Arguments = "system_profiler SPHardwareDataType";
             process.Start();
 
 
-            string Mac = string.Empty;
-            ManagementClass MC = new ManagementClass("system_profiler SPHardwareDataType");
-            ManagementObjectCollection MOCol = MC.GetInstances();
-            foreach (ManagementObject MO in MOCol)
-                if (MO != null)
-                {
-                    if (MO["MacAddress"] != null)
-                    {
-                        Mac = MO["MACAddress"].ToString();
-                        if (Mac != string.Empty)
-                            break;
-                    }
-                }
+            //string Mac = string.Empty;
+            //ManagementClass MC = new ManagementClass("system_profiler SPHardwareDataType");
+            //ManagementObjectCollection MOCol = MC.GetInstances();
+            //foreach (ManagementObject MO in MOCol)
+            //    if (MO != null)
+            //    {
+            //        if (MO["MacAddress"] != null)
+            //        {
+            //            Mac = MO["MACAddress"].ToString();
+            //            if (Mac != string.Empty)
+            //                break;
+            //        }
+            //    }
             //return Mac;
 
             //get dahboard details
