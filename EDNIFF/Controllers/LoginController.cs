@@ -35,15 +35,15 @@ namespace EDNIFF.Controllers
                 }
 
 
+                obj.Password = "Pass@123";
+                obj.Username = "A2C0523";
+                PublicVariables.WebApiURL = "http://192.168.2.14:91/api";
+
                 //PublicVariables.WebApiURL = "https://localhost:44346/api";//Properties.Settings.Default.APIUrls[apiindex];
                 HttpAPIRequests httpRequest = new HttpAPIRequests();
                 var response = await httpRequest.PostRequestForLogin<AuthDetails>(obj.Username.Trim(), obj.Password);
                 if (response.hasError)
                 {
-                    //alert("123");
-
-
-
                     return View("Index.cshtml");
                 }
                 else

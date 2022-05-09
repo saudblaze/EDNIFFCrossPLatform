@@ -23,7 +23,7 @@ namespace EDNIFF.Common
         public void LoadDevices()
         {
             devices = new List<Device>();
-            LoadProcessor();
+            //LoadProcessor();
             //LoadMemory();
             //LoadVideo();
             //LoadSound();
