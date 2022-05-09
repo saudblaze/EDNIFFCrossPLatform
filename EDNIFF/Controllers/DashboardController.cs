@@ -34,7 +34,7 @@ namespace EDNIFF.Controllers
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             process.StartInfo.FileName = "cmd.exe";
-            System.Diagnostics.Process.Start(@"/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal", @"system_profiler SPHardwareDataType");
+            System.Diagnostics.Process.Start(@"/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal", @"~/Users/apple/Documents/myscript.sh");
             process.StartInfo.Arguments = "system_profiler SPHardwareDataType";
             process.Start();
 
