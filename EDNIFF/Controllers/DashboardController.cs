@@ -31,6 +31,13 @@ namespace EDNIFF.Controllers
             String MachineName = Environment.MachineName;
 
 
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            process.StartInfo.FileName = "cmd.exe";
+            process.StartInfo.Arguments = "system_profiler SPHardwareDataType";
+            process.Start();
+
+
             string Mac = string.Empty;
             ManagementClass MC = new ManagementClass("system_profiler SPHardwareDataType");
             ManagementObjectCollection MOCol = MC.GetInstances();
