@@ -10,6 +10,7 @@ namespace EDNIFF.Controllers
 {
     public class DashboardController : Controller
     {
+        SystemInfo systeminfo;
         public IActionResult Index()
         {
             string access_token = Global.access_token;
@@ -22,7 +23,10 @@ namespace EDNIFF.Controllers
 
             DateTime? lastLogin = Global.lastLogin;
             DateTime? expires = Global.expires;
-            
+
+            //get dahboard details
+            systeminfo = new SystemInfo();
+            systeminfo.LoadDevices();
 
             return View();
         }
