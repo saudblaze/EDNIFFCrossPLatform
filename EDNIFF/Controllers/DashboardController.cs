@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace EDNIFF.Controllers
@@ -24,9 +26,29 @@ namespace EDNIFF.Controllers
             DateTime? lastLogin = Global.lastLogin;
             DateTime? expires = Global.expires;
 
+            String hostName = Dns.GetHostName();
+
+            String MachineName = Environment.MachineName;
+
+
+            string Mac = string.Empty;
+            ManagementClass MC = new ManagementClass("Win32_NetworkAdapter");
+            ManagementObjectCollection MOCol = MC.GetInstances();
+            foreach (ManagementObject MO in MOCol)
+                if (MO != null)
+                {
+                    if (MO["MacAddress"] != null)
+                    {
+                        Mac = MO["MACAddress"].ToString();
+                        if (Mac != string.Empty)
+                            break;
+                    }
+                }
+            //return Mac;
+
             //get dahboard details
-            systeminfo = new SystemInfo();
-            systeminfo.LoadDevices();
+            //systeminfo = new SystemInfo();
+            //systeminfo.LoadDevices();
 
             return View();
         }
