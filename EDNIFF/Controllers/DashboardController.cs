@@ -32,7 +32,7 @@ namespace EDNIFF.Controllers
 
 
             string Mac = string.Empty;
-            ManagementClass MC = new ManagementClass("Win32_NetworkAdapter");
+            ManagementClass MC = new ManagementClass("system_profiler SPHardwareDataType");
             ManagementObjectCollection MOCol = MC.GetInstances();
             foreach (ManagementObject MO in MOCol)
                 if (MO != null)
