@@ -83,7 +83,7 @@ namespace EDNIFF.Controllers
                     else if (System.OperatingSystem.IsMacOS())
                     {
                         cmd.FileName = "sh";
-                        cmd.Arguments = "-c \"sysctl -n hw.model\"";
+                        cmd.Arguments = "-c \"system_profiler SPHardwareDataType\"";
                     }
                     else return null;
 
@@ -97,7 +97,7 @@ namespace EDNIFF.Controllers
                             builder.Append(process.StandardOutput.ReadToEnd());
                         }
 
-                        return builder.ToString().Trim();
+                        string strtemp = builder.ToString().Trim();
                     }
                     catch (Exception)
                     {
