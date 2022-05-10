@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Management;
 using System.Net;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace EDNIFF.Controllers
@@ -39,34 +40,61 @@ namespace EDNIFF.Controllers
             //process.StartInfo.Arguments = "system_profiler SPHardwareDataType";
             //process.Start();
 
+            StringBuilder systemInfo = new StringBuilder(string.Empty);
 
+            systemInfo.AppendFormat("Operation System:  {0}n", Environment.OSVersion);
+            systemInfo.AppendFormat("Processor Architecture:  {0}n", Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE"));
+            systemInfo.AppendFormat("Processor Model:  {0}n", Environment.GetEnvironmentVariable("PROCESSOR_IDENTIFIER"));
+            systemInfo.AppendFormat("Processor Level:  {0}n", Environment.GetEnvironmentVariable("PROCESSOR_LEVEL"));
+            systemInfo.AppendFormat("SystemDirectory:  {0}n", Environment.SystemDirectory);
+            systemInfo.AppendFormat("ProcessorCount:  {0}n", Environment.ProcessorCount);
+            systemInfo.AppendFormat("UserDomainName:  {0}n", Environment.UserDomainName);
+            systemInfo.AppendFormat("UserName: {0}n", Environment.UserName);
+            //Drives
+            systemInfo.AppendFormat("LogicalDrives:n");
+            foreach (System.IO.DriveInfo DriveInfo1 in System.IO.DriveInfo.GetDrives())
+            {
+                try
+                {
+                    systemInfo.AppendFormat("t Drive: {0}ntt VolumeLabel: " +
+                        "{1}ntt DriveType: {2}ntt DriveFormat: {3}ntt " +
+                        "TotalSize: {4}ntt AvailableFreeSpace: {5}n",
+                        DriveInfo1.Name, DriveInfo1.VolumeLabel, DriveInfo1.DriveType,
+                        DriveInfo1.DriveFormat, DriveInfo1.TotalSize, DriveInfo1.AvailableFreeSpace);
+                }
+                catch
+                {
+                }
+            }
+            systemInfo.AppendFormat("Version:  {0}", Environment.Version);
+            Console.WriteLine(systemInfo);
 
             try
             {
-                var appContentResources = Environment.CurrentDirectory;
-                var command = appContentResources + "/myscript.sh";
+                //var appContentResources = Environment.CurrentDirectory;
+                //var command = appContentResources + "/myscript.sh";
 
-                //var command = @"~/Users/apple/Documents/myscript.sh";
-                var scriptFile = @"~/Users/apple/Documents/myscript.sh";//Path to shell script file
-                var arguments = string.Format("{0} {1} {2} {3} {4}", "testarg1", "testarg2", "testarg3", "testarg3", "testarg4");
-                var process = new Process { StartInfo = { FileName = command } };
+                ////var command = @"~/Users/apple/Documents/myscript.sh";
+                //var scriptFile = @"~/Users/apple/Documents/myscript.sh";//Path to shell script file
+                //var arguments = string.Format("{0} {1} {2} {3} {4}", "testarg1", "testarg2", "testarg3", "testarg3", "testarg4");
+                //var process = new Process { StartInfo = { FileName = command } };
                 
 
-                var processReult = process.Start();   // Start that process.
-                //while (!process.StandardOutput.EndOfStream)
-                //{
-                //    string result = process.StandardOutput.ReadLine();
-                //    // do something here
+                //var processReult = process.Start();   // Start that process.
+                ////while (!process.StandardOutput.EndOfStream)
+                ////{
+                ////    string result = process.StandardOutput.ReadLine();
+                ////    // do something here
+                ////}
+                ////process.WaitForExit();
+                //if (processReult)
+                //{ 
+                
                 //}
-                //process.WaitForExit();
-                if (processReult)
-                { 
+                //else
+                //{ 
                 
-                }
-                else
-                { 
-                
-                }
+                //}
             }
             catch (System.ComponentModel.Win32Exception exception)
             { 
