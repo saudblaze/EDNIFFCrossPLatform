@@ -1,6 +1,7 @@
 ﻿using EDNIFF.Common;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Diagnostics;
 using System.Management;
 using System.Net;
 using System.Text;
@@ -67,25 +68,42 @@ namespace EDNIFF.Controllers
             try
             {
 
-                StringBuilder processorInfo = new StringBuilder(string.Empty);
-                ManagementClass mgmntClass = new ManagementClass("Win32_OperatingSystem");
-                ManagementObjectCollection mgmntObj = mgmntClass.GetInstances();
-                PropertyDataCollection properties = mgmntClass.Properties;
-                foreach (ManagementObject obj in mgmntObj)
-                {
-                    foreach (PropertyData property in properties)
+                
+                    var cmd = new ProcessStartInfo();
+                    cmd.RedirectStandardError = true;
+                    cmd.CreateNoWindow = true;
+                    cmd.UseShellExecute = false;
+                    cmd.RedirectStandardOutput = true;
+
+                    if (System.OperatingSystem.IsWindows())
                     {
-                        try
-                        {
-                            processorInfo.AppendLine(property.Name + ":  " +
-                                obj.Properties[property.Name].Value.ToString());
-                        }
-                        catch
-                        {
-                        }
+                        cmd.FileName = "CMD.exe";
+                        cmd.Arguments = "/C wmic csproduct get name | find /v \"Name\"";
                     }
-                    processorInfo.AppendLine();
-                }
+                    else if (System.OperatingSystem.IsMacOS())
+                    {
+                        cmd.FileName = "sh";
+                        cmd.Arguments = "-c \"sysctl -n hw.model\"";
+                    }
+                    else return null;
+
+                    try
+                    {
+
+                        var builder = new StringBuilder();
+                        using (Process process = Process.Start(cmd))
+                        {
+                            process.WaitForExit();
+                            builder.Append(process.StandardOutput.ReadToEnd());
+                        }
+
+                        return builder.ToString().Trim();
+                    }
+                    catch (Exception)
+                    {
+                        return null;
+                    }
+               
 
 
 
