@@ -1,14 +1,9 @@
-﻿using EDNIFF.APIModels;
-using EDNIFF.Common;
+﻿using EDNIFF.Common;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Management;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace EDNIFF.Controllers
 {
@@ -71,6 +66,31 @@ namespace EDNIFF.Controllers
 
             try
             {
+
+                StringBuilder processorInfo = new StringBuilder(string.Empty);
+                ManagementClass mgmntClass = new ManagementClass("Win32_OperatingSystem");
+                ManagementObjectCollection mgmntObj = mgmntClass.GetInstances();
+                PropertyDataCollection properties = mgmntClass.Properties;
+                foreach (ManagementObject obj in mgmntObj)
+                {
+                    foreach (PropertyData property in properties)
+                    {
+                        try
+                        {
+                            processorInfo.AppendLine(property.Name + ":  " +
+                                obj.Properties[property.Name].Value.ToString());
+                        }
+                        catch
+                        {
+                        }
+                    }
+                    processorInfo.AppendLine();
+                }
+
+
+
+
+
                 //var appContentResources = Environment.CurrentDirectory;
                 //var command = appContentResources + "/myscript.sh";
 
@@ -78,7 +98,7 @@ namespace EDNIFF.Controllers
                 //var scriptFile = @"~/Users/apple/Documents/myscript.sh";//Path to shell script file
                 //var arguments = string.Format("{0} {1} {2} {3} {4}", "testarg1", "testarg2", "testarg3", "testarg3", "testarg4");
                 //var process = new Process { StartInfo = { FileName = command } };
-                
+
 
                 //var processReult = process.Start();   // Start that process.
                 ////while (!process.StandardOutput.EndOfStream)
@@ -89,11 +109,11 @@ namespace EDNIFF.Controllers
                 ////process.WaitForExit();
                 //if (processReult)
                 //{ 
-                
+
                 //}
                 //else
                 //{ 
-                
+
                 //}
             }
             catch (System.ComponentModel.Win32Exception exception)
