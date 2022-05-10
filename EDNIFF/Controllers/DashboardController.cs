@@ -40,26 +40,42 @@ namespace EDNIFF.Controllers
             //process.Start();
 
 
-            var command = @"~/Users/apple/Documents/myscript.sh";
-            var scriptFile = @"~/Users/apple/Documents/myscript.sh";//Path to shell script file
-            var arguments = string.Format("{0} {1} {2} {3} {4}", "testarg1", "testarg2", "testarg3", "testarg3", "testarg4");
-            var processInfo = new ProcessStartInfo()
-            {
-                FileName = command,
-                Arguments = arguments,
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-                CreateNoWindow = true
 
-            };
-
-            Process process = Process.Start(processInfo);   // Start that process.
-            while (!process.StandardOutput.EndOfStream)
+            try
             {
-                string result = process.StandardOutput.ReadLine();
-                // do something here
+                var appContentResources = Environment.CurrentDirectory;
+                var command = appContentResources + "/myscript.sh";
+
+                //var command = @"~/Users/apple/Documents/myscript.sh";
+                var scriptFile = @"~/Users/apple/Documents/myscript.sh";//Path to shell script file
+                var arguments = string.Format("{0} {1} {2} {3} {4}", "testarg1", "testarg2", "testarg3", "testarg3", "testarg4");
+                var process = new Process { StartInfo = { FileName = command } };
+                
+
+                var processReult = process.Start();   // Start that process.
+                //while (!process.StandardOutput.EndOfStream)
+                //{
+                //    string result = process.StandardOutput.ReadLine();
+                //    // do something here
+                //}
+                //process.WaitForExit();
+                if (processReult)
+                { 
+                
+                }
+                else
+                { 
+                
+                }
             }
-            process.WaitForExit();
+            catch (System.ComponentModel.Win32Exception exception)
+            { 
+                
+            }
+
+
+
+            
 
             //string Mac = string.Empty;
             //ManagementClass MC = new ManagementClass("system_profiler SPHardwareDataType");
