@@ -97,7 +97,7 @@ namespace EDNIFF.BusinessLogic
                     }
                 }
 
-                //MacInfo.Hardware = sPHardwareDataType;
+                MacInfo.Audio = SPAudioDataType;
 
             }
             catch (System.ComponentModel.Win32Exception exception)

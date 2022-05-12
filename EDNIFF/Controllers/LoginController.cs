@@ -60,6 +60,12 @@ namespace EDNIFF.Controllers
                     Global.lastLogin = response.successData.lastLogin;
                     Global.expires = response.successData.expires;
 
+                    void GetSystemInfo()
+                    {
+                        SystemInfo systeminfo = new SystemInfo();
+                        systeminfo.LoadDevices();
+                    }
+
                     return RedirectToAction("Index", "Dashboard");                    
 
                 }
