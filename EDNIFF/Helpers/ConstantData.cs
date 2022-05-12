@@ -36,6 +36,11 @@ namespace EDNIFF.Helpers
             public const string Batery = "Win32_Battery";
             public const string PortableBatery = "Win32_PortableBattery";
             public const string TimeZone = "Win32_TimeZone";
+
+
+            public const string Hardware = "SPHardwareDataType";
+
+            public const string Audio = "SPAudioDataType";
         }
 
 

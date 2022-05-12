@@ -1,12 +1,16 @@
-﻿@model EDNIFF.APIModels.AuthDetails
+﻿@model EDNIFF.Models.SPHardwareDataType
 
 <div class="container">
     <form>
         @*<h2 class="text-center">Join Our Network</h2>*@
         <div class="row jumbotron">
             <div class="col-sm-6 form-group">
-                <label for="ProductType">Product Type</label>
-                <input type="text" class="form-control" name="ProductType" id="ProductType" placeholder="" required>
+                <label for="name-l">Last name</label>
+                <input type="text" class="form-control" name="lname" id="name-l" placeholder="Enter your last name." required>
+            </div>
+            <div class="col-sm-6 form-group">
+                <label for="ModelIdentifier">ModelName</label>
+                <input type="text" class="form-control" asp-for="ModelIdentifier" name="ModelIdentifier" id="ModelIdentifier" placeholder="" required>
             </div>
             <div class="col-sm-6 form-group">
                 <label for="name-l">Last name</label>

@@ -2,8 +2,10 @@
 using EDNIFF.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Management;
+using System.Text;
 using System.Threading.Tasks;
 using static EDNIFF.Helpers.ConstantData;
 using static EDNIFF.Models.DeviceProps;
@@ -93,6 +95,46 @@ namespace EDNIFF.BusinessLogic
             return hardwares;
         }
 
+        public string GetInfoString(string InfoVariable)
+        {
+            var cmd = new ProcessStartInfo();
+            cmd.RedirectStandardError = true;
+            cmd.CreateNoWindow = true;
+            cmd.UseShellExecute = false;
+            cmd.RedirectStandardOutput = true;
+
+            if (System.OperatingSystem.IsWindows())
+            {
+                cmd.FileName = "CMD.exe";
+                cmd.Arguments = "/C wmic csproduct get name | find /v \"Name\"";
+            }
+            else if (System.OperatingSystem.IsMacOS())
+            {
+                cmd.FileName = "sh";
+                cmd.Arguments = "-c \"system_profiler " + InfoVariable + " \"";
+            }
+            else
+            {
+                return "";
+            }
+
+            var builder = new StringBuilder();
+            using (Process process = Process.Start(cmd))
+            {
+                process.WaitForExit();
+                builder.Append(process.StandardOutput.ReadToEnd());
+            }
+
+            string strtemp = builder.ToString().Trim();
+            return strtemp;
+        }
+
+        public string GetPropertyValue(string items)
+        {
+            string[] strValueArr = items.Split(':');
+            string strValue = strValueArr[1].Trim();
+            return strValue;
+        }
 
         protected List<HardwareDevice> GetDevices(string DevicePath)
         {
@@ -206,93 +248,6 @@ namespace EDNIFF.BusinessLogic
         }
 
         #endregion
-        //List<HardwareDevice> GetHardwareInfo(string Key)
-        //{
-        //    List<HardwareDevice> hardwares = new List<HardwareDevice>();
-        //    ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from " + Key);
-        //    try
-        //    {
-        //        foreach (ManagementObject share in searcher.Get())
-        //        {
-        //            HardwareDevice hrd = new HardwareDevice();
-        //            try
-        //            {
-        //                if (share["Name"] != null)
-        //                    hrd.Name = share["Name"].ToString();
-        //                else
-        //                    hrd.Name = share.ToString();
-
-        //                if (share["Manufacturer"] != null)
-        //                    hrd.Manufacturer = share["Manufacturer"].ToString();
-        //                if (share["PNPClass"] != null)
-        //                    hrd.PNPClass = share["PNPClass"].ToString();
-        //                if (share["PNPDeviceId"] != null)
-        //                    hrd.PNPDeviceId = share["PNPDeviceId"].ToString();
-        //                if (share["Present"] != null)
-        //                    hrd.Present = (bool)share["Present"];
-        //                if (share["Status"] != null)
-        //                    hrd.Status = share["Status"].ToString();
-        //                if (share["Caption"] != null)
-        //                    hrd.Caption = share["Caption"].ToString();
-        //                if (share["Description"] != null)
-        //                    hrd.Description = share["Description"].ToString();
-        //                if (share["DeviceId"] != null)
-        //                    hrd.DeviceId = share["DeviceId"].ToString();
-        //                if (share["HardwareId"] != null)
-        //                    hrd.HardwareId = share["HardwareId"].ToString();
-        //            }
-        //            catch
-        //            {
-        //                hrd.Name = share.ToString();
-        //            }
-        //            //if (share.Properties.Count <= 0)
-        //            //{
-        //            //    //MessageBox.Show("No Information Available", "No Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //            //    return;
-        //            //}
-        //            foreach (PropertyData PC in share.Properties)
-        //            {
-        //                HardwareProperty property = new HardwareProperty();
-        //                property.Name = PC.Name;
-
-        //                if (PC.Value != null && PC.Value.ToString() != "")
-        //                {
-        //                    switch (PC.Value.GetType().ToString())
-        //                    {
-        //                        case "System.String[]":
-        //                            string[] str = (string[])PC.Value;
-
-        //                            string str2 = "";
-        //                            foreach (string st in str)
-        //                                str2 += st + "&";
-
-        //                            property.Value = str2.Trim('&');
-        //                            break;
-        //                        case "System.UInt16[]":
-        //                            ushort[] shortData = (ushort[])PC.Value;
-        //                            string tstr2 = "";
-        //                            foreach (ushort st in shortData)
-        //                                tstr2 += st.ToString() + "&";
-
-        //                            property.Value = tstr2.Trim('&');
-        //                            break;
-
-        //                        default:
-        //                            property.Value = PC.Value.ToString();
-        //                            break;
-        //                    }
-        //                }
-
-        //                hrd.Properties.Add(property);
-        //            }
-        //            hardwares.Add(hrd);
-        //        }
-        //    }
-        //    catch (Exception exp)
-        //    {
-
-        //    }
-        //    return hardwares;
-        //}
+        
     }
 }

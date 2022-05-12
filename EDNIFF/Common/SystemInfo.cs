@@ -11,13 +11,19 @@ namespace EDNIFF.Common
     public class SystemInfo
     {
         public List<Device> devices;
-        //public static Dictionary<long, string> observations { get; set; }
-        //public static long[] observations { get; set; }
+        public MacInfo MacInfo;
 
+
+        HardwareService objHardwareService;
 
         public SystemInfo()
         {
             //observations = new Dictionary<int, string>();
+
+            objHardwareService = new HardwareService();
+
+            MacInfo = new MacInfo();
+
         }
         #region --private methods--
         public void LoadDevices()
@@ -30,6 +36,9 @@ namespace EDNIFF.Common
             //LoadDiskDrive();
             //LoadSystemDetails();
             //LoadOtherDevices();
+
+
+            LoadHardware();
         }
         private void LoadSystemDetails()
         {
@@ -98,6 +107,11 @@ namespace EDNIFF.Common
         //    SystemReportService system = new SystemReportService();
         //       List<TestResult>   result = system.GetSystemInfo(devices);
         //}
+
+        private void LoadHardware()
+        {
+            objHardwareService.GetHardware(MacInfo);
+        }
 
         #endregion
 
