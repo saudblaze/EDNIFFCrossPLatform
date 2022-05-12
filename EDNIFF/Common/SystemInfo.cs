@@ -42,7 +42,7 @@ namespace EDNIFF.Common
 
         private void LoadAudio()
         {
-            objAudioService.GetAudio(MacInfo)
+            objAudioService.GetAudio(MacInfo);
         }
 
         #endregion
