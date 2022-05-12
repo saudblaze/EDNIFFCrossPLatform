@@ -11,7 +11,7 @@ namespace EDNIFF.Controllers
 {
     public class DashboardController : Controller
     {
-        SystemInfo systeminfo;
+        
         SPHardwareDataType _SPHardwareDataType;
 
         public DashboardController()
@@ -35,9 +35,10 @@ namespace EDNIFF.Controllers
             String hostName = Dns.GetHostName();
 
             String MachineName = Environment.MachineName;
-            
 
-            return View(systeminfo.MacInfo);
+            _SPHardwareDataType = MacInfo.Hardware;
+
+            return View(_SPHardwareDataType);
         }
 
         public void GetSPHardwareDataType()

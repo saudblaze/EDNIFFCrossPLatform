@@ -10,7 +10,7 @@ namespace EDNIFF.BusinessLogic
 {
     class AudioService : BaseHardwareInfo
     {
-        public void GetAudio(MacInfo MacInfo)
+        public void GetAudio()
         {
             try
             {

@@ -13,7 +13,7 @@ namespace EDNIFF.BusinessLogic
 {
     class HardwareService : BaseHardwareInfo
     {
-        public void GetHardware(MacInfo MacInfo)
+        public void GetHardware()
         {
             try
             {

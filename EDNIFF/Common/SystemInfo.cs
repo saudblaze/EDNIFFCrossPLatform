@@ -7,7 +7,7 @@ namespace EDNIFF.Common
     public class SystemInfo
     {
         public List<Device> devices;
-        public MacInfo MacInfo;
+        
 
 
         HardwareService objHardwareService;
@@ -21,7 +21,7 @@ namespace EDNIFF.Common
             objHardwareService = new HardwareService();
             objAudioService = new AudioService();
 
-            MacInfo = new MacInfo();
+            
 
         }
         #region --private methods--
@@ -33,12 +33,12 @@ namespace EDNIFF.Common
 
         private void LoadHardware()
         {
-            objHardwareService.GetHardware(MacInfo);
+            objHardwareService.GetHardware();
         }
 
         private void LoadAudio()
         {
-            objAudioService.GetAudio(MacInfo);
+            objAudioService.GetAudio();
         }
 
         #endregion

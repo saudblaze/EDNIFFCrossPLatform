@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace EDNIFF.Common
 {
-    public class MacInfo
+    public static class MacInfo
     {
-        public SPHardwareDataType Hardware { get; set; }
-        public SPAudioDataType Audio { get; set; }
-        public SPBluetoothDataType Bluetooth { get; set; }
-        public SPDisplaysDataType Displays { get; set; }
-        public SPCameraDataType Camera { get; set; }
-        public SPMemoryDataType Memory { get; set; }
-        public SPSmartCardsDataType SmartCards { get; set; }
-        public SPThunderboltDataType Thunderbolt { get; set; }
-        public SPStorageDataType Storage { get; set; }
-        public SPWWANDataType WWAN { get; set; }
-        public SPUSBDataType USB { get; set; }
-        public SPPowerDataType Power { get; set; }
-        public SPNetworkDataType Network { get; set; }
-        public SPCardReaderDataType CardReader { get; set; }
+        public static SPHardwareDataType Hardware { get; set; }
+        public static SPAudioDataType Audio { get; set; }
+        public static SPBluetoothDataType Bluetooth { get; set; }
+        public static SPDisplaysDataType Displays { get; set; }
+        public static SPCameraDataType Camera { get; set; }
+        public static SPMemoryDataType Memory { get; set; }
+        public static SPSmartCardsDataType SmartCards { get; set; }
+        public static SPThunderboltDataType Thunderbolt { get; set; }
+        public static SPStorageDataType Storage { get; set; }
+        public static SPWWANDataType WWAN { get; set; }
+        public static SPUSBDataType USB { get; set; }
+        public static SPPowerDataType Power { get; set; }
+        public static SPNetworkDataType Network { get; set; }
+        public static SPCardReaderDataType CardReader { get; set; }
 
     }
 }
