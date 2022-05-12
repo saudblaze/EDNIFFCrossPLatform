@@ -4,34 +4,42 @@
     <form>
         @*<h2 class="text-center">Join Our Network</h2>*@
         <div class="row jumbotron">
-            
-            <div class="col-sm-6 form-group">
-                <label for="ModelIdentifier">ModelName</label>
-                <input type="text" class="form-control" asp-for="ModelIdentifier" name="ModelIdentifier" id="ModelIdentifier" placeholder="" required>
+
+            <div class="col-sm-4 form-group">
+                <label for="name-l">Product Type</label>
+                <input type="text" class="form-control" name="lname" id="name-l" placeholder="Enter your last name." value="Laptop">
             </div>
-            <div class="col-sm-6 form-group">
-                <label for="name-l">Last name</label>
-                <input type="text" class="form-control" name="lname" id="name-l" placeholder="Enter your last name." required>
+            <div class="col-sm-4 form-group">
+                <label for="Manufacturer">Manufacturer</label>
+                <input type="text" class="form-control" name="Manufacturer" id="Manufacturer" placeholder="Enter your last name." value="Apple">
             </div>
-            <div class="col-sm-6 form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email." required>
+            <div class="col-sm-4 form-group">
+                <label for="ModelIdentifier">Model Name</label>
+                <input type="text" class="form-control" asp-for="ModelIdentifier" name="ModelIdentifier" id="ModelIdentifier" placeholder="" >
             </div>
-            <div class="col-sm-6 form-group">
-                <label for="address-1">Address Line-1</label>
-                <input type="address" class="form-control" name="Locality" id="address-1" placeholder="Locality/House/Street no." required>
+            <div class="col-sm-4 form-group">
+                <label for="PartNumber">Part Number</label>
+                <input type="text" class="form-control" name="PartNumber" id="PartNumber" placeholder="" >
             </div>
-            <div class="col-sm-6 form-group">
-                <label for="address-2">Address Line-2</label>
-                <input type="address" class="form-control" name="address" id="address-2" placeholder="Village/City Name." required>
+            <div class="col-sm-4 form-group">
+                <label for="SerialNumber">Serial Number</label>
+                <input type="text" class="form-control" name="SerialNumber" id="SerialNumber" placeholder="Enter your SerialNumber." >
+            </div>
+            <div class="col-sm-4 form-group">
+                <label for="Processor">Processor</label>
+                <input type="text" class="form-control" name="Processor" id="Processor"  >
+            </div>
+            <div class="col-sm-4 form-group">
+                <label for="RamSize">Ram Size</label>
+                <input type="text" class="form-control" name="Ram Size" id="RamSize" >
             </div>
             <div class="col-sm-4 form-group">
                 <label for="State">State</label>
-                <input type="address" class="form-control" name="State" id="State" placeholder="Enter your state name." required>
+                <input type="text" class="form-control" name="State" id="State" placeholder="Enter your state name." required>
             </div>
             <div class="col-sm-2 form-group">
                 <label for="zip">Postal-Code</label>
-                <input type="zip" class="form-control" name="Zip" id="zip" placeholder="Postal-Code." required>
+                <input type="text" class="form-control" name="Zip" id="zip" placeholder="Postal-Code." required>
             </div>
             <div class="col-sm-6 form-group">
                 <label for="Country">Country</label>
