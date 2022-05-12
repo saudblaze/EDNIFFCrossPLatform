@@ -35,10 +35,9 @@ namespace EDNIFF.Controllers
             String hostName = Dns.GetHostName();
 
             String MachineName = Environment.MachineName;
+            
 
-            _SPHardwareDataType = systeminfo.MacInfo.Hardware;
-
-            return View(_SPHardwareDataType);
+            return View(systeminfo.MacInfo);
         }
 
         public void GetSPHardwareDataType()
