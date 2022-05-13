@@ -19,13 +19,11 @@ namespace EDNIFF.BusinessLogic
                 string[] linesArr = strtemp.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
                 SPAudioDataType SPAudioDataType = new SPAudioDataType();
 
-
+                bool blnBuiltInMicrophone = false;
+                bool blnBuiltinOutput = false;
 
                 foreach (string items in linesArr)
-                {
-
-                    bool blnBuiltInMicrophone = false;
-                    bool blnBuiltinOutput = false;
+                {                    
 
                     if (items.ToString().Contains("Built-in Microphone"))
                     {

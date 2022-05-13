@@ -19,12 +19,13 @@ namespace EDNIFF.BusinessLogic
                 string[] linesArr = strtemp.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
                 SPMemoryDataType SPMemoryDataType = new SPMemoryDataType();
 
+                bool blnBank0 = false;
+                bool blnBank1 = false;
+
+
                 foreach (string items in linesArr)
                 {
-
-                    bool blnBank0 = false;
-                    bool blnBank1 = false;
-
+                    
                     if (items.ToString().Contains("ECC:"))
                     {
                         SPMemoryDataType.ECC = GetPropertyValue(items.ToString());
