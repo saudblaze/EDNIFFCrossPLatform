@@ -15,33 +15,43 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EDNIFF</a>
+                @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EDNIFF</a>*@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-
 
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Administrator" asp-action="ListUsers">
-                                Manage Users
-                            </a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Administrator" asp-action="ListRoles">
-                                Manage Roles
-                            </a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Devices" asp-action="Index">Devices</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Tests" asp-action="Index">Tests</a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Observation" asp-action="Index">Observation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
+                        </li>
 
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        @*{
+                            <li class="nav-item">
+                                <form method="post" asp-controller="account" asp-action="logout">
+                                    <button type="submit" style="width:auto"
+                                            class="nav-link btn btn-link py-0">
+                                        Logout @userName
+                                    </button>
+                                </form>
+                            </li>
+                       }*@                                        
                     </ul>
                 </div>
             </div>
@@ -54,9 +64,28 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - EDNIFF - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+
+        <table>
+            <tr>
+                <td><label style="margin-left:10px;margin-right:10px;">Audit</label></td>
+                <td style="margin-left:10px;margin-right:10px;"><h5><span class="badge bg-secondary" style="color: white;margin-left:10px;margin-right:10px;">NOT SAVED</span></h5></td>
+
+                <td> <label style="margin-left:10px;margin-right:10px;">OS IMAGE</label></td>
+                <td style="margin-left:10px;margin-right:10px;"> <h5><span class="badge bg-secondary" style="color: white;margin-left:10px;margin-right:10px;">IDLE</span></h5></td>
+
+                <td> <label style="margin-left:10px;margin-right:10px;">DISK ERASURE</label></td>
+                <td style="margin-left:10px;margin-right:10px;"> <h5><span class="badge bg-secondary" style="color: white;margin-left:10px;margin-right:10px;">IDLE</span></h5></td>
+
+                <td> <label style="margin-left:10px;margin-right:10px;">OBSERVATION</label></td>
+                <td style="margin-left:10px;margin-right:10px;"> <h5><span class="badge bg-secondary" style="color: white; margin-left: 10px; margin-right: 10px;">NOT DETAILS</span></h5></td>
+
+                <td> <label style="margin-left:10px;margin-right:10px;">TESTING</label></td>
+                <td style="margin-left:10px;margin-right:10px;"> <h5><span class="badge bg-secondary" style="color: white; margin-left: 10px; margin-right: 10px;">NOT DONE</span></h5></td>
+
+                <td style="right:0px"><button style="margin-left:10px" class="btn btn-primary float-right">Submit</button>  </td>
+            </tr>
+        </table>
+
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

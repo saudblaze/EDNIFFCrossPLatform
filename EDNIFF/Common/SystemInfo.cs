@@ -7,12 +7,12 @@ namespace EDNIFF.Common
     public class SystemInfo
     {
         public List<Device> devices;
-        
-
 
         HardwareService objHardwareService;
         AudioService objAudioService;
-        
+        MemoryService objMemoryService;
+
+
 
         public SystemInfo()
         {
@@ -29,6 +29,7 @@ namespace EDNIFF.Common
         {
             LoadHardware();
             LoadAudio();
+            LoadMemory()
         }        
 
         private void LoadHardware()
@@ -39,6 +40,11 @@ namespace EDNIFF.Common
         private void LoadAudio()
         {
             objAudioService.GetAudio();
+        }
+
+        private void LoadMemory()
+        {
+            objMemoryService.GetMemory();
         }
 
         #endregion

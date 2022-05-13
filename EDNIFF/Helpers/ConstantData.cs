@@ -41,6 +41,8 @@ namespace EDNIFF.Helpers
             public const string Hardware = "SPHardwareDataType";
 
             public const string Audio = "SPAudioDataType";
+
+            public const string Memory = "SPMemoryDataType";
         }
 
 
