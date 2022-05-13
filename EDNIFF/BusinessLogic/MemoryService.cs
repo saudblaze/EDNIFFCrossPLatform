@@ -35,13 +35,13 @@ namespace EDNIFF.BusinessLogic
                         SPMemoryDataType.UpgradeableMemory = GetPropertyValue(items.ToString());
                     }
 
-                    if (items.ToString().Contains("Bank 0"))
+                    if (items.ToString().Contains("BANK 0"))
                     {
                         blnBank0 = true;
                         blnBank1 = false;
                     }
 
-                    if (items.ToString().Contains("Bank 1"))
+                    if (items.ToString().Contains("BANK 1"))
                     {
                         blnBank1 = true;
                         blnBank0 = false;
