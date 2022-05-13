@@ -20,8 +20,7 @@ namespace EDNIFF.Common
 
             objHardwareService = new HardwareService();
             objAudioService = new AudioService();
-
-            
+            objMemoryService = new MemoryService();
 
         }
         #region --private methods--
