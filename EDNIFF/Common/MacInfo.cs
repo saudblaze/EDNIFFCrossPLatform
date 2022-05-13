@@ -1,4 +1,5 @@
 ﻿using EDNIFF.Models;
+using EDNIFF.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,17 @@ namespace EDNIFF.Common
         public static SPPowerDataType Power { get; set; }
         public static SPNetworkDataType Network { get; set; }
         public static SPCardReaderDataType CardReader { get; set; }
+
+
+        public static MacinfoVM MapMacInfoVM( )
+        {
+            MacinfoVM objReturn = new MacinfoVM();
+            if (MacInfo.Memory != null)
+            {
+                objReturn.Memory = MacInfo.Memory;
+            }
+            return objReturn;
+        }
 
     }
 }

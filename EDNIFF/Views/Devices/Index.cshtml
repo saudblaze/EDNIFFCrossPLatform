@@ -1,4 +1,9 @@
-﻿
+﻿@model EDNIFF.ViewModel.MacinfoVM
+
+
+
+
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -28,8 +33,8 @@
         </thead>
         <tbody>
             <tr>
-                <td>Type</td>
-                <td>Size</td>
+                <td>@Model.Memory.Bank0.Type</td>
+                <td>@Model.Memory.Bank0.Size</td>
                 <td>Model</td>
                 <td>Smart</td>
                 <td>Erase</td>
@@ -62,19 +67,42 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Type</td>
-                <td>Size</td>
-                <td>Model</td>
-                <td>Smart</td>
-                <td>Erase</td>
-                <td>Image</td>
-                <td>Progress</td>
-                <td>Status</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            @if (Model.Memory != null)
+            {
+                if (Model.Memory.Bank0 != null)
+                {
+                    <tr>
+                        <td>RAM</td>
+                        <td>RAM</td>
+                        <td>Model.Memory.Manufacturer</td>
+                        <td>Model.Memory.Type</td>
+                        <td>Model.Memory.SerialNumber</td>
+                        <td>Model.Memory.Size</td>
+                        <td>Model.Memory.Speed</td>
+                        <td>Model.Memory.PartNumber</td>
+                        <td>Model.Memory.SerialNumber</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                }
+                if (Model.Memory.Bank1 != null)
+                {
+                    <tr>
+                        <td>RAM</td>
+                        <td>RAM</td>
+                        <td>Model.Memory.Manufacturer</td>
+                        <td>Model.Memory.Type</td>
+                        <td>Model.Memory.SerialNumber</td>
+                        <td>Model.Memory.Size</td>
+                        <td>Model.Memory.Speed</td>
+                        <td>Model.Memory.PartNumber</td>
+                        <td>Model.Memory.SerialNumber</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                }
+            }
+
         </tbody>
     </table>
 
