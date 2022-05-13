@@ -14,7 +14,7 @@ namespace EDNIFF.BusinessLogic
         {
             try
             {
-                string strtemp = GetInfoString(ConstantData.DevicePaths.Hardware);
+                string strtemp = GetInfoString(ConstantData.DevicePaths.Audio);
 
                 string[] linesArr = strtemp.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
                 SPAudioDataType SPAudioDataType = new SPAudioDataType();
