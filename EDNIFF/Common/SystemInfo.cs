@@ -29,7 +29,7 @@ namespace EDNIFF.Common
         {
             LoadHardware();
             LoadAudio();
-            LoadMemory()
+            LoadMemory();
         }        
 
         private void LoadHardware()

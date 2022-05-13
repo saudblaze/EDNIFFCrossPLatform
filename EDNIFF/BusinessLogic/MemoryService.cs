@@ -10,7 +10,7 @@ namespace EDNIFF.BusinessLogic
 {
     class MemoryService : BaseHardwareInfo
     {
-        public void GetHardware()
+        public void GetMemory()
         {
             try
             {
