@@ -40,12 +40,14 @@ namespace EDNIFF.BusinessLogic
                     {
                         blnBank0 = true;
                         blnBank1 = false;
+                        SPMemoryDataType.Bank0 = new Bank0(); 
                     }
 
                     if (items.ToString().Contains("BANK 1"))
                     {
                         blnBank1 = true;
                         blnBank0 = false;
+                        SPMemoryDataType.Bank1 = new Bank1();
                     }
 
                     //blnBank0

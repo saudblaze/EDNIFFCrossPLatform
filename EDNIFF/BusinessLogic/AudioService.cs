@@ -29,12 +29,14 @@ namespace EDNIFF.BusinessLogic
                     {
                         blnBuiltInMicrophone = true;
                         blnBuiltinOutput = false;
+                        SPAudioDataType.BuiltInMicrophone = new BuiltInMicrophone();
                     }
 
                     if (items.ToString().Contains("Built-in Output"))
                     {
                         blnBuiltinOutput = true;
                         blnBuiltInMicrophone = false;
+                        SPAudioDataType.BuiltInOutput = new BuiltInOutput();
                     }
 
                     //BuiltInMicrophone
