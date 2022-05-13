@@ -14,7 +14,7 @@ namespace EDNIFF.BusinessLogic
         {
             try
             {
-                string strtemp = GetInfoString(ConstantData.DevicePaths.Hardware);
+                string strtemp = GetInfoString(ConstantData.DevicePaths.Memory);
 
                 string[] linesArr = strtemp.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
                 SPMemoryDataType SPMemoryDataType = new SPMemoryDataType();
