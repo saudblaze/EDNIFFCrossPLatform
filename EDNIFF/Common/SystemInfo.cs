@@ -34,7 +34,7 @@ namespace EDNIFF.Common
 
         private void LoadHardware()
         {
-            objHardwareService.GetHardware(devices);
+            objHardwareService.GetHardware();
         }
 
         private void LoadAudio()

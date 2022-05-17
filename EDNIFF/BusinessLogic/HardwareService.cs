@@ -13,7 +13,7 @@ namespace EDNIFF.BusinessLogic
 {
     class HardwareService : BaseHardwareInfo
     {
-        public void GetHardware(List<Device> devices)
+        public void GetHardware()
         {
             try
             {
@@ -96,7 +96,7 @@ namespace EDNIFF.BusinessLogic
                 }
 
                 MacInfo.Hardware = sPHardwareDataType;
-                devices.Add(device);
+                MacInfo.devices.Add(device);
 
             }
             catch (System.ComponentModel.Win32Exception exception)
