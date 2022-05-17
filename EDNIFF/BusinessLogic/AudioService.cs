@@ -97,6 +97,37 @@ namespace EDNIFF.BusinessLogic
                     }
                 }
 
+
+
+                if (SPAudioDataType.BuiltInMicrophone != null)
+                {
+                    Device device = new Device();
+                    device.Category = ConstantData.Categories.Audio;
+                    device.DeviceName = ConstantData.DeviceNames.Audio;
+                    device.Manufacturer = SPAudioDataType.BuiltInMicrophone.Manufacturer;
+                    device.Model = "";
+                    device.Serial = "";
+                    device.Size = ""; 
+                    device.Speed = SPAudioDataType.BuiltInMicrophone.CurrentSampleRate;
+                    device.Info1 = SPAudioDataType.BuiltInMicrophone.Transport;
+                    device.Info2 = SPAudioDataType.BuiltInMicrophone.InputSource;
+                    MacInfo.devices.Add(device);
+                }
+                if (SPAudioDataType.BuiltInOutput != null)
+                {
+                    Device device = new Device();
+                    device.Category = ConstantData.Categories.Audio;
+                    device.DeviceName = ConstantData.DeviceNames.Audio;
+                    device.Manufacturer = SPAudioDataType.BuiltInOutput.Manufacturer;
+                    device.Model = "";
+                    device.Serial = "";
+                    device.Size = "";
+                    device.Speed = SPAudioDataType.BuiltInOutput.CurrentSampleRate;
+                    device.Info1 = SPAudioDataType.BuiltInOutput.Transport;
+                    device.Info2 = SPAudioDataType.BuiltInOutput.OutputSource;
+                    MacInfo.devices.Add(device);
+                }
+
                 MacInfo.Audio = SPAudioDataType;
 
             }

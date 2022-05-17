@@ -28,9 +28,9 @@ namespace EDNIFF.Common
         public void LoadDevices()
         {
 
-            LoadHardware();
-            LoadAudio();
+            LoadHardware();            
             LoadMemory();
+            LoadAudio();
         }        
 
         private void LoadHardware()
