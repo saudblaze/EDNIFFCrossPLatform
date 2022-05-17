@@ -21,6 +21,7 @@ namespace EDNIFF.Common
             objHardwareService = new HardwareService();
             objAudioService = new AudioService();
             objMemoryService = new MemoryService();
+            devices = new List<Device>();
 
         }
         #region --private methods--
