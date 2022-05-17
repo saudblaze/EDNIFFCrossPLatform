@@ -32,6 +32,10 @@ namespace EDNIFF.Common
             {
                 objReturn.Memory = MacInfo.Memory;
             }
+            if (MacInfo.Hardware != null)
+            {
+                objReturn.Hardware = MacInfo.Hardware;
+            }
             return objReturn;
         }
 
