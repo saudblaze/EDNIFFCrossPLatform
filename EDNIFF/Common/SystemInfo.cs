@@ -16,6 +16,7 @@ namespace EDNIFF.Common
         SDCardService objSDCardService;
         GraphicsService objGraphicsService;
         BatteryService objBatteryService;
+        StorageService objStorageService;
         public SystemInfo()
         {
             //observations = new Dictionary<int, string>();
@@ -28,6 +29,7 @@ namespace EDNIFF.Common
             objSDCardService = new SDCardService();
             objGraphicsService = new GraphicsService();
             objBatteryService = new BatteryService();
+            objStorageService = new StorageService();
             devices = new List<Device>();
 
         }
@@ -42,6 +44,7 @@ namespace EDNIFF.Common
             LoadSDCard();
             LoadGraphics();
             LoadBattery();
+            LoadStorage();
         }        
 
         private void LoadHardware()
@@ -75,6 +78,10 @@ namespace EDNIFF.Common
         private void LoadBattery()
         {
             objBatteryService.GetBattery();
+        }
+        private void LoadStorage()
+        {
+            objStorageService.GetStorage();
         }
         #endregion
 

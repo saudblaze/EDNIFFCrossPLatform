@@ -53,6 +53,8 @@ namespace EDNIFF.Helpers
             public const string Displays = "SPDisplaysDataType";
 
             public const string Battery = "SPPowerDataType";
+
+            public const string Storage = "SPStorageDataType";
         }
 
 
