@@ -56,7 +56,7 @@ namespace EDNIFF.Common
 
         private void LoadCamera()
         {
-            objCameraService.GetCamera();
+            objCameraService.GetBluetooth();
         }
 
 
