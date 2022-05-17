@@ -14,6 +14,10 @@ namespace EDNIFF.BusinessLogic
         {
             try
             {
+                
+                
+
+
                 string strtemp = GetInfoString(ConstantData.DevicePaths.Memory);
                 if (!string.IsNullOrEmpty(strtemp))
                 {
@@ -111,6 +115,35 @@ namespace EDNIFF.BusinessLogic
                         {
                             SPMemoryDataType.Bank1.SerialNumber = GetPropertyValue(items.ToString());
                         }
+                    }
+
+                    if (SPMemoryDataType.Bank0 != null)
+                    {
+                        Device device = new Device();
+                        device.Category = ConstantData.Categories.RAM;
+                        device.DeviceName = ConstantData.DeviceNames.RAM;
+                        device.Manufacturer = SPMemoryDataType.Bank0.Manufacturer;
+                        device.Model = SPMemoryDataType.Bank0.Type;
+                        device.Serial = SPMemoryDataType.Bank0.SerialNumber;
+                        device.Size = SPMemoryDataType.Bank0.Size;
+                        device.Speed = SPMemoryDataType.Bank0.Speed;
+                        device.Info1 = "";
+                        device.Info2 = "";
+                        MacInfo.devices.Add(device);
+                    }
+                    if (SPMemoryDataType.Bank1 != null)
+                    {
+                        Device device = new Device();
+                        device.Category = ConstantData.Categories.RAM;
+                        device.DeviceName = ConstantData.DeviceNames.RAM;
+                        device.Manufacturer = SPMemoryDataType.Bank1.Manufacturer;
+                        device.Model = SPMemoryDataType.Bank1.Type;
+                        device.Serial = SPMemoryDataType.Bank1.SerialNumber;
+                        device.Size = SPMemoryDataType.Bank1.Size;
+                        device.Speed = SPMemoryDataType.Bank1.Speed;
+                        device.Info1 = "";
+                        device.Info2 = "";
+                        MacInfo.devices.Add(device);
                     }
 
                     MacInfo.Memory = SPMemoryDataType;
