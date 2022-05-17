@@ -14,10 +14,6 @@ namespace EDNIFF.BusinessLogic
         {
             try
             {
-                
-                
-
-
                 string strtemp = GetInfoString(ConstantData.DevicePaths.Memory);
                 if (!string.IsNullOrEmpty(strtemp))
                 {

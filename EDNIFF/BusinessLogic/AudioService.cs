@@ -15,7 +15,10 @@ namespace EDNIFF.BusinessLogic
             try
             {
                 string strtemp = GetInfoString(ConstantData.DevicePaths.Audio);
-
+                if (string.IsNullOrEmpty(strtemp))
+                {
+                    return;
+                }
                 string[] linesArr = strtemp.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
                 SPAudioDataType SPAudioDataType = new SPAudioDataType();
 
@@ -96,8 +99,6 @@ namespace EDNIFF.BusinessLogic
                         SPAudioDataType.BuiltInOutput.OutputSource = GetPropertyValue(items.ToString());
                     }
                 }
-
-
 
                 if (SPAudioDataType.BuiltInMicrophone != null)
                 {

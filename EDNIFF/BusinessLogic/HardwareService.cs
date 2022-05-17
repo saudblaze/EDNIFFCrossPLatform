@@ -23,7 +23,10 @@ namespace EDNIFF.BusinessLogic
                 device.Manufacturer = "Apple";
 
                 string strtemp = GetInfoString(ConstantData.DevicePaths.Hardware);
-                
+                if (string.IsNullOrEmpty(strtemp))
+                {
+                    return;
+                }
                 string[] linesArr = strtemp.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
                 SPHardwareDataType sPHardwareDataType = new SPHardwareDataType();
                 foreach (string items in linesArr)

@@ -20,7 +20,10 @@ namespace EDNIFF.BusinessLogic
                 
 
                 string strtemp = GetInfoString(ConstantData.DevicePaths.Bluetooth);
-
+                if (string.IsNullOrEmpty(strtemp))
+                {
+                    return;
+                }
                 string[] linesArr = strtemp.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
                 
                 foreach (string items in linesArr)

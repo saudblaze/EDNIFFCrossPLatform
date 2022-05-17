@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace EDNIFF.BusinessLogic
 {
-    class CameraService : BaseHardwareInfo
+    class SDCardService : BaseHardwareInfo
     {
         public void GetBluetooth()
         {
             try
             {
                 Device device = new Device();
-                device.Category = ConstantData.Categories.Webcam;
-                device.DeviceName = ConstantData.DeviceNames.Webcam;
+                device.Category = ConstantData.Categories.Ports;
+                device.DeviceName = ConstantData.DeviceNames.SDCardPort;
 
                 string strtemp = GetInfoString(ConstantData.DevicePaths.Camera);
                 if (string.IsNullOrEmpty(strtemp))
@@ -24,16 +24,20 @@ namespace EDNIFF.BusinessLogic
                     return;
                 }
                 string[] linesArr = strtemp.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
-                
+
                 foreach (string items in linesArr)
                 {
-                    if (items.ToString().Contains("Model ID"))
-                    {
-                        device.Manufacturer = GetPropertyValue(items.ToString());
-                    }
-                    if (items.ToString().Contains("Unique ID"))
+                    if (items.ToString().Contains("Serial Number"))
                     {
                         device.Serial = GetPropertyValue(items.ToString());
+                    }
+                    if (items.ToString().Contains("Product ID"))
+                    {
+                        device.Model = GetPropertyValue(items.ToString());
+                    }
+                    if (items.ToString().Contains("Vendor ID"))
+                    {
+                        device.Manufacturer = GetPropertyValue(items.ToString());
                     }
                 }
 
