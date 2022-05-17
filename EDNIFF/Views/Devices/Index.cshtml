@@ -68,7 +68,22 @@
         </thead>
         <tbody>
 
-
+            @if (Model.Hardware != null)
+            {
+                <tr>
+                    <td>Processor</td>
+                    <td>Processor</td>
+                    <td> </td>
+                    <td>@Model.Hardware.ProcessorName</td>
+                    <td>@Model.Hardware.SerialNumber</td>
+                    <td>@Model.Hardware.Memory</td>
+                    <td>@Model.Hardware.ProcessorSpeed</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            }
 
             @if (Model.Memory != null)
             {
