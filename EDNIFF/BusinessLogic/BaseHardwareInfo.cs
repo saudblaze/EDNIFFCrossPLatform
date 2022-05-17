@@ -16,6 +16,8 @@ namespace EDNIFF.BusinessLogic
     {
         public string GetInfoString(string InfoVariable)
         {
+            string strReturn = string.Empty;
+
             var cmd = new ProcessStartInfo();
             cmd.RedirectStandardError = true;
             cmd.CreateNoWindow = true;
@@ -43,9 +45,12 @@ namespace EDNIFF.BusinessLogic
                 process.WaitForExit();
                 builder.Append(process.StandardOutput.ReadToEnd());
             }
-
-            string strtemp = builder.ToString().Trim();
-            return strtemp;
+            if (builder.ToString().Trim() != string.Empty)
+            {
+                strReturn = builder.ToString().Trim();
+            }
+            
+            return strReturn;
         }
 
         public string GetPropertyValue(string items)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static EDNIFF.Helpers.ConstantData;
 
 namespace EDNIFF.Models
 {
@@ -11,6 +12,8 @@ namespace EDNIFF.Models
         public string UpgradeableMemory { get; set; }
         public Bank0 Bank0 { get; set; }
         public Bank1 Bank1 { get; set; }
+
+        public Categories Category { get; set; }
     }
 
     public class Bank0
