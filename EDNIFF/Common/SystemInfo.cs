@@ -33,6 +33,7 @@ namespace EDNIFF.Common
             LoadHardware();            
             LoadMemory();
             LoadAudio();
+            LoadBluetooth();
         }        
 
         private void LoadHardware()
@@ -49,6 +50,11 @@ namespace EDNIFF.Common
         {
             objMemoryService.GetMemory();
         }
+        private void LoadBluetooth()
+        {
+            objBluetoothService.GetBluetooth();
+        }
+
 
         #endregion
 
