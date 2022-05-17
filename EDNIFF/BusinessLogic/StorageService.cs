@@ -21,8 +21,8 @@ namespace EDNIFF.BusinessLogic
                     SPPowerDataType obkSPPowerDataType = new SPPowerDataType();
 
                     Device device = new Device();
-                    device.Category = ConstantData.Categories.Battery;
-                    device.DeviceName = ConstantData.DeviceNames.Battery;
+                    device.Category = ConstantData.Categories.Storage;
+                    device.DeviceName = ConstantData.DeviceNames.Storage;
 
                     bool blnUntitled = false;
 
