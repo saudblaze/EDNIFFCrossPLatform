@@ -27,6 +27,7 @@ namespace EDNIFF.Common
         #region --private methods--
         public void LoadDevices()
         {
+
             LoadHardware();
             LoadAudio();
             LoadMemory();

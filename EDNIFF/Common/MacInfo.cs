@@ -26,6 +26,11 @@ namespace EDNIFF.Common
 
         public static List<Device> devices { get; set; }
 
+        static MacInfo()
+        {
+            devices = new List<Device>();
+        }
+
 
         public static MacinfoVM MapMacInfoVM( )
         {
