@@ -18,7 +18,7 @@ namespace EDNIFF.BusinessLogic
                 device.Category = ConstantData.Categories.Ports;
                 device.DeviceName = ConstantData.DeviceNames.SDCardPort;
 
-                string strtemp = GetInfoString(ConstantData.DevicePaths.Camera);
+                string strtemp = GetInfoString(ConstantData.DevicePaths.CardReader);
                 if (string.IsNullOrEmpty(strtemp))
                 {
                     return;
