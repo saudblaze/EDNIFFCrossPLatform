@@ -44,7 +44,7 @@ namespace EDNIFF.BusinessLogic
                     }
                     if (items.ToString().Contains("Firmware Version"))
                     {
-                        device.Info1 = GetPropertyValue(items.ToString());
+                        device.Info2 = GetPropertyValue(items.ToString());
                     }
 
                 }

@@ -12,7 +12,7 @@ namespace EDNIFF.Common
         AudioService objAudioService;
         MemoryService objMemoryService;
         BluetoothService objBluetoothService;
-
+        CameraService objCameraService;
 
 
         public SystemInfo()
@@ -23,29 +23,28 @@ namespace EDNIFF.Common
             objAudioService = new AudioService();
             objMemoryService = new MemoryService();
             objBluetoothService = new BluetoothService();
+            objCameraService = new CameraService();
             devices = new List<Device>();
 
         }
         #region --private methods--
         public void LoadDevices()
         {
-
             LoadHardware();            
             LoadMemory();
             LoadAudio();
             LoadBluetooth();
+            LoadCamera();
         }        
 
         private void LoadHardware()
         {
             objHardwareService.GetHardware();
         }
-
         private void LoadAudio()
         {
             objAudioService.GetAudio();
         }
-
         private void LoadMemory()
         {
             objMemoryService.GetMemory();
@@ -53,6 +52,11 @@ namespace EDNIFF.Common
         private void LoadBluetooth()
         {
             objBluetoothService.GetBluetooth();
+        }
+
+        private void LoadCamera()
+        {
+            objCameraService.GetCamera();
         }
 
 

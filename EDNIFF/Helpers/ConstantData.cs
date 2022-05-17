@@ -45,6 +45,8 @@ namespace EDNIFF.Helpers
             public const string Memory = "SPMemoryDataType";
 
             public const string Bluetooth = "SPBluetoothDataType";
+
+            public const string Camera = "SPCameraDataType";
         }
 
 
