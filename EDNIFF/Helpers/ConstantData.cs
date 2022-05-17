@@ -49,6 +49,8 @@ namespace EDNIFF.Helpers
             public const string Camera = "SPCameraDataType";
 
             public const string CardReader = "SPCardReaderDataType";
+
+            public const string Displays = "SPDisplaysDataType";
         }
 
 

@@ -14,6 +14,7 @@ namespace EDNIFF.Common
         BluetoothService objBluetoothService;
         CameraService objCameraService;
         SDCardService objSDCardService;
+        GraphicsService objGraphicsService;
 
         public SystemInfo()
         {
@@ -25,6 +26,7 @@ namespace EDNIFF.Common
             objBluetoothService = new BluetoothService();
             objCameraService = new CameraService();
             objSDCardService = new SDCardService();
+            objGraphicsService = new GraphicsService();
             devices = new List<Device>();
 
         }
@@ -37,6 +39,7 @@ namespace EDNIFF.Common
             LoadBluetooth();
             LoadCamera();
             LoadSDCard();
+            LoadGraphics();
         }        
 
         private void LoadHardware()
@@ -63,7 +66,10 @@ namespace EDNIFF.Common
         {
             objSDCardService.GetSDCard();
         }
-
+        private void LoadGraphics()
+        {
+            objGraphicsService.GetGraphics();
+        }
         #endregion
 
     }
