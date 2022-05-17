@@ -10,7 +10,7 @@ namespace EDNIFF.BusinessLogic
 {
     class SDCardService : BaseHardwareInfo
     {
-        public void GetBluetooth()
+        public void GetSDCard()
         {
             try
             {
