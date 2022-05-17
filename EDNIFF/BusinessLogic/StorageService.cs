@@ -33,6 +33,10 @@ namespace EDNIFF.BusinessLogic
                         {
                             blnUntitled = true;
                         }
+                        if (items.ToString().Contains("Untitled 2:"))
+                        {
+                            blnUntitled = false;
+                        }
                         if (blnUntitled == true && items.ToString().Contains("Capacity"))
                         {
                             device.Size = GetPropertyValue(items.ToString());
