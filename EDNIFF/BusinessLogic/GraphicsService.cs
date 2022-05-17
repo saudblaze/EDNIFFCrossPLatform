@@ -14,7 +14,7 @@ namespace EDNIFF.BusinessLogic
         {
             try
             {
-                string strtemp = GetInfoString(ConstantData.DevicePaths.Memory);
+                string strtemp = GetInfoString(ConstantData.DevicePaths.Displays);
                 if (!string.IsNullOrEmpty(strtemp))
                 {
                     string[] linesArr = strtemp.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
