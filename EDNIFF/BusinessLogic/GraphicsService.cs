@@ -24,6 +24,7 @@ namespace EDNIFF.BusinessLogic
                     bool blnLCD2 = false;
 
                     int iLCDCount = 0;
+                    SPDisplaysDataType.Video = new Video();
 
                     foreach (string items in linesArr)
                     {
@@ -65,7 +66,15 @@ namespace EDNIFF.BusinessLogic
                         if (items.ToString().Contains("Color LCD"))
                         {
                             iLCDCount = iLCDCount + 1;
-                            SPDisplaysDataType.LCD1 = new LCD();
+                            if (iLCDCount == 1)
+                            {
+                                SPDisplaysDataType.LCD1 = new LCD();
+                            }
+                            if (iLCDCount == 2)
+                            {
+                                SPDisplaysDataType.LCD2 = new LCD();
+                            }
+
                         }
 
 
