@@ -43,6 +43,8 @@ namespace EDNIFF.Helpers
             public const string Audio = "SPAudioDataType";
 
             public const string Memory = "SPMemoryDataType";
+
+            public const string Bluetooth = "SPBluetoothDataType";
         }
 
 

@@ -11,6 +11,7 @@ namespace EDNIFF.Common
         HardwareService objHardwareService;
         AudioService objAudioService;
         MemoryService objMemoryService;
+        BluetoothService objBluetoothService;
 
 
 
@@ -21,6 +22,7 @@ namespace EDNIFF.Common
             objHardwareService = new HardwareService();
             objAudioService = new AudioService();
             objMemoryService = new MemoryService();
+            objBluetoothService = new BluetoothService();
             devices = new List<Device>();
 
         }
