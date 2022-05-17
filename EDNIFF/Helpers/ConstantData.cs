@@ -55,6 +55,8 @@ namespace EDNIFF.Helpers
             public const string Battery = "SPPowerDataType";
 
             public const string Storage = "SPStorageDataType";
+
+            public const string USB = "SPUSBDataType";
         }
 
 
