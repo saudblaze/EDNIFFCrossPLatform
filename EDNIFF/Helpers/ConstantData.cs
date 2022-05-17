@@ -47,6 +47,8 @@ namespace EDNIFF.Helpers
             public const string Bluetooth = "SPBluetoothDataType";
 
             public const string Camera = "SPCameraDataType";
+
+            public const string CardReader = "SPCardReaderDataType";
         }
 
 
