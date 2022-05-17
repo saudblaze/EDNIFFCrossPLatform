@@ -13,10 +13,15 @@ namespace EDNIFF.BusinessLogic
 {
     class HardwareService : BaseHardwareInfo
     {
-        public void GetHardware()
+        public void GetHardware(List<Device> devices)
         {
             try
             {
+                Device device = new Device();
+                device.Category = ConstantData.Categories.Processor;
+                device.DeviceName = ConstantData.DeviceNames.Processor;
+                device.Manufacturer = "Apple";
+
                 string strtemp = GetInfoString(ConstantData.DevicePaths.Hardware);
                 
                 string[] linesArr = strtemp.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
@@ -35,10 +40,12 @@ namespace EDNIFF.BusinessLogic
                     if (items.ToString().Contains("Processor Name"))
                     {
                         sPHardwareDataType.ProcessorName = GetPropertyValue(items.ToString());
+                        device.Model = GetPropertyValue(items.ToString());
                     }
                     if (items.ToString().Contains("Processor Speed"))
                     {
                         sPHardwareDataType.ProcessorSpeed = GetPropertyValue(items.ToString());
+                        device.Speed = GetPropertyValue(items.ToString());
                     }
                     if (items.ToString().Contains("Number of Processors"))
                     {
@@ -63,6 +70,7 @@ namespace EDNIFF.BusinessLogic
                     if (items.ToString().Contains("Memory"))
                     {
                         sPHardwareDataType.Memory = GetPropertyValue(items.ToString());
+                        device.Size = GetPropertyValue(items.ToString());
                     }
                     if (items.ToString().Contains("System Firmware Version"))
                     {
@@ -75,6 +83,7 @@ namespace EDNIFF.BusinessLogic
                     if (items.ToString().Contains("Serial Number"))
                     {
                         sPHardwareDataType.SerialNumber = GetPropertyValue(items.ToString());
+                        device.Serial = GetPropertyValue(items.ToString());
                     }
                     if (items.ToString().Contains("Hardware UUID"))
                     {
@@ -87,6 +96,7 @@ namespace EDNIFF.BusinessLogic
                 }
 
                 MacInfo.Hardware = sPHardwareDataType;
+                devices.Add(device);
 
             }
             catch (System.ComponentModel.Win32Exception exception)

@@ -24,6 +24,8 @@ namespace EDNIFF.Common
         public static SPNetworkDataType Network { get; set; }
         public static SPCardReaderDataType CardReader { get; set; }
 
+        public static List<Device> devices { get; set; }
+
 
         public static MacinfoVM MapMacInfoVM( )
         {
@@ -35,6 +37,10 @@ namespace EDNIFF.Common
             if (MacInfo.Hardware != null)
             {
                 objReturn.Hardware = MacInfo.Hardware;
+            }
+            if (MacInfo.devices != null)
+            {
+                objReturn.devices = MacInfo.devices;
             }
             return objReturn;
         }

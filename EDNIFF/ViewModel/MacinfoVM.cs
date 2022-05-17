@@ -22,5 +22,8 @@ namespace EDNIFF.ViewModel
         public SPPowerDataType Power { get; set; }
         public SPNetworkDataType Network { get; set; }
         public SPCardReaderDataType CardReader { get; set; }
+
+
+        public List<Device> devices { get; set; }
     }
 }

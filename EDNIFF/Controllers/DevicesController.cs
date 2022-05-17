@@ -15,6 +15,7 @@ namespace EDNIFF.Controllers
             MacinfoVM objMacinfoVM = new MacinfoVM();
             objMacinfoVM = MacInfo.MapMacInfoVM();
 
+
             return View(objMacinfoVM);
         }
     }
