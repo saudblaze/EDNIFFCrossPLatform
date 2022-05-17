@@ -51,6 +51,8 @@ namespace EDNIFF.Helpers
             public const string CardReader = "SPCardReaderDataType";
 
             public const string Displays = "SPDisplaysDataType";
+
+            public const string Battery = "SPPowerDataType";
         }
 
 
