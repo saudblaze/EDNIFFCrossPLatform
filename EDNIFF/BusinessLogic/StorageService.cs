@@ -29,7 +29,7 @@ namespace EDNIFF.BusinessLogic
                     foreach (string items in linesArr)
                     {
                         //Power
-                        if (items.ToString().Contains("Untited 2 - Data"))
+                        if (items.ToString().Contains("Untitled 2 - Data"))
                         {
                             blnUntitled = true;
                         }
