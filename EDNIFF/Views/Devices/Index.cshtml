@@ -10,7 +10,7 @@
 
 <h1>Devices</h1>
 
-<div class="row jumbotron">
+<div class="row jumbotron" >
 
     <table class="table table-bordered" style="background-color:white;">
         <thead>
@@ -45,51 +45,54 @@
             </tr>
         </tbody>
     </table>
-    <table class="table table-bordered" style="background-color:white;">
-        <thead>
-            <tr>
-                <th colspan="11" style="background-color:maroon;color:white;">
-                    System Devices   <button type="button" class="btn btn-info" style="float:right;">Add/Edit Device</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:9%">Category</th>
-                <th style="width:9%">Device</th>
-                <th style="width:9%">Manufacturer</th>
-                <th style="width:9%">Model</th>
-                <th style="width:9%">Serial</th>
-                <th style="width:9%">Size</th>
-                <th style="width:9%; text-overflow: ellipsis;">Speed</th>
-                <th style="width:9%">Info1</th>
-                <th style="width:9%">Info2</th>
-                <th style="width:9%">Erased</th>
-                <th style="width:10%">Tested</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div style="overflow:scroll; max-height:450px;max-width:1000px">
+        <table class="table table-bordered" style="background-color:white;width:11px;">
+            <thead>
+                <tr>
+                    <th colspan="11" style="background-color:maroon;color:white;">
+                        System Devices   <button type="button" class="btn btn-info" style="float:right;">Add/Edit Device</button>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="width200">Category</th>
+                    <th class="width200">Device</th>
+                    <th class="width200">Manufacturer</th>
+                    <th class="width200">Model</th>
+                    <th class="width200">Serial</th>
+                    <th class="width200">Size</th>
+                    <th class="width200" text-overflow: ellipsis;">Speed</th>
+                    <th class="width200">Info1</th>
+                    <th class="width200">Info2</th>
+                    <th class="width200">Erased</th>
+                    <th class="width200">Tested</th>
+                </tr>
+            </thead>
+            <tbody>
 
-            @if (Model.devices != null && Model.devices.Count > 0)
-            {
-                foreach (Device item in Model.devices)
+                @if (Model.devices != null && Model.devices.Count > 0)
                 {
-                    <tr>
-                        <td>@item.Category</td>
-                        <td>@item.DeviceName</td>
-                        <td>@item.Manufacturer</td>
-                        <td>@item.Model</td>
-                        <td>@item.Serial</td>
-                        <td>@item.Size</td>
-                        <td>@item.Speed</td>
-                        <td>@item.Info1</td>
-                        <td>@item.Info2</td>
-                        <td> </td>
-                        <td>@item.deviceStatus</td>
-                    </tr>
+                    foreach (Device item in Model.devices)
+                    {
+                        <tr>
+                            <td>@item.Category</td>
+                            <td>@item.DeviceName</td>
+                            <td>@item.Manufacturer</td>
+                            <td>@item.Model</td>
+                            <td>@item.Serial</td>
+                            <td>@item.Size</td>
+                            <td>@item.Speed</td>
+                            <td>@item.Info1</td>
+                            <td>@item.Info2</td>
+                            <td> </td>
+                            <td>@item.deviceStatus</td>
+                        </tr>
+                    }
                 }
-            }
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
+    
 
 
     @*<div class="col-sm-4 form-group">
