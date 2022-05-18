@@ -75,13 +75,11 @@
                     {
                         <tr>
                             <td>
-                                @item.Category
-                                
+                                @item.Category                                      
                             </td>
                             <td>@item.DeviceName</td>
                             <td>
-                                @item.Manufacturer = @item.Manufacturer.ToString().Length > 10 ? @item.Manufacturer.Remove(10, @item.Manufacturer.ToString().Length - 10) + "..." : @item.Manufacturer;
-                                @*@item.Manufacturer*@
+                                @item.Manufacturer
                             </td>
                             <td>@item.Model</td>
                             <td>@item.Serial</td>
