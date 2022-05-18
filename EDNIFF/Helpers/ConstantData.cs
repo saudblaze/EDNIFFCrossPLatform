@@ -57,6 +57,10 @@ namespace EDNIFF.Helpers
             public const string Storage = "SPStorageDataType";
 
             public const string USB = "SPUSBDataType";
+
+            public const string Network = "SPNetworkDataType";
+
+            
         }
 
 

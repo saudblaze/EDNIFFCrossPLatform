@@ -18,6 +18,7 @@ namespace EDNIFF.Common
         BatteryService objBatteryService;
         StorageService objStorageService;
         USBService objUSBService;
+        NetworkService objNetworkService;
         public SystemInfo()
         {
             //observations = new Dictionary<int, string>();
@@ -32,6 +33,7 @@ namespace EDNIFF.Common
             objBatteryService = new BatteryService();
             objStorageService = new StorageService();
             objUSBService = new USBService();
+            objNetworkService = new NetworkService();
             devices = new List<Device>();
 
         }
@@ -48,6 +50,7 @@ namespace EDNIFF.Common
             LoadBattery();
             LoadStorage();
             LoadUSB();
+            LoadNetwork();
         }        
 
         private void LoadHardware()
@@ -89,6 +92,10 @@ namespace EDNIFF.Common
         private void LoadUSB()
         {
             objUSBService.GetUSB();
+        }
+        private void LoadNetwork()
+        {
+            objNetworkService.GetNetwork();
         }
         #endregion
 
