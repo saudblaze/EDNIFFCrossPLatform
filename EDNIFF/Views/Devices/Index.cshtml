@@ -8,7 +8,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Devices</h1>
+<h3>Devices</h3>
 
 <div class="row jumbotron" >
 
@@ -45,8 +45,8 @@
             </tr>
         </tbody>
     </table>
-    <div style="overflow:scroll; max-height:450px;max-width:1000px">
-        <table class="table table-bordered" style="background-color:white;width:11px;">
+    <div style="overflow:scroll; max-height:450px; max-width:450px">
+        <table class="table table-bordered" style="background-color:white; width:11px; width:600px">
             <thead>
                 <tr>
                     <th colspan="11" style="background-color:maroon;color:white;">
@@ -74,9 +74,15 @@
                     foreach (Device item in Model.devices)
                     {
                         <tr>
-                            <td>@item.Category</td>
+                            <td>
+                                @item.Category
+                                
+                            </td>
                             <td>@item.DeviceName</td>
-                            <td>@item.Manufacturer</td>
+                            <td>
+                                @item.Manufacturer = @item.Manufacturer.ToString().Length > 10 ? @item.Manufacturer.Remove(10, @item.Manufacturer.ToString().Length - 10) + "..." : @item.Manufacturer;
+                                @*@item.Manufacturer*@
+                            </td>
                             <td>@item.Model</td>
                             <td>@item.Serial</td>
                             <td>@item.Size</td>
