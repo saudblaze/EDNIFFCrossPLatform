@@ -27,18 +27,18 @@ namespace EDNIFF.BusinessLogic
                     foreach (string items in linesArr)
                     {
                         //Power
-                        if (items.ToString().Contains("Cart Type"))
+                        if (items.ToString().Contains("Type:"))
                         {
                             device.Model = GetPropertyValue(items.ToString());
                         }
-                        if (items.ToString().Contains("Firmware Version"))
+                        if (items.ToString().Contains("Hardware"))
                         {
                             device.Manufacturer = GetPropertyValue(items.ToString());
                         }
-                        if (items.ToString().Contains("MAC Address"))
+                        if (items.ToString().Contains("IPv4 Addresses"))
                         {
-                            device.Serial = GetPropertyValue(items.ToString());
-                        }
+                            device.Info1 = GetPropertyValue(items.ToString());
+                        }                        
                     }
 
                     MacInfo.devices.Add(device);
