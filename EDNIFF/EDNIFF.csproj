@@ -1,28 +1,35 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="AForge" Version="2.2.5" />
-    <PackageReference Include="AForge.Video" Version="2.2.5" />
-    <PackageReference Include="AForge.Video.DirectShow" Version="2.2.5" />
-    <PackageReference Include="ElectronNET.API" Version="13.5.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
-    <PackageReference Include="NAudio" Version="1.10.0" />
-    <PackageReference Include="System.Management" Version="5.0.0" />
-    <PackageReference Include="System.Management.Automation.dll" Version="10.0.10586" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Update="electron.manifest.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == '' Or '$(Configuration)' == 'Debug'">
+		<EnvironmentName>Development</EnvironmentName>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)' != '' AND '$(Configuration)' != 'Debug' ">
+		<EnvironmentName>Production</EnvironmentName>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="AForge" Version="2.2.5" />
+		<PackageReference Include="AForge.Video" Version="2.2.5" />
+		<PackageReference Include="AForge.Video.DirectShow" Version="2.2.5" />
+		<PackageReference Include="ElectronNET.API" Version="13.5.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+		<PackageReference Include="NAudio" Version="1.10.0" />
+		<PackageReference Include="System.Management" Version="5.0.0" />
+		<PackageReference Include="System.Management.Automation.dll" Version="10.0.10586" />
+	</ItemGroup>
+	<ItemGroup>
+		<Content Update="electron.manifest.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
 </Project>
