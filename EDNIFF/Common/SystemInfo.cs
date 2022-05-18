@@ -19,6 +19,7 @@ namespace EDNIFF.Common
         StorageService objStorageService;
         USBService objUSBService;
         NetworkService objNetworkService;
+        WifiService objWifiService;
         public SystemInfo()
         {
             //observations = new Dictionary<int, string>();
@@ -34,6 +35,7 @@ namespace EDNIFF.Common
             objStorageService = new StorageService();
             objUSBService = new USBService();
             objNetworkService = new NetworkService();
+            objWifiService = new WifiService();
             devices = new List<Device>();
 
         }
@@ -51,6 +53,7 @@ namespace EDNIFF.Common
             LoadStorage();
             LoadUSB();
             LoadNetwork();
+            LoadWifi();
         }        
 
         private void LoadHardware()
@@ -96,6 +99,10 @@ namespace EDNIFF.Common
         private void LoadNetwork()
         {
             objNetworkService.GetNetwork();
+        }
+        private void LoadWifi()
+        {
+            objWifiService.GetWifi();
         }
         #endregion
 

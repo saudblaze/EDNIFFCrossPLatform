@@ -58,6 +58,8 @@ namespace EDNIFF.Helpers
 
             public const string USB = "SPUSBDataType";
 
+            public const string WIFI = "SPAirPortDataType";
+
             public const string Network = "SPNetworkDataType";
 
             
