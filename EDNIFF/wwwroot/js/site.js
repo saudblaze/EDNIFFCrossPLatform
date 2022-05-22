@@ -113,7 +113,7 @@ function StartTest(obj, isAllSelected) {
             return obj.TestName === "CMOS"
         });
         if (temp && temp[0]) {
-            _currentTest = temp[0];
+            _currentTest = temp[0];            
         }
         isAnyTest = true;
 
@@ -135,6 +135,9 @@ function StartTest(obj, isAllSelected) {
         $("#btnNext").show();
         $("#btnMarkAsCompleted").show();
         $("#btnStart").prop("disabled", true);
+
+        $("#lbl" + _currentTest.TestName).text("Running");
+        $("#lblResult" + _currentTest.TestName).text("Not Tested");
     } else {
         alert("Please select atleast one task .");
     }
