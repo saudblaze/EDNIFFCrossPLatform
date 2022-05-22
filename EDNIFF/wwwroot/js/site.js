@@ -13,14 +13,12 @@ var _listOfTest;
 var _currentTest;
 
 function testmethod() {
-    debugger
     var mtemp = _listOfTest
 
 }
 
 
 $("#AllSelect").change(function () {
-    debugger
     if (this.checked) {
         $("#chkCMOS").prop('checked', true);
         $("#chkSound").prop('checked', true);
@@ -86,7 +84,6 @@ function NextClick() {
 
         var NextTest = false;
         $.each(_listOfTest, function (index, item) {
-            debugger
             if (item.TestSelected == true && item.TestDone == false) {
                 //bind this test in div
                 _currentTest = item;
@@ -108,7 +105,6 @@ function NextClick() {
 
 
 function StartTest(obj, isAllSelected) {
-    debugger
     _listOfTest = obj;
     var isAnyTest = false;
     if (isAllSelected) {
@@ -188,14 +184,15 @@ function MarkAsCompleted(objResultText) {
                 _currentTest.TestDone = true;
                 $("#lbl" + _currentTest.TestName).text(objResultText);
                 $("#lblResult" + _currentTest.TestName).text(objResultText);
-                SetLable($("#lbl" + _currentTest.TestName),'');
-                SetLable($("#lblResult" + _currentTest.TestName));
+                SetLable($("#lbl" + _currentTest.TestName), objResultText);
+                SetLable($("#lblResult" + _currentTest.TestName), objResultText);
             }
         });
     }
 }
 
-function SetLable(InputId,objResult) {
+function SetLable(InputId, objResult) {
+    
     if (InputId) {
         $(InputId).removeClass();
         if (objResult == 'Pass') {
