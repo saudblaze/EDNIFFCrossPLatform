@@ -316,17 +316,27 @@ namespace EDNIFF.Controllers
                         "<td> Model </td>" +
                         "<td>" + objDevice.Info2 + "</td>" +
                         "</tr>" +
+
                         "<tr>" +
                         "<td> Result </td>" +
                         "<td>" +
                             "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='checkbox' id='Pass' name='CMOS' onchange='MarkAsCompleted()' value='Pass' >" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='CMOS' onchange='MarkAsCompleted()' value='Pass' >" +
                                 "<label class='form-check-label'>Pass</label>" +
                             "</div>"+
                             "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='checkbox' id='Fail' name='CMOS' onchange='MarkAsCompleted()' value='Fail' >" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='CMOS' onchange='MarkAsCompleted()' value='Fail' >" +
                                 "<label class='form-check-label'>Fail</label>" +
                             "</div>" + 
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Comments </td>" +
+                        "<td>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input type='text' class='form-control' id='txtCMOSComment' placeholder=''>" +                                
+                            "</div>" +                            
                         "</td>" +
                         "</tr>" +
 
