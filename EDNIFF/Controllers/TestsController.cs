@@ -318,13 +318,14 @@ namespace EDNIFF.Controllers
                         "</tr>" +
                         "<tr>" +
                         "<td> Result </td>" +
-                        "<td>" + 
-                            "<div class='form-check'>" +
-                            "<input class='form-check-input' type='checkbox' id='check1' name='option1' value='Pass' >" +
-                            "<label class='form-check-label'>Option 1</label>"+
-
-                            "<input class='form-check-input' type='checkbox' id='check1' name='option2' value='Fail' >" +
-                            "<label class='form-check-label'>Option 2</label>" +
+                        "<td>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='checkbox' id='Pass' name='CMOS' onchange='MarkAsCompleted()' value='Pass' >" +
+                                "<label class='form-check-label'>Pass</label>" +
+                            "</div>"+
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='checkbox' id='Fail' name='CMOS' onchange='MarkAsCompleted()' value='Fail' >" +
+                                "<label class='form-check-label'>Fail</label>" +
                             "</div>" + 
                         "</td>" +
                         "</tr>" +
