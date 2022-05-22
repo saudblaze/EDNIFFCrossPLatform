@@ -111,6 +111,15 @@ namespace EDNIFF.BusinessLogic
                     deviceCMOS.Serial = sPHardwareDataType.SystemFirmwareVersion;
                     deviceCMOS.Info1 = sPHardwareDataType.ModelIdentifier;
                     deviceCMOS.Info2 = sPHardwareDataType.ModelName;
+
+                    
+                    deviceCMOS.LableId = "chkCMOS";
+                    deviceCMOS.TestName = "CMOS";
+                    deviceCMOS.TestLable = "CMOS";
+                    deviceCMOS.TestResultLable = "Optional";
+                    deviceCMOS.TestDone = false;
+                    deviceCMOS.TestSelected = false;
+                    
                     MacInfo.devices.Add(device);
                 }
 
