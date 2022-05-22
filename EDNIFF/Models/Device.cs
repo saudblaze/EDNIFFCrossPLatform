@@ -61,13 +61,15 @@ namespace EDNIFF.Models
 
         //new fields added
         public string InputId { get; set; }
-        public string LableId { get; set; }
+        //public string LableId { get; set; }
         public string TestName { get; set; }
         public string TestLable { get; set; }
         public string TestResultLable { get; set; }
         public bool TestDone { get; set; }
         public bool TestSelected { get; set; }
         public int TestIndex { get; set; }
-        
+
+        public string ClassName { get; set; }
+
     }
 }

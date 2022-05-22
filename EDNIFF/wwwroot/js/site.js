@@ -94,6 +94,7 @@ function NextClick() {
             }
         });
         if (!NextTest) {
+            _objToBeSaved.IsTestDone = true;
             alert("test completed");
         }
 
@@ -152,7 +153,7 @@ function StartTest(obj, isAllSelected) {
             success: function (result)
             {
                 if (result.isSuccess == 1) {
-                    alert('Successfully received Data ');
+                    //alert('Successfully received Data ');
                     var strHtml = result.data;
                     $("#divTest").html(strHtml)
                 } else {
@@ -168,7 +169,10 @@ function StartTest(obj, isAllSelected) {
 }
 
 function MainSaveMethod() {
-    alert(12);
+    if (_objToBeSaved && _objToBeSaved.IsTestDone) {
+
+    }
+    var temp = _listOfTest;
 }
 
 
@@ -184,8 +188,28 @@ function MarkAsCompleted(objResultText) {
                 _currentTest.TestDone = true;
                 $("#lbl" + _currentTest.TestName).text(objResultText);
                 $("#lblResult" + _currentTest.TestName).text(objResultText);
+                SetLable($("#lbl" + _currentTest.TestName),'');
+                SetLable($("#lblResult" + _currentTest.TestName));
             }
         });
+    }
+}
+
+function SetLable(InputId,objResult) {
+    if (InputId) {
+        $(InputId).removeClass();
+        if (objResult == 'Pass') {
+            $(InputId).addClass('form-check-label PassText');
+        }
+        else if (objResult == 'Fail') {
+            $(InputId).addClass('form-check-label FailText');
+        } 
+        else if (objResult == 'NoDevice') {
+            $(InputId).addClass('form-check-label NoDeviceText');
+        } 
+        else (objResult == 'NotTested') {
+            $(InputId).addClass('form-check-label NotTestedText');
+        } 
     }
 }
 
