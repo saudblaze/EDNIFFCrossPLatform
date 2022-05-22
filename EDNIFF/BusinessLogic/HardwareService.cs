@@ -120,7 +120,7 @@ namespace EDNIFF.BusinessLogic
                     deviceCMOS.TestDone = false;
                     deviceCMOS.TestSelected = false;
                     
-                    MacInfo.devices.Add(device);
+                    MacInfo.devices.Add(deviceCMOS);
                 }
 
             }
