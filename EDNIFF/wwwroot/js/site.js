@@ -152,11 +152,16 @@ function StartTest(obj, isAllSelected) {
             url: '/Tests/GetTestHtml',
             contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
             data: _currentTest,
-            success: function (result && result.IsSuccess == 1) {
-                debugger
-                alert('Successfully received Data ');
-                var strHtml = result.data;
-                $("#divTest").html(strHtml)
+            success: function (result)
+            {
+                if (result.IsSuccess == 1) {
+                    debugger
+                    alert('Successfully received Data ');
+                    var strHtml = result.data;
+                    $("#divTest").html(strHtml)
+                } else {
+                    alert('Failed to receive the Data');
+                }                
             },
             error: function () {
                 alert('Failed to receive the Data');
