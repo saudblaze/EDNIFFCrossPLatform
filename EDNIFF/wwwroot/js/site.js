@@ -172,15 +172,17 @@ function MainSaveMethod() {
 }
 
 
-function MarkAsCompleted() {
+function MarkAsCompleted(objResultText) {
     debugger
     if (_currentTest) {
         $.each(_listOfTest, function (index, item) {
-            debugger
+            
             if (_currentTest.TestName == item.TestName) {
+                debugger
                 //also make ajax call and marked static object with is testdone = true
                 item.TestDone = true;
                 _currentTest.TestDone = true;
+                $("#" + _currentTest.LableId).val(objResultText);
             }
         });
     }
