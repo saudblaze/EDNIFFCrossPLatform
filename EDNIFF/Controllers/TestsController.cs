@@ -297,7 +297,9 @@ namespace EDNIFF.Controllers
 
             strResult = "<table class='table'>" +
                         "<thead class='thead-dark'><tr> " +
-                            "<th colspan='4'>CMOS Test</th>" +
+                            "<th colspan='4'>CMOS Test"+
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                            "</th>" +
                         "</tr></thead> " +
                         "<tbody>" +
                         "<tr>" +
