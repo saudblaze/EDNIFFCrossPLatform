@@ -152,7 +152,7 @@ function StartTest(obj, isAllSelected) {
             success: function (result)
             {
                 debugger
-                if (result.IsSuccess == 1) {
+                if (result.isSuccess == 1) {
                     alert('Successfully received Data ');
                     var strHtml = result.data;
                     $("#divTest").html(strHtml)
