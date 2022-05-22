@@ -1,0 +1,22 @@
+﻿
+.width200 {
+    width: 200px !important;
+}
+
+
+
+.PassText {
+    color: forestgreen ;
+}
+
+.NotTestedText {
+    color: darkorange ;    
+}
+
+.NoDeviceText {
+    color: dodgerblue ;
+}
+
+.FailText {
+    color: red ;
+}

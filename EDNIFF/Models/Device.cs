@@ -68,8 +68,5 @@ namespace EDNIFF.Models
         public bool TestDone { get; set; }
         public bool TestSelected { get; set; }
         public int TestIndex { get; set; }
-
-        public string ClassName { get; set; }
-
     }
 }
