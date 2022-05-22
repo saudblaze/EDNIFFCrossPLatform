@@ -112,13 +112,10 @@ namespace EDNIFF.BusinessLogic
                     deviceCMOS.Info1 = sPHardwareDataType.ModelIdentifier;
                     deviceCMOS.Info2 = sPHardwareDataType.ModelName;
 
-                    
-                    //deviceCMOS.LableId = "lblCMOS";
                     deviceCMOS.TestName = "CMOS";
                     deviceCMOS.TestLable = "CMOS";
                     deviceCMOS.TestResultLable = "Optional";
-                    deviceCMOS.TestDone = false;
-                    deviceCMOS.TestSelected = false;
+                    deviceCMOS.TestDone = false;                    
                     
                     MacInfo.devices.Add(deviceCMOS);
                 }

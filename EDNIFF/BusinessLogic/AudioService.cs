@@ -112,6 +112,12 @@ namespace EDNIFF.BusinessLogic
                     device.Speed = SPAudioDataType.BuiltInMicrophone.CurrentSampleRate;
                     device.Info1 = SPAudioDataType.BuiltInMicrophone.Transport;
                     device.Info2 = SPAudioDataType.BuiltInMicrophone.InputSource;
+
+                    device.TestName = "Sound";
+                    device.TestLable = "Sound";
+                    device.TestResultLable = "Optional";
+                    device.TestDone = false;                    
+
                     MacInfo.devices.Add(device);
                 }
                 if (SPAudioDataType.BuiltInOutput != null)

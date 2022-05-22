@@ -271,6 +271,30 @@ namespace EDNIFF.Controllers
             }
         }
 
+
+        public JsonResult MarkTestComplete(TestList obj)
+        {
+
+            if (obj != null)
+            {
+                string strResult = getTestView(obj.TestName);
+
+                foreach (Device item in MacInfo.devices)
+                {
+                    if (item.TestName == obj.TestName)
+                    {
+                        item.TestDone = true;
+                    }
+                }
+
+                return Json(new { IsSuccess = 1 });
+            }
+            else
+            {
+                return Json(new { IsSuccess = 0 });
+            }
+        }
+
         public string getTestView(string TestName)
         {
 
@@ -282,6 +306,10 @@ namespace EDNIFF.Controllers
                 case "CMOS":
                     Device objDevice = MacInfo.devices.Where(x => x.TestName == TestName).FirstOrDefault();
                     strResult = GetCMOSString(objDevice);
+                    break;
+                case "Sound":
+                    Device objDeviceSound = MacInfo.devices.Where(x => x.TestName == TestName).FirstOrDefault();
+                    strResult = GetSoundString(objDeviceSound);
                     break;
                 default:
                     break;
@@ -348,6 +376,72 @@ namespace EDNIFF.Controllers
                             "<div class='form-check'>" +
                                 "<input type='text' class='form-control' id='txtCMOSComment' placeholder=''>" +                                
                             "</div>" +                            
+                        "</td>" +
+                        "</tr>" +
+
+                        "</tbody>" +
+                        "</table>";
+
+            return strResult;
+        }
+
+        public string GetSoundString(Device objDevice)
+        {
+            string strResult = string.Empty;
+
+            strResult = "<table class='table'>" +
+                        "<thead class='thead-dark'><tr> " +
+                            "<th colspan='4'>Sound Test" +
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                            "</th>" +
+                        "</tr></thead> " +
+                        "<tbody>" +
+                        "<tr>" +
+                        "<td> SMC Version </td>" +
+                        "<td>" + objDevice.Model + "</td>" +
+                        "</tr>" +
+                        "<tr>" +
+                        "<td> System Firmware Version </td>" +
+                        "<td>" + objDevice.Serial + "</td>" +
+                        "</tr>" +
+                        "<tr>" +
+                        "<td> Model Identifier </td>" +
+                        "<td>" + objDevice.Info1 + "</td>" +
+                        "</tr>" +
+                        "<tr>" +
+                        "<td> Model </td>" +
+                        "<td>" + objDevice.Info2 + "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td>  </td>" +
+                        "<td>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='CMOS' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
+                                "<label class='form-check-label'>Pass</label>" +
+                            "</div>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='CMOS' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
+                                "<label class='form-check-label'>Fail</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Result </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Comments </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<input type='text' class='form-control' id='txtCMOSComment' placeholder=''>" +
+                            "</div>" +
                         "</td>" +
                         "</tr>" +
 

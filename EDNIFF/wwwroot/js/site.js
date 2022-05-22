@@ -125,49 +125,73 @@ function StartTest(obj, isAllSelected) {
                 //call ajax and bind this test in div                 
                 _currentTest = item;
                 isAnyTest = true;
-                GetTestHtml();
+                
             }
         });
     }
 
 
     if (isAnyTest) {
+        GetTestHtml();
         $("#btnNext").show();
         $("#btnMarkAsCompleted").show();
         $("#btnStart").prop("disabled", true);
-        debugger
         $("#lbl" + _currentTest.TestName).text("Running");
         $("#lblResult" + _currentTest.TestName).text("Not Tested");
     } else {
         alert("Please select atleast one task .");
-    }
+    }    
+}
 
-    function GetTestHtml() {
-        var mdata = _currentTest
-        $.ajax({
-            type: 'POST',
-            url: '/Tests/GetTestHtml',
-            contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
-            data: _currentTest,
-            success: function (result)
-            {
-                if (result.isSuccess == 1) {
-                    //alert('Successfully received Data ');
-                    var strHtml = result.data;
-                    $("#divTest").html(strHtml)
-                } else {
-                    alert('Failed to receive the Data');
-                }                
-            },
-            error: function () {
+function MarkItAsCompleted() {
+    var mdata = _currentTest
+    $.ajax({
+        type: 'POST',
+        url: '/Tests/MarkTestComplete',
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
+        data: _currentTest,
+        success: function (result) {
+            if (result.isSuccess == 1) {
+                debugger
+                ////alert('Successfully received Data ');
+                //var strHtml = result.data;
+                //$("#divTest").html(strHtml)
+            } else {
                 alert('Failed to receive the Data');
-                console.log('Failed ');
             }
-        })
-    }
+        },
+        error: function () {
+            alert('Failed to receive the Data');
+            console.log('Failed ');
+        }
+    })
+}
+
+function GetTestHtml() {
+    var mdata = _currentTest
+    $.ajax({
+        type: 'POST',
+        url: '/Tests/GetTestHtml',
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
+        data: _currentTest,
+        success: function (result) {
+            if (result.isSuccess == 1) {
+                //alert('Successfully received Data ');
+                var strHtml = result.data;
+                $("#divTest").html(strHtml)
+            } else {
+                alert('Failed to receive the Data');
+            }
+        },
+        error: function () {
+            alert('Failed to receive the Data');
+            console.log('Failed ');
+        }
+    })
 }
 
 function MainSaveMethod() {
+    debugger
     if (_objToBeSaved && _objToBeSaved.IsTestDone) {
 
     }
@@ -176,13 +200,14 @@ function MainSaveMethod() {
 
 
 function MarkAsCompleted(objResultText) {
-    debugger
     if (_currentTest) {
         $.each(_listOfTest, function (index, item) {
             
             if (_currentTest.TestName == item.TestName) {
-                debugger
                 //also make ajax call and marked static object with is testdone = true
+                debugger
+                MarkItAsCompleted();
+
                 item.TestDone = true;
                 _currentTest.TestDone = true;
                 $("#lbl" + _currentTest.TestName).text(objResultText);
