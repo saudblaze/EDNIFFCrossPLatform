@@ -80,9 +80,7 @@ $(".singleselect").change(function () {
 
 
 function NextClick() {
-    debugger
-
-
+    
     //check if current test is marked as complete than only check for next test
     if (_currentTest && _currentTest.TestDone == true) {
 
@@ -145,7 +143,6 @@ function StartTest(obj, isAllSelected) {
     }
 
     function GetTestHtml() {
-        debugger
         var mdata = _currentTest
         $.ajax({
             type: 'POST',
@@ -154,8 +151,8 @@ function StartTest(obj, isAllSelected) {
             data: _currentTest,
             success: function (result)
             {
+                debugger
                 if (result.IsSuccess == 1) {
-                    debugger
                     alert('Successfully received Data ');
                     var strHtml = result.data;
                     $("#divTest").html(strHtml)
