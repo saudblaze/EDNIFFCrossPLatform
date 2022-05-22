@@ -316,6 +316,19 @@ namespace EDNIFF.Controllers
                         "<td> Model </td>" +
                         "<td>" + objDevice.Info2 + "</td>" +
                         "</tr>" +
+                        "<tr>" +
+                        "<td> Result </td>" +
+                        "<td>" + 
+                            "<div class='form-check'>" +
+                            "<input class='form-check-input' type='checkbox' id='check1' name='option1' value='Pass' >" +
+                            "<label class='form-check-label'>Option 1</label>"+
+
+                            "<input class='form-check-input' type='checkbox' id='check1' name='option2' value='Fail' >" +
+                            "<label class='form-check-label'>Option 2</label>" +
+                            "</div>" + 
+                        "</td>" +
+                        "</tr>" +
+
                         "</tbody>" +
                         "</table>";
 

@@ -151,7 +151,6 @@ function StartTest(obj, isAllSelected) {
             data: _currentTest,
             success: function (result)
             {
-                debugger
                 if (result.isSuccess == 1) {
                     alert('Successfully received Data ');
                     var strHtml = result.data;
