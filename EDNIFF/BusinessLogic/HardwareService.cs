@@ -113,7 +113,7 @@ namespace EDNIFF.BusinessLogic
                     deviceCMOS.Info2 = sPHardwareDataType.ModelName;
 
                     
-                    deviceCMOS.LableId = "chkCMOS";
+                    //deviceCMOS.LableId = "lblCMOS";
                     deviceCMOS.TestName = "CMOS";
                     deviceCMOS.TestLable = "CMOS";
                     deviceCMOS.TestResultLable = "Optional";

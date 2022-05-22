@@ -335,7 +335,7 @@ namespace EDNIFF.Controllers
                         "<td> Result </td>" +
                         "<td>" +
                             "<div class='form-check'>" +
-                                "<label class='form-check-label' id='"+ objDevice.LableId + "'></label>" +
+                                "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'></label>" +
                             "</div>" +                            
                         "</td>" +
                         "</tr>" +
