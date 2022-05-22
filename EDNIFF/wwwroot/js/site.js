@@ -207,7 +207,8 @@ function SetLable(InputId,objResult) {
         else if (objResult == 'NoDevice') {
             $(InputId).addClass('form-check-label NoDeviceText');
         } 
-        else (objResult == 'NotTested') {
+        else if (objResult == 'NotTested')
+        {
             $(InputId).addClass('form-check-label NotTestedText');
         } 
     }
