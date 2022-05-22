@@ -182,8 +182,8 @@ function MarkAsCompleted(objResultText) {
                 //also make ajax call and marked static object with is testdone = true
                 item.TestDone = true;
                 _currentTest.TestDone = true;
-                $("#lbl" + _currentTest.TestName).val(objResultText);
-                $("#lblResult" + _currentTest.TestName).val(objResultText);
+                $("#lbl" + _currentTest.TestName).text(objResultText);
+                $("#lblResult" + _currentTest.TestName).text(objResultText);
             }
         });
     }
