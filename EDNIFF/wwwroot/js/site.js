@@ -135,7 +135,7 @@ function StartTest(obj, isAllSelected) {
         $("#btnNext").show();
         $("#btnMarkAsCompleted").show();
         $("#btnStart").prop("disabled", true);
-
+        debugger
         $("#lbl" + _currentTest.TestName).text("Running");
         $("#lblResult" + _currentTest.TestName).text("Not Tested");
     } else {
