@@ -22,10 +22,11 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.WebEncoders" Version="6.0.5" />
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
 		<PackageReference Include="NAudio" Version="1.10.0" />
 		<PackageReference Include="System.Management" Version="5.0.0" />
-		<PackageReference Include="System.Management.Automation.dll" Version="10.0.10586" />
+		<PackageReference Include="System.Management.Automation.dll" Version="10.0.10586" />		
 	</ItemGroup>
 	<ItemGroup>
 		<Content Update="electron.manifest.json">

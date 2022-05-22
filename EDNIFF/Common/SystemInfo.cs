@@ -42,9 +42,9 @@ namespace EDNIFF.Common
         #region --private methods--
         public void LoadDevices()
         {
-            LoadHardware();            
-            LoadMemory();
+            LoadHardware();  
             LoadAudio();
+            LoadMemory();
             LoadBluetooth();
             LoadCamera();
             LoadSDCard();

@@ -1,20 +1,561 @@
-﻿
+﻿@model EDNIFF.ViewModel.TestVM
+
 @{
     ViewData["Title"] = "Index";
 }
 
+@{
+    //var model = @Html.Raw(Json.Encode(Model));
+    //var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+
+    var temp = @Html.Raw(Json.Serialize(Model));
+}
+
 <h3>Tests</h3>
 
-<div style="width:1200px; display:flex; ">
+<div style="width:1200px; display:flex; overflow:scroll; max-height:400px">
 
-    <div style="width:20%; background-color:lightgray; height:600px;">
-        test list
+    <div style="width:20%; background-color:lightgray; height:500px;">
+        <table style="padding:10px; width:100%;" class="table-bordered">
+            <tr>
+                <td colspan="2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="AllSelect">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Select All
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkCMOS">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            CMOS
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblCMOS"> Optional </label>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkSound">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Sound
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblSound"> Optional </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkUSB">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            USB
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblUSB"> Optional </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkLanPort">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Lan Port
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblLanPort"> Optional </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkOptical">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Optical
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblOptical"> Optional </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkLCD">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            LCD
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblLCD"> Optional </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkKeyboard">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Keyboard
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblKeyboard"> Optional </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkTouchpad">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Touchpad
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblTouchpad"> Optional </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkWifi">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Wifi / Blue
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblWifi"> Optional </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkBattery">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Battery
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblBattery"> Optional </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkCamera">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Camera
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblCamera"> Optional </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkTouchScreen">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            TouchScreen
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblTouchScreen"> Optional </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkMicrophone">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Microphone
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblMicrophone"> Optional </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkSDCard">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            SD Card Test
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblSDCard"> Optional </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkBiometric">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Biometric
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblBiometric"> Optional </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkSmartCard">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Smart Card
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblSmartCard"> Optional </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkDisplay">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Display
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblDisplay"> Optional </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" id="chkPortTest">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Port Test
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="lblPortTest"> Optional </label>
+                </td>
+            </tr>
+
+            @*@foreach (var item in Model.TestList)
+        {
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input singleselect" type="checkbox" value="@item.TestSelected" id="@item.Id">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            @item.TestLable
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-check-label" id="@item.LableId"> @item.TestResultLable </label>
+                </td>
+            </tr>
+        }*@
+
+
+
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>
+                    @*<button type="submit" class="btn btn-primary btn-block btn-sm" style="width:110px" onclick="location.href='@Url.Action("DisplaySearchResults", "Tests")'">Start</button>*@
+                    <button type="submit" class="btn btn-primary btn-block btn-sm" style="width:110px" id="btnStart">Start</button>
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-primary btn-block btn-sm" style="width:110px" onclick="testmethod()">Display Report</button>
+                </td>
+            </tr>
+
+        </table>
     </div>
 
-    <div style="width: 80%; background-color: lightyellow; height: 600px;">
-                                                                         test 
+    <div style="width: 75%; height: 500px; background-color: lightyellow; border: 1px solid gray;" >
+        <div id="divTest">
+            
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-block btn-sm" style="width:110px; " id="btnMarkAsCompleted" onclick="MarkAsCompleted()">Mark as Completed</button>
+            <button type="button" class="btn btn-primary btn-block btn-sm" style="width:110px; " id="btnNext" onclick="NextClick()">Next</button>
+        </div>
     </div>
 
 </div>
+
+
+@section Scripts
+{
+    <script>
+        $(function () {
+            //debugger
+
+
+            $("#btnNext").hide();
+            $("#btnMarkAsCompleted").hide();
+
+            //alert("All good");
+
+
+            $('#btnStart').click(function () {
+                var tt = @temp;
+
+                var objMain = [];
+                var objCMOS = {
+                    Id: 'chkCMOS',
+                    TestName: 'CMOS',
+                    TestLable: 'CMOS',
+                    LableId: 'lblCMOS',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkCMOS").prop("checked"),
+                    TestIndex: 0,
+                };
+                objMain.push(objCMOS);
+
+                var objSound = {
+                    Id: 'chkSound',
+                    TestName: 'Sound',
+                    TestLable: 'Sound',
+                    LableId: 'lblSound',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkSound").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objSound);
+
+                var objUSB = {
+                    Id: 'chkUSB',
+                    TestName: 'USB',
+                    TestLable: 'USB',
+                    LableId: 'lblUSB',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkUSB").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objUSB);
+
+                var objLanPort = {
+                    Id: 'chkLanPort',
+                    TestName: 'LanPort',
+                    TestLable: 'LanPort',
+                    LableId: 'lblLanPort',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkLanPort").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objLanPort);
+
+                var objOptical = {
+                    Id: 'chkOptical',
+                    TestName: 'Optical',
+                    TestLable: 'Optical',
+                    LableId: 'lblOptical',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkOptical").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objOptical);
+
+                var objTestLCD = {
+                    Id: 'chkLCD',
+                    TestName: 'LCD',
+                    TestLable: 'LCD',
+                    LableId: 'lblLCD',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkLCD").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objTestLCD);
+
+                var objTestKeyboard = {
+                    Id: 'chkKeyboard',
+                    TestName: 'Keyboard',
+                    TestLable: 'Keyboard',
+                    LableId: 'lblKeyboard',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkKeyboard").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objTestKeyboard);
+
+                var objTestTouchpad = {
+                    Id: 'chkTouchpad',
+                    TestName: 'Touchpad',
+                    TestLable: 'Touchpad',
+                    LableId: 'lblTouchpad',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkTouchpad").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objTestTouchpad);
+
+                var objTestWifi = {
+                    Id: 'chkWifi',
+                    TestName: 'Wifi',
+                    TestLable: 'Wifi',
+                    LableId: 'lblWifi',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkWifi").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objTestWifi);
+
+                var objTestBattery = {
+                    Id: 'chkBattery',
+                    TestName: 'Battery',
+                    TestLable: 'Battery',
+                    LableId: 'lblBattery',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkBattery").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objTestBattery);
+
+                var objTestCamera = {
+                    Id: 'chkCamera',
+                    TestName: 'Camera',
+                    TestLable: 'Camera',
+                    LableId: 'lblCamera',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkCamera").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objTestCamera);
+
+                var objTestTouchScreen = {
+                    Id: 'chkTouchScreen',
+                    TestName: 'TouchScreen',
+                    TestLable: 'TouchScreen',
+                    LableId: 'lblTouchScreen',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkTouchScreen").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objTestTouchScreen);
+
+                var objTestMicrophone = {
+                    Id: 'chkMicrophone',
+                    TestName: 'Microphone',
+                    TestLable: 'Microphone',
+                    LableId: 'lblMicrophone',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkMicrophone").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objTestMicrophone);
+
+                var objTestSDCard = {
+                    Id: 'chkSDCard',
+                    TestName: 'SDCard',
+                    TestLable: 'SD Card Test',
+                    LableId: 'lblSDCard',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkSDCard").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objTestSDCard);
+
+                var objTestBiometric = {
+                    Id: 'chkBiometric',
+                    TestName: 'Biometric',
+                    TestLable: 'Biometric',
+                    LableId: 'lblBiometric',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkBiometric").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objTestBiometric);
+
+                var objTestSmartCard = {
+                    Id: 'chkSmartCard',
+                    TestName: 'SmartCard',
+                    TestLable: 'Smart Card',
+                    LableId: 'lblSmartCard',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkSmartCard").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objTestSmartCard);
+
+                var objTestDisplay = {
+                    Id: 'chkDisplay',
+                    TestName: 'Display',
+                    TestLable: 'Display',
+                    LableId: 'lblSmartCard',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkDisplay").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objTestDisplay);
+
+                var objTestPortTest = {
+                    Id: 'chkPortTest',
+                    TestName: 'PortTest',
+                    TestLable: 'Port Test',
+                    LableId: 'lblPortTest',
+                    TestResultLable: 'Optional',
+                    TestDone: false,
+                    TestSelected: $("#chkPortTest").prop("checked"),
+                    TestIndex: 1,
+                }
+                objMain.push(objTestPortTest);
+
+                var isAllSelected = $("#AllSelect").prop("checked");
+                StartTest(objMain, isAllSelected);
+            });
+
+
+        });
+    </script>
+}
 
 

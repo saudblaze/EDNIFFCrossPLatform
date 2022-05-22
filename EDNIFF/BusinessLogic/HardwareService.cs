@@ -98,8 +98,21 @@ namespace EDNIFF.BusinessLogic
                     }
                 }
 
-                MacInfo.Hardware = sPHardwareDataType;
+                //MacInfo.Hardware = sPHardwareDataType;
                 MacInfo.devices.Add(device);
+
+                if (!string.IsNullOrEmpty(sPHardwareDataType.SystemFirmwareVersion) && !string.IsNullOrEmpty(sPHardwareDataType.SMCVersion) && !string.IsNullOrEmpty(sPHardwareDataType.ModelIdentifier))
+                {
+                    Device deviceCMOS = new Device();
+                    deviceCMOS.Category = ConstantData.Categories.MotherBoard;
+                    deviceCMOS.DeviceName = ConstantData.DeviceNames.MotherBoard;
+                    deviceCMOS.Manufacturer = "Apple";
+                    deviceCMOS.Model = sPHardwareDataType.SMCVersion;
+                    deviceCMOS.Serial = sPHardwareDataType.SystemFirmwareVersion;
+                    deviceCMOS.Info1 = sPHardwareDataType.ModelIdentifier;
+                    deviceCMOS.Info2 = sPHardwareDataType.ModelName;
+                    MacInfo.devices.Add(device);
+                }
 
             }
             catch (System.ComponentModel.Win32Exception exception)

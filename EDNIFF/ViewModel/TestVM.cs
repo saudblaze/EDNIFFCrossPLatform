@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace EDNIFF.ViewModel
+{
+    public class TestVM
+    {
+        public List<TestList> TestList { get; set; }        
+    }
+    public class TestList
+    {
+        public string Id { get; set; }
+        public string LableId { get; set; }
+        public string TestName { get; set; }
+        public string TestLable { get; set; }
+        public string TestResultLable { get; set; }
+        public bool TestDone { get; set; }
+        public bool TestSelected { get; set; }
+        public int TestIndex { get; set; }
+    }
+}

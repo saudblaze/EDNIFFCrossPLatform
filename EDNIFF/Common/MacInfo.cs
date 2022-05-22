@@ -26,9 +26,12 @@ namespace EDNIFF.Common
 
         public static List<Device> devices { get; set; }
 
+        public static bool IsTestCompleted { get; set; }
+
         static MacInfo()
         {
             devices = new List<Device>();
+            IsTestCompleted = false;
         }
 
 
