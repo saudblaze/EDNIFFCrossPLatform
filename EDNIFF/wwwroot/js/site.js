@@ -155,7 +155,7 @@ function MarkItAsCompleted() {
         url: '/Tests/MarkTestComplete',
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
         data: mdata,
-        async:false,
+        //async:false,
         success: function (result) {
             if (result.isSuccess == 1) {
                 ////alert('Successfully received Data ');
@@ -179,7 +179,7 @@ function GetTestHtml() {
         url: '/Tests/GetTestHtml',
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
         data: _currentTest,
-        async: false,
+        //async: false,
         success: function (result) {
             if (result.isSuccess == 1) {
                 var strHtml = result.data;
