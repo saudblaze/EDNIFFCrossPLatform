@@ -398,18 +398,18 @@ namespace EDNIFF.Controllers
                         "<tbody>" +
 
                         "<tr>" +
-                        "<td><img src='~/img/Left.png' alt='No image found' /> </td>" +
-                        "<td><img src='~/img/Right.png' alt='No image found' />  </td>" +
+                        "<td class='td50 AllignCenter'><img src='~/img/Left.png' alt='No image found' /> </td>" +
+                        "<td class='td50 AllignCenter'><img src='~/img/Right.png' alt='No image found' />  </td>" +
                         "</tr>" +
 
 
                         "<tr>" +
-                        "<td> <button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnLeftSpeaker' onclick='LeftSpeakerTest()'>Left</button> </td>" +
-                        "<td> <button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnRightSpeaker' onclick='RightSpeakerTest()'>Right</button></td>" +
+                        "<td class='td50 Allignleft'> <button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; ' id='btnLeftSpeaker' onclick='LeftSpeakerTest()'>Left</button> </td>" +
+                        "<td class='td50 Allignleft'> <button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; ' id='btnRightSpeaker' onclick='RightSpeakerTest()'>Right</button></td>" +
                         "</tr>" +
 
                         "<tr>" +
-                        "<td> "+
+                        "<td class='td50 Allignleft'> " +
                         "<div class='form-check form-check-inline'>" +
                                 "<input class='form-check-input' type='radio' id='Pass' name='LeftSpeaker' onchange='LeftSpeakerChange(\"Pass\")' value='Pass' >" +
                                 "<label class='form-check-label'>Pass</label>" +
@@ -419,7 +419,7 @@ namespace EDNIFF.Controllers
                                 "<label class='form-check-label'>Fail</label>" +
                             "</div>" +
                         "</td>" +
-                        "<td>" +
+                        "<td class='td50 Allignleft'>" +
                             "<div class='form-check form-check-inline'>" +
                                 "<input class='form-check-input' type='radio' id='Pass' name='RightSpeaker' onchange='RightSpeakerChange(\"Pass\")' value='Pass' >" +
                                 "<label class='form-check-label'>Pass</label>" +
@@ -432,8 +432,8 @@ namespace EDNIFF.Controllers
                         "</tr>" +
 
                         "<tr>" +
-                        "<td> Result </td>" +
-                        "<td>" +
+                        "<td class='td50 Allignleft'> Result </td>" +
+                        "<td class='td50 Allignleft'>" +
                             "<div class='form-check'>" +
                                 "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
                             "</div>" +
@@ -441,8 +441,8 @@ namespace EDNIFF.Controllers
                         "</tr>" +
 
                         "<tr>" +
-                        "<td> Audio Port </td>" +
-                        "<td>" +
+                        "<td class='td50 Allignleft'> Audio Port </td>" +
+                        "<td class='td50 Allignleft'>" +
                             "<div class='form-check'>" +
                                 "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
                             "</div>" +
@@ -458,8 +458,8 @@ namespace EDNIFF.Controllers
                         
 
                         "<tr>" +
-                        "<td> Comments </td>" +
-                        "<td>" +
+                        "<td class='td50 Allignleft'> Comments </td>" +
+                        "<td class='td50 Allignleft'>" +
                             "<div class='form-check'>" +
                                 "<input type='text' class='form-control' id='txtCMOSComment' placeholder=''>" +
                             "</div>" +

@@ -20,3 +20,16 @@
 .FailText {
     color: red ;
 }
+
+
+.td50 {
+    width:50%;
+}
+
+.Allignleft {
+   text-align:left;
+}
+
+.AllignCenter {
+    text-align: center;
+}
