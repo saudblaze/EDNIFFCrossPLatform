@@ -481,8 +481,10 @@ namespace EDNIFF.Controllers
         public string GetSoundUSB(Device objDevice)
         {
             string strResult = string.Empty;
+            if (objDevice != null)
+            {
 
-            strResult = "<table class='table'>" +
+                strResult = "<table class='table'>" +
                         "<thead class='thead-dark'><tr> " +
                             "<th colspan='4'>USB Test" +
                             "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
@@ -564,6 +566,25 @@ namespace EDNIFF.Controllers
                         "</tbody>" +
                         "</table>";
 
+            }
+            else
+            {
+                strResult = "<table class='table'>" +
+                            "<thead class='thead-dark'><tr> " +
+                                "<th colspan='4'>No Object Found" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                                "</th>" +
+                            "</tr></thead> " +
+                            "<tbody>" +
+
+                            "<tr>" +
+                            "<td ></td>" +
+                            "<td ></td>" +
+                            "</tr>" +                            
+
+                            "</tbody>" +
+                            "</table>";
+            }
             return strResult;
         }
 
