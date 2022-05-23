@@ -326,10 +326,11 @@ namespace EDNIFF.Controllers
         public string GetCMOSString(Device objDevice)
         {
             string strResult = string.Empty;
-
-            strResult = "<table class='table'>" +
+            if (objDevice != null)
+            {
+                strResult = "<table class='table'>" +
                         "<thead class='thead-dark'><tr> " +
-                            "<th colspan='4'>CMOS Test"+
+                            "<th colspan='4'>CMOS Test" +
                             "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
                             "</th>" +
                         "</tr></thead> " +
@@ -357,11 +358,11 @@ namespace EDNIFF.Controllers
                             "<div class='form-check form-check-inline'>" +
                                 "<input class='form-check-input' type='radio' id='Pass' name='CMOS' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
                                 "<label class='form-check-label'>Pass</label>" +
-                            "</div>"+
+                            "</div>" +
                             "<div class='form-check form-check-inline'>" +
                                 "<input class='form-check-input' type='radio' id='Fail' name='CMOS' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
                                 "<label class='form-check-label'>Fail</label>" +
-                            "</div>" + 
+                            "</div>" +
                         "</td>" +
                         "</tr>" +
 
@@ -370,7 +371,7 @@ namespace EDNIFF.Controllers
                         "<td>" +
                             "<div class='form-check'>" +
                                 "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
-                            "</div>" +                            
+                            "</div>" +
                         "</td>" +
                         "</tr>" +
 
@@ -378,22 +379,41 @@ namespace EDNIFF.Controllers
                         "<td> Comments </td>" +
                         "<td>" +
                             "<div class='form-check'>" +
-                                "<input type='text' class='form-control' id='txtCMOSComment' placeholder=''>" +                                
-                            "</div>" +                            
+                                "<input type='text' class='form-control' id='txtCMOSComment' placeholder=''>" +
+                            "</div>" +
                         "</td>" +
                         "</tr>" +
 
                         "</tbody>" +
                         "</table>";
+            }
+            else
+            {
+                strResult = "<table class='table'>" +
+                            "<thead class='thead-dark'><tr> " +
+                                "<th colspan='4'>No Object Found" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                                "</th>" +
+                            "</tr></thead> " +
+                            "<tbody>" +
 
+                            "<tr>" +
+                            "<td ></td>" +
+                            "<td ></td>" +
+                            "</tr>" +
+
+                            "</tbody>" +
+                            "</table>";
+            }
             return strResult;
         }
 
         public string GetSoundString(Device objDevice)
         {
             string strResult = string.Empty;
-
-            strResult = "<table class='table'>" +
+            if (objDevice != null)
+            {
+                strResult = "<table class='table'>" +
                         "<thead class='thead-dark'><tr> " +
                             "<th colspan='4'>Sound Test" +
                             "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
@@ -461,7 +481,7 @@ namespace EDNIFF.Controllers
                                 "</div>" +
                             "</div>" +
                         "</td>" +
-                        
+
 
                         "<tr>" +
                         "<td class='td50 Allignleft'> Comments </td>" +
@@ -474,7 +494,25 @@ namespace EDNIFF.Controllers
 
                         "</tbody>" +
                         "</table>";
+            }
+            else
+            {
+                strResult = "<table class='table'>" +
+                            "<thead class='thead-dark'><tr> " +
+                                "<th colspan='4'>No Object Found" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                                "</th>" +
+                            "</tr></thead> " +
+                            "<tbody>" +
 
+                            "<tr>" +
+                            "<td ></td>" +
+                            "<td ></td>" +
+                            "</tr>" +
+
+                            "</tbody>" +
+                            "</table>";
+            }
             return strResult;
         }
 
