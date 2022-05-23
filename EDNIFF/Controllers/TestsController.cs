@@ -444,14 +444,14 @@ namespace EDNIFF.Controllers
                         "<td class='td50 Allignleft'> Audio Port </td>" +
                         "<td class='td50 Allignleft'>" +
                             "<div style='display:flex;'>" +
-                                "<div class='form-check'>" +
+                                "<div class='form-check paddingleft'>" +
                                     "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
                                 "</div>" +
-                                "<div class='form-check form-check-inline'>" +
+                                "<div class='form-check form-check-inline' style='padding-left:10px;'>" +
                                     "<input class='form-check-input' type='radio' id='Pass' name='AudioPort' onchange='Sound.AudioPortChange(\"Pass\")' value='Pass' >" +
                                     "<label class='form-check-label'>Pass</label>" +
                                 "</div>" +
-                                "<div class='form-check form-check-inline'>" +
+                                "<div class='form-check form-check-inline' style='padding-left:10px;'>" +
                                     "<input class='form-check-input' type='radio' id='Fail' name='AudioPort' onchange='Sound.AudioPortChange(\"Fail\")' value='Fail' >" +
                                     "<label class='form-check-label'>Fail</label>" +
                                 "</div>" +
