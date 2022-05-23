@@ -105,6 +105,7 @@ function NextClick() {
 
 
 function StartTest(obj, isAllSelected) {
+    debugger
     _listOfTest = obj;
     var isAnyTest = false;
     if (isAllSelected) {
@@ -144,6 +145,7 @@ function StartTest(obj, isAllSelected) {
 }
 
 function MarkItAsCompleted() {
+    debugger
     var mdata = _currentTest
     $.ajax({
         type: 'POST',
@@ -168,6 +170,7 @@ function MarkItAsCompleted() {
 }
 
 function GetTestHtml() {
+    debugger
     var mdata = _currentTest
     $.ajax({
         type: 'POST',
@@ -176,7 +179,7 @@ function GetTestHtml() {
         data: _currentTest,
         success: function (result) {
             if (result.isSuccess == 1) {
-                //alert('Successfully received Data ');
+                debugger
                 var strHtml = result.data;
                 $("#divTest").html(strHtml)
             } else {
