@@ -253,11 +253,11 @@ var Sound = {
     },
     LeftSpeakerTest() {
         alert('LeftSpeakerTest');
-        $("input:radio[name='LeftSpeaker']:checked").val('Pass')
+        $("#chkLeftSpeakerPass").prop("checked", true);
     },
     RightSpeakerTest() {
         //make right radio pass selected
-        $("input:radio[name='RightSpeaker']:checked").val('Pass')
+        $("#chkRightSpeakerPass").prop("checked", true);
     },
     AudioPortChange() {
         alert('AudioPortChange');
