@@ -404,28 +404,28 @@ namespace EDNIFF.Controllers
 
 
                         "<tr>" +
-                        "<td class='td50 Allignleft'> <button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; ' id='btnLeftSpeaker' onclick='LeftSpeakerTest()'>Left</button> </td>" +
-                        "<td class='td50 Allignleft'> <button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; ' id='btnRightSpeaker' onclick='RightSpeakerTest()'>Right</button></td>" +
+                        "<td class='td50 Allignleft'> <button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; ' id='btnLeftSpeaker' onclick='Sound.LeftSpeakerTest()'>Left</button> </td>" +
+                        "<td class='td50 Allignleft'> <button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; ' id='btnRightSpeaker' onclick='Sound.RightSpeakerTest()'>Right</button></td>" +
                         "</tr>" +
 
                         "<tr>" +
                         "<td class='td50 Allignleft'> " +
                         "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' id='Pass' name='LeftSpeaker' onchange='LeftSpeakerChange(\"Pass\")' value='Pass' >" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='LeftSpeaker' onchange='Sound.LeftSpeakerChange(\"Pass\")' value='Pass' >" +
                                 "<label class='form-check-label'>Pass</label>" +
                             "</div>" +
                             "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' id='Fail' name='LeftSpeaker' onchange='LeftSpeakerChange(\"Fail\")' value='Fail' >" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='LeftSpeaker' onchange='Sound.LeftSpeakerChange(\"Fail\")' value='Fail' >" +
                                 "<label class='form-check-label'>Fail</label>" +
                             "</div>" +
                         "</td>" +
                         "<td class='td50 Allignleft'>" +
                             "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' id='Pass' name='RightSpeaker' onchange='RightSpeakerChange(\"Pass\")' value='Pass' >" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='RightSpeaker' onchange='Sound.RightSpeakerChange(\"Pass\")' value='Pass' >" +
                                 "<label class='form-check-label'>Pass</label>" +
                             "</div>" +
                             "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' id='Fail' name='RightSpeaker' onchange='RightSpeakerChange(\"Fail\")' value='Fail' >" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='RightSpeaker' onchange='Sound.RightSpeakerChange(\"Fail\")' value='Fail' >" +
                                 "<label class='form-check-label'>Fail</label>" +
                             "</div>" +
                         "</td>" +
@@ -434,7 +434,7 @@ namespace EDNIFF.Controllers
                         "<tr>" +
                         "<td class='td50 Allignleft'> Result </td>" +
                         "<td class='td50 Allignleft'>" +
-                            "<div class='form-check'>" +
+                            "<div class='form-check paddingleft'>" +
                                 "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
                             "</div>" +
                         "</td>" +
@@ -448,11 +448,11 @@ namespace EDNIFF.Controllers
                                     "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
                                 "</div>" +
                                 "<div class='form-check form-check-inline'>" +
-                                    "<input class='form-check-input' type='radio' id='Pass' name='AudioPort' onchange='AudioPortChange(\"Pass\")' value='Pass' >" +
+                                    "<input class='form-check-input' type='radio' id='Pass' name='AudioPort' onchange='Sound.AudioPortChange(\"Pass\")' value='Pass' >" +
                                     "<label class='form-check-label'>Pass</label>" +
                                 "</div>" +
                                 "<div class='form-check form-check-inline'>" +
-                                    "<input class='form-check-input' type='radio' id='Fail' name='AudioPort' onchange='AudioPortChange(\"Fail\")' value='Fail' >" +
+                                    "<input class='form-check-input' type='radio' id='Fail' name='AudioPort' onchange='Sound.AudioPortChange(\"Fail\")' value='Fail' >" +
                                     "<label class='form-check-label'>Fail</label>" +
                                 "</div>" +
                             "</div>" +
@@ -462,7 +462,7 @@ namespace EDNIFF.Controllers
                         "<tr>" +
                         "<td class='td50 Allignleft'> Comments </td>" +
                         "<td class='td50 Allignleft'>" +
-                            "<div class='form-check'>" +
+                            "<div class='form-check paddingleft'>" +
                                 "<input type='text' class='form-control' id='txtCMOSComment' placeholder=''>" +
                             "</div>" +
                         "</td>" +

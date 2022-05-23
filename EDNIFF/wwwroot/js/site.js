@@ -241,3 +241,24 @@ function SetLable(InputId, objResult) {
     }
 }
 
+
+var Sound = {
+
+    LeftSpeakerChange(){
+        alert('LeftSpeakerChange');
+    },
+    RightSpeakerChange() {
+        alert('RightSpeakerChange');
+    },
+    LeftSpeakerTest() {
+        alert('LeftSpeakerTest');
+    },
+    RightSpeakerTest() {
+        alert('RightSpeakerTest');
+    },
+    AudioPortChange() {
+        alert('AudioPortChange');
+    },
+
+}
+
