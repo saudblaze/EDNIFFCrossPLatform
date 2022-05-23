@@ -277,3 +277,9 @@ var Sound = {
 
 }
 
+var USB = {
+    RetestUSB() {
+        alert('RetestUSB');
+    }
+}
+

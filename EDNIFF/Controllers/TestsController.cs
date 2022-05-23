@@ -313,7 +313,7 @@ namespace EDNIFF.Controllers
                     break;
                 case "USB":
                     Device objDeviceUSB = MacInfo.devices.Where(x => x.TestName == TestName).FirstOrDefault();
-                    strResult = GetSoundUSB(objDeviceUSB);
+                    strResult = GetUSB(objDeviceUSB);
                     break;
                 default:
                     break;
@@ -330,7 +330,7 @@ namespace EDNIFF.Controllers
             {
                 strResult = "<table class='table'>" +
                         "<thead class='thead-dark'><tr> " +
-                            "<th colspan='4'>CMOS Test" +
+                            "<th colspan='4'>"+ objDevice.TestName + " Test" +
                             "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
                             "</th>" +
                         "</tr></thead> " +
@@ -379,7 +379,7 @@ namespace EDNIFF.Controllers
                         "<td> Comments </td>" +
                         "<td>" +
                             "<div class='form-check'>" +
-                                "<input type='text' class='form-control' id='txtCMOSComment' placeholder=''>" +
+                                "<input type='text' class='form-control' id='txt" + objDevice.TestName + "Comment' placeholder=''>" +
                             "</div>" +
                         "</td>" +
                         "</tr>" +
@@ -415,7 +415,7 @@ namespace EDNIFF.Controllers
             {
                 strResult = "<table class='table'>" +
                         "<thead class='thead-dark'><tr> " +
-                            "<th colspan='4'>Sound Test" +
+                            "<th colspan='4'>" + objDevice.TestName + " Test" +
                             "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
                             "</th>" +
                         "</tr></thead> " +
@@ -433,26 +433,26 @@ namespace EDNIFF.Controllers
                         "</tr>" +
 
                         "<tr>" +
-                        "<td class='td50 Allignleft'> " +
-                        "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' name='LeftSpeaker' id='chkLeftSpeakerPass' onchange='Sound.LeftSpeakerChange(\"Pass\")' value='Pass' >" +
-                                "<label class='form-check-label'>Pass</label>" +
-                            "</div>" +
-                            "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' name='LeftSpeaker' id='chkLeftSpeakerFail' onchange='Sound.LeftSpeakerChange(\"Fail\")' value='Fail' >" +
-                                "<label class='form-check-label'>Fail</label>" +
-                            "</div>" +
-                        "</td>" +
-                        "<td class='td50 Allignleft'>" +
-                            "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' name='RightSpeaker' id='chkRightSpeakerPass' onchange='Sound.RightSpeakerChange(\"Pass\")' value='Pass' >" +
-                                "<label class='form-check-label'>Pass</label>" +
-                            "</div>" +
-                            "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' name='RightSpeaker' id='chkRightSpeakerFail' onchange='Sound.RightSpeakerChange(\"Fail\")' value='Fail' >" +
-                                "<label class='form-check-label'>Fail</label>" +
-                            "</div>" +
-                        "</td>" +
+                            "<td class='td50 Allignleft'> " +
+                                "<div class='form-check form-check-inline'>" +
+                                    "<input class='form-check-input' type='radio' name='LeftSpeaker' id='chkLeftSpeakerPass' onchange='Sound.LeftSpeakerChange(\"Pass\")' value='Pass' >" +
+                                    "<label class='form-check-label'>Pass</label>" +
+                                "</div>" +
+                                "<div class='form-check form-check-inline'>" +
+                                    "<input class='form-check-input' type='radio' name='LeftSpeaker' id='chkLeftSpeakerFail' onchange='Sound.LeftSpeakerChange(\"Fail\")' value='Fail' >" +
+                                    "<label class='form-check-label'>Fail</label>" +
+                                "</div>" +
+                            "</td>" +
+                            "<td class='td50 Allignleft'>" +
+                                "<div class='form-check form-check-inline'>" +
+                                    "<input class='form-check-input' type='radio' name='RightSpeaker' id='chkRightSpeakerPass' onchange='Sound.RightSpeakerChange(\"Pass\")' value='Pass' >" +
+                                    "<label class='form-check-label'>Pass</label>" +
+                                "</div>" +
+                                "<div class='form-check form-check-inline'>" +
+                                    "<input class='form-check-input' type='radio' name='RightSpeaker' id='chkRightSpeakerFail' onchange='Sound.RightSpeakerChange(\"Fail\")' value='Fail' >" +
+                                    "<label class='form-check-label'>Fail</label>" +
+                                "</div>" +
+                            "</td>" +
                         "</tr>" +
 
                         "<tr>" +
@@ -487,7 +487,7 @@ namespace EDNIFF.Controllers
                         "<td class='td50 Allignleft'> Comments </td>" +
                         "<td class='td50 Allignleft'>" +
                             "<div class='form-check paddingleft'>" +
-                                "<input type='text' class='form-control' id='txtCMOSComment' placeholder=''>" +
+                                "<input type='text' class='form-control' id='txt" + objDevice.TestName + "Comment' placeholder=''>" +
                             "</div>" +
                         "</td>" +
                         "</tr>" +
@@ -516,7 +516,7 @@ namespace EDNIFF.Controllers
             return strResult;
         }
 
-        public string GetSoundUSB(Device objDevice)
+        public string GetUSB(Device objDevice)
         {
             string strResult = string.Empty;
             if (objDevice != null)
@@ -524,44 +524,30 @@ namespace EDNIFF.Controllers
 
                 strResult = "<table class='table'>" +
                         "<thead class='thead-dark'><tr> " +
-                            "<th colspan='4'>USB Test" +
+                            "<th colspan='4'>" + objDevice.TestName + " Test" +
                             "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
                             "</th>" +
                         "</tr></thead> " +
                         "<tbody>" +
 
+                        
+
+
                         "<tr>" +
-                        "<td class='td50 AllignCenter'><img src='~/Images/Left.png' alt='No image found' /> </td>" +
-                        "<td class='td50 AllignCenter'><img src='~/Images/Right.png' alt='No image found' />  </td>" +
+                        "<td class='td50 Allignleft'> Total Number of ports to test </td>" +
+                        "<td class='td50 Allignleft'>"+
+                        "<div class='form-check paddingleft'>" +
+                                "<input type='text' class='form-control' id='txt"+ objDevice.TestName + "Number' placeholder=''>" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='RetestUSB()'>Retest</button>" +
+                            "</div>" +
+                        " </td>" +
                         "</tr>" +
 
-
                         "<tr>" +
-                        "<td class='td50 Allignleft'> <button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; ' id='btnLeftSpeaker' onclick='Sound.LeftSpeakerTest()'>Left</button> </td>" +
-                        "<td class='td50 Allignleft'> <button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; ' id='btnRightSpeaker' onclick='Sound.RightSpeakerTest()'>Right</button></td>" +
-                        "</tr>" +
-
-                        "<tr>" +
-                        "<td class='td50 Allignleft'> " +
-                        "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' name='LeftSpeaker' id='chkLeftSpeakerPass' onchange='Sound.LeftSpeakerChange(\"Pass\")' value='Pass' >" +
-                                "<label class='form-check-label'>Pass</label>" +
-                            "</div>" +
-                            "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' name='LeftSpeaker' id='chkLeftSpeakerFail' onchange='Sound.LeftSpeakerChange(\"Fail\")' value='Fail' >" +
-                                "<label class='form-check-label'>Fail</label>" +
-                            "</div>" +
-                        "</td>" +
-                        "<td class='td50 Allignleft'>" +
-                            "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' name='RightSpeaker' id='chkRightSpeakerPass' onchange='Sound.RightSpeakerChange(\"Pass\")' value='Pass' >" +
-                                "<label class='form-check-label'>Pass</label>" +
-                            "</div>" +
-                            "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' name='RightSpeaker' id='chkRightSpeakerFail' onchange='Sound.RightSpeakerChange(\"Fail\")' value='Fail' >" +
-                                "<label class='form-check-label'>Fail</label>" +
-                            "</div>" +
-                        "</td>" +
+                            "<td class='td50 Allignleft'> " +                            
+                            "</td>" +
+                            "<td class='td50 Allignleft'>" +                            
+                            "</td>" +
                         "</tr>" +
 
                         "<tr>" +
@@ -571,32 +557,13 @@ namespace EDNIFF.Controllers
                                 "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
                             "</div>" +
                         "</td>" +
-                        "</tr>" +
-
-                        "<tr>" +
-                        "<td class='td50 Allignleft'> Audio Port </td>" +
-                        "<td class='td50 Allignleft'>" +
-                            "<div style='display:flex;'>" +
-                                "<div class='form-check paddingleft'>" +
-                                    "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
-                                "</div>" +
-                                "<div class='form-check form-check-inline marginleft10' >" +
-                                    "<input class='form-check-input' type='radio' id='Pass' name='AudioPort' onchange='Sound.AudioPortChange(\"Pass\")' value='Pass' >" +
-                                    "<label class='form-check-label'>Pass</label>" +
-                                "</div>" +
-                                "<div class='form-check form-check-inline marginleft10' >" +
-                                    "<input class='form-check-input' type='radio' id='Fail' name='AudioPort' onchange='Sound.AudioPortChange(\"Fail\")' value='Fail' >" +
-                                    "<label class='form-check-label'>Fail</label>" +
-                                "</div>" +
-                            "</div>" +
-                        "</td>" +
-
+                        "</tr>" +                        
 
                         "<tr>" +
                         "<td class='td50 Allignleft'> Comments </td>" +
                         "<td class='td50 Allignleft'>" +
                             "<div class='form-check paddingleft'>" +
-                                "<input type='text' class='form-control' id='txtCMOSComment' placeholder=''>" +
+                                "<input type='text' class='form-control' id='txt" + objDevice.TestName + "Comment' placeholder=''>" +
                             "</div>" +
                         "</td>" +
                         "</tr>" +
