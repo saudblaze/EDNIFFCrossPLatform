@@ -277,7 +277,7 @@ namespace EDNIFF.Controllers
 
             if (obj != null)
             {
-                string strResult = getTestView(obj.TestName);
+                //string strResult = getTestView(obj.TestName);
 
                 foreach (Device item in MacInfo.devices)
                 {
