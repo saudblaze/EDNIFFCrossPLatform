@@ -90,9 +90,14 @@ function NextClick() {
                 NextTest = true;
             }
         });
+        debugger
         if (!NextTest) {
             _objToBeSaved.IsTestDone = true;
             alert("test completed");
+        } else {
+            GetTestHtml();
+            $("#lbl" + _currentTest.TestName).text("Running");
+            $("#lblResult" + _currentTest.TestName).text("Not Tested");
         }
 
 
@@ -105,7 +110,6 @@ function NextClick() {
 
 
 function StartTest(obj, isAllSelected) {
-    debugger
     _listOfTest = obj;
     var isAnyTest = false;
     if (isAllSelected) {
@@ -122,7 +126,6 @@ function StartTest(obj, isAllSelected) {
         //check for first selected test and TestDone = false 
 
         $.each(_listOfTest, function (index, item) {
-            debugger
             if (item.TestSelected == true && item.TestDone == false && isAnyTest == false) {
                 //call ajax and bind this test in div                 
                 _currentTest = item;
@@ -146,17 +149,15 @@ function StartTest(obj, isAllSelected) {
 }
 
 function MarkItAsCompleted() {
-    debugger
     var mdata = _currentTest
     $.ajax({
         type: 'POST',
         url: '/Tests/MarkTestComplete',
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
-        data: _currentTest,
+        data: mdata,
         async:false,
         success: function (result) {
             if (result.isSuccess == 1) {
-                debugger
                 ////alert('Successfully received Data ');
                 //var strHtml = result.data;
                 //$("#divTest").html(strHtml)
@@ -172,7 +173,6 @@ function MarkItAsCompleted() {
 }
 
 function GetTestHtml() {
-    debugger
     var mdata = _currentTest
     $.ajax({
         type: 'POST',
@@ -182,7 +182,6 @@ function GetTestHtml() {
         async: false,
         success: function (result) {
             if (result.isSuccess == 1) {
-                debugger
                 var strHtml = result.data;
                 $("#divTest").html(strHtml)
             } else {
@@ -211,7 +210,6 @@ function MarkAsCompleted(objResultText) {
             
             if (_currentTest.TestName == item.TestName) {
                 //also make ajax call and marked static object with is testdone = true
-                debugger
                 MarkItAsCompleted();
 
                 item.TestDone = true;
