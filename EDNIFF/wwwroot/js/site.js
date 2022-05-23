@@ -90,6 +90,7 @@ function NextClick() {
             }
         });
         if (!NextTest) {
+            _objToBeSaved._listOfTest = _listOfTest;
             _objToBeSaved.IsTestDone = true;
             alert("test completed");
         } else {
@@ -196,7 +197,7 @@ function GetTestHtml() {
 function MainSaveMethod() {
     debugger
     if (_objToBeSaved && _objToBeSaved.IsTestDone) {
-
+        alert('you can save data now ');
     }
     var temp = _listOfTest;
 }
