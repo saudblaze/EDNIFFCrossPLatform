@@ -252,12 +252,15 @@ var Sound = {
         Sound.MarkSoundTested();
     },
     LeftSpeakerTest() {
+
         alert('LeftSpeakerTest');
         $("#chkLeftSpeakerPass").prop("checked", true);
+        $("#chkLeftSpeakerPass").attr('checked', 'checked');
     },
     RightSpeakerTest() {
-        //make right radio pass selected
+        alert('LeftSpeakerTest');
         $("#chkRightSpeakerPass").prop("checked", true);
+        $("#chkRightSpeakerPass").attr('checked', 'checked');
     },
     AudioPortChange() {
         alert('AudioPortChange');
