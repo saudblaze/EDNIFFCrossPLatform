@@ -481,7 +481,7 @@ namespace EDNIFF.Controllers
                                 "</div>" +
                             "</div>" +
                         "</td>" +
-
+                        "</tr>"+
 
                         "<tr>" +
                         "<td class='td50 Allignleft'> Comments </td>" +
@@ -538,7 +538,7 @@ namespace EDNIFF.Controllers
                         "<td class='td50 Allignleft'>"+
                         "<div class='form-check paddingleft'>" +
                                 "<input type='text' class='form-control' id='txt"+ objDevice.TestName + "Number' placeholder=''>" +
-                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='RetestUSB()'>Retest</button>" +
+                                
                             "</div>" +
                         " </td>" +
                         "</tr>" +
@@ -546,7 +546,8 @@ namespace EDNIFF.Controllers
                         "<tr>" +
                             "<td class='td50 Allignleft'> " +                            
                             "</td>" +
-                            "<td class='td50 Allignleft'>" +                            
+                            "<td class='td50 Allignleft'>" +
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; ' id='btnNext' onclick='USB.RetestUSB()'>Retest</button>" +
                             "</td>" +
                         "</tr>" +
 
@@ -557,7 +558,21 @@ namespace EDNIFF.Controllers
                                 "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
                             "</div>" +
                         "</td>" +
-                        "</tr>" +                        
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td class='td50 Allignleft'>  </td>" +
+                        "<td class='td50 Allignleft'>" +
+                                "<div class='form-check form-check-inline marginleft10' >" +
+                                    "<input class='form-check-input' type='radio' id='Pass' name='AudioPort' onchange='USB.USBChange(\"Pass\")' value='Pass' >" +
+                                    "<label class='form-check-label'>Pass</label>" +
+                                "</div>" +
+                                "<div class='form-check form-check-inline marginleft10' >" +
+                                    "<input class='form-check-input' type='radio' id='Fail' name='AudioPort' onchange='USB.USBChange(\"Fail\")' value='Fail' >" +
+                                    "<label class='form-check-label'>Fail</label>" +
+                                "</div>" +                            
+                        "</td>" +
+                        "</tr>" +
 
                         "<tr>" +
                         "<td class='td50 Allignleft'> Comments </td>" +

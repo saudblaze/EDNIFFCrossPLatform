@@ -280,6 +280,9 @@ var Sound = {
 var USB = {
     RetestUSB() {
         alert('RetestUSB');
+    },
+    USBChange(mResult) {
+        MarkAsCompleted(mResult);
     }
 }
 
