@@ -39,6 +39,11 @@ namespace EDNIFF.BusinessLogic
                         }
                     }
 
+                    device.TestName = "USB";
+                    device.TestLable = "USB";
+                    device.TestResultLable = "Optional";
+                    device.TestDone = false;
+
                     MacInfo.devices.Add(device);
                 }
             }
