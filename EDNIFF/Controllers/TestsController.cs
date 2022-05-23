@@ -312,8 +312,7 @@ namespace EDNIFF.Controllers
                     strResult = GetSoundString(objDeviceSound);
                     break;
                 case "USB":
-                    string strDeviceUSB = TestName + "_Port";
-                    Device objDeviceUSB = MacInfo.devices.Where(x => x.TestName == strDeviceUSB).FirstOrDefault();
+                    Device objDeviceUSB = MacInfo.devices.Where(x => x.TestName == TestName).FirstOrDefault();
                     strResult = GetSoundUSB(objDeviceUSB);
                     break;
                 default:
