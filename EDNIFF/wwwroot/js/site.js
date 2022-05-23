@@ -78,7 +78,6 @@ $(".singleselect").change(function () {
 
 
 function NextClick() {
-    debugger
     //check if current test is marked as complete than only check for next test
     if (_currentTest && _currentTest.TestDone == true) {
 
@@ -90,7 +89,6 @@ function NextClick() {
                 NextTest = true;
             }
         });
-        debugger
         if (!NextTest) {
             _objToBeSaved.IsTestDone = true;
             alert("test completed");

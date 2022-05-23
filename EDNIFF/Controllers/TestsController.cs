@@ -396,32 +396,36 @@ namespace EDNIFF.Controllers
                             "</th>" +
                         "</tr></thead> " +
                         "<tbody>" +
+
                         "<tr>" +
-                        "<td> SMC Version </td>" +
-                        "<td>" + objDevice.Model + "</td>" +
+                        "<td><img src='~/img/Left.png' alt='No image found' /> </td>" +
+                        "<td><img src='~/img/Right.png' alt='No image found' />  </td>" +
                         "</tr>" +
+
+
                         "<tr>" +
-                        "<td> System Firmware Version </td>" +
-                        "<td>" + objDevice.Serial + "</td>" +
-                        "</tr>" +
-                        "<tr>" +
-                        "<td> Model Identifier </td>" +
-                        "<td>" + objDevice.Info1 + "</td>" +
-                        "</tr>" +
-                        "<tr>" +
-                        "<td> Model </td>" +
-                        "<td>" + objDevice.Info2 + "</td>" +
+                        "<td> <button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnLeftSpeaker' onclick='LeftSpeakerTest()'>Left</button> </td>" +
+                        "<td> <button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnRightSpeaker' onclick='RightSpeakerTest()'>Right</button></td>" +
                         "</tr>" +
 
                         "<tr>" +
-                        "<td>  </td>" +
-                        "<td>" +
-                            "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' id='Pass' name='CMOS' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
+                        "<td> "+
+                        "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='LeftSpeaker' onchange='LeftSpeakerChange(\"Pass\")' value='Pass' >" +
                                 "<label class='form-check-label'>Pass</label>" +
                             "</div>" +
                             "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' id='Fail' name='CMOS' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='LeftSpeaker' onchange='LeftSpeakerChange(\"Fail\")' value='Fail' >" +
+                                "<label class='form-check-label'>Fail</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "<td>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='RightSpeaker' onchange='RightSpeakerChange(\"Pass\")' value='Pass' >" +
+                                "<label class='form-check-label'>Pass</label>" +
+                            "</div>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='RightSpeaker' onchange='RightSpeakerChange(\"Fail\")' value='Fail' >" +
                                 "<label class='form-check-label'>Fail</label>" +
                             "</div>" +
                         "</td>" +
@@ -435,6 +439,23 @@ namespace EDNIFF.Controllers
                             "</div>" +
                         "</td>" +
                         "</tr>" +
+
+                        "<tr>" +
+                        "<td> Audio Port </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
+                            "</div>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='AudioPort' onchange='AudioPortChange(\"Pass\")' value='Pass' >" +
+                                "<label class='form-check-label'>Pass</label>" +
+                            "</div>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='AudioPort' onchange='AudioPortChange(\"Fail\")' value='Fail' >" +
+                                "<label class='form-check-label'>Fail</label>" +
+                            "</div>" +
+                        "</td>" +
+                        
 
                         "<tr>" +
                         "<td> Comments </td>" +
