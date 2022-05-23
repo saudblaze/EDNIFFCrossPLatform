@@ -308,11 +308,11 @@ namespace EDNIFF.Controllers
                     strResult = GetCMOSString(objDeviceCMOS);
                     break;
                 case "Sound":
-                    Device objDeviceSound = MacInfo.devices.Where(x => x.TestName == TestName + "_Port").FirstOrDefault();
+                    Device objDeviceSound = MacInfo.devices.Where(x => x.TestName == TestName).FirstOrDefault();
                     strResult = GetSoundString(objDeviceSound);
                     break;
                 case "USB":
-                    Device objDeviceUSB = MacInfo.devices.Where(x => x.TestName == TestName).FirstOrDefault();
+                    Device objDeviceUSB = MacInfo.devices.Where(x => x.TestName == TestName + "_Port").FirstOrDefault();
                     strResult = GetSoundUSB(objDeviceUSB);
                     break;
                 default:
