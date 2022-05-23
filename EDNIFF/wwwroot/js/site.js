@@ -116,7 +116,7 @@ function StartTest(obj, isAllSelected) {
             return obj.TestName === "CMOS"
         });
         if (temp && temp[0]) {
-            _currentTest = temp[0];            
+            _currentTest = temp[0];
         }
         isAnyTest = true;
 
@@ -128,7 +128,7 @@ function StartTest(obj, isAllSelected) {
                 //call ajax and bind this test in div                 
                 _currentTest = item;
                 isAnyTest = true;
-                
+
             }
         });
     }
@@ -143,7 +143,7 @@ function StartTest(obj, isAllSelected) {
         $("#lblResult" + _currentTest.TestName).text("Not Tested");
     } else {
         alert("Please select atleast one task .");
-    }    
+    }
 }
 
 function MarkItAsCompleted() {
@@ -205,7 +205,7 @@ function MainSaveMethod() {
 function MarkAsCompleted(objResultText) {
     if (_currentTest) {
         $.each(_listOfTest, function (index, item) {
-            
+
             if (_currentTest.TestName == item.TestName) {
                 //also make ajax call and marked static object with is testdone = true
                 MarkItAsCompleted();
@@ -222,7 +222,7 @@ function MarkAsCompleted(objResultText) {
 }
 
 function SetLable(InputId, objResult) {
-    
+
     if (InputId) {
         $(InputId).removeClass();
         if (objResult == 'Pass') {
@@ -230,35 +230,49 @@ function SetLable(InputId, objResult) {
         }
         else if (objResult == 'Fail') {
             $(InputId).addClass('form-check-label FailText');
-        } 
+        }
         else if (objResult == 'NoDevice') {
             $(InputId).addClass('form-check-label NoDeviceText');
-        } 
-        else if (objResult == 'NotTested')
-        {
+        }
+        else if (objResult == 'NotTested') {
             $(InputId).addClass('form-check-label NotTestedText');
-        } 
+        }
     }
 }
 
 
 var Sound = {
 
-    LeftSpeakerChange(){
+    LeftSpeakerChange() {
         alert('LeftSpeakerChange');
+        Sound.MarkSoundTested();
     },
     RightSpeakerChange() {
         alert('RightSpeakerChange');
+        Sound.MarkSoundTested();
     },
     LeftSpeakerTest() {
         alert('LeftSpeakerTest');
+        $("input:radio[name='LeftSpeaker']:checked").val('Pass')
     },
     RightSpeakerTest() {
-        alert('RightSpeakerTest');
+        //make right radio pass selected
+        $("input:radio[name='RightSpeaker']:checked").val('Pass')
     },
     AudioPortChange() {
         alert('AudioPortChange');
     },
+    MarkSoundTested() {
+        debugger
+        var LeftSpeaker = $("input:radio[name='LeftSpeaker']:checked").val();
+        var RightSpeaker = $("input:radio[name='RightSpeaker']:checked").val();
+        if (LeftSpeaker && RightSpeaker) {
+            MarkAsCompleted('Pass');
+        } else {
+            MarkAsCompleted('Fail');
+        }
+    }
+
 
 }
 
