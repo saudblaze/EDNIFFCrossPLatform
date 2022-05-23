@@ -123,7 +123,7 @@ function StartTest(obj, isAllSelected) {
 
         $.each(_listOfTest, function (index, item) {
             debugger
-            if (item.TestSelected == true && item.TestDone == false) {
+            if (item.TestSelected == true && item.TestDone == false && isAnyTest == false) {
                 //call ajax and bind this test in div                 
                 _currentTest = item;
                 isAnyTest = true;
