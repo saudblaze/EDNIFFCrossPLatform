@@ -78,7 +78,7 @@ $(".singleselect").change(function () {
 
 
 function NextClick() {
-    
+    debugger
     //check if current test is marked as complete than only check for next test
     if (_currentTest && _currentTest.TestDone == true) {
 
@@ -122,6 +122,7 @@ function StartTest(obj, isAllSelected) {
         //check for first selected test and TestDone = false 
 
         $.each(_listOfTest, function (index, item) {
+            debugger
             if (item.TestSelected == true && item.TestDone == false) {
                 //call ajax and bind this test in div                 
                 _currentTest = item;
@@ -152,6 +153,7 @@ function MarkItAsCompleted() {
         url: '/Tests/MarkTestComplete',
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
         data: _currentTest,
+        async:false,
         success: function (result) {
             if (result.isSuccess == 1) {
                 debugger
@@ -177,6 +179,7 @@ function GetTestHtml() {
         url: '/Tests/GetTestHtml',
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
         data: _currentTest,
+        async: false,
         success: function (result) {
             if (result.isSuccess == 1) {
                 debugger
