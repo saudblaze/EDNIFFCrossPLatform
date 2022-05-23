@@ -212,8 +212,8 @@ function MarkAsCompleted(objResultText) {
 
                 item.TestDone = true;
                 _currentTest.TestDone = true;
-                $("#lbl" + _currentTest.TestName).text(objResultText);
-                $("#lblResult" + _currentTest.TestName).text(objResultText);
+                //$("#lbl" + _currentTest.TestName).text(objResultText);
+                //$("#lblResult" + _currentTest.TestName).text(objResultText);
                 SetLable($("#lbl" + _currentTest.TestName), objResultText);
                 SetLable($("#lblResult" + _currentTest.TestName), objResultText);
             }
@@ -224,6 +224,7 @@ function MarkAsCompleted(objResultText) {
 function SetLable(InputId, objResult) {
 
     if (InputId) {
+        $(InputId).text(objResult);
         $(InputId).removeClass();
         if (objResult == 'Pass') {
             $(InputId).addClass('form-check-label PassText');
@@ -252,21 +253,17 @@ var Sound = {
         Sound.MarkSoundTested();
     },
     LeftSpeakerTest() {
-
-        alert('LeftSpeakerTest');
-        $("#chkLeftSpeakerPass").prop("checked", true);
         $("#chkLeftSpeakerPass").attr('checked', 'checked');
+        Sound.MarkSoundTested();
     },
     RightSpeakerTest() {
-        alert('LeftSpeakerTest');
-        $("#chkRightSpeakerPass").prop("checked", true);
         $("#chkRightSpeakerPass").attr('checked', 'checked');
+        Sound.MarkSoundTested();
     },
     AudioPortChange() {
         alert('AudioPortChange');
     },
     MarkSoundTested() {
-        debugger
         var LeftSpeaker = $("input:radio[name='LeftSpeaker']:checked").val();
         var RightSpeaker = $("input:radio[name='RightSpeaker']:checked").val();
         if (LeftSpeaker && RightSpeaker) {
