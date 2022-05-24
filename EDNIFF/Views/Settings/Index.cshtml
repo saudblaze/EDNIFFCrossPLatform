@@ -5,3 +5,23 @@
 
 <h1>Settings</h1>
 
+<button type="button" class="btn btn-primary btn-block btn-sm" style="width: 110px; float:right;" id="btnNext" onclick="testJavascript()">Next</button>
+
+@section Scripts
+{
+
+    <script type="text/javascript">
+        alert(1);
+        function testJavascript() {
+            alert(3);
+        }
+
+        $(function () {
+            alert(2);
+        });
+    </script>
+
+
+}
+
+
