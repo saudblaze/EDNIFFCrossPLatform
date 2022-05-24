@@ -217,5 +217,68 @@ namespace EDNIFF.BusinessLogic
 
             }
         }
+
+        public void GetBiometric()
+        {
+            try
+            {
+                Device device = new Device();
+                device.Category = ConstantData.Categories.Ports;
+                device.DeviceName = ConstantData.DeviceNames.BiometricSensorPort;
+                device.TestName = "Biometric";
+                device.TestLable = "Biometric";
+                device.TestResultLable = "Optional";
+                device.TestDone = false;
+                device.deviceStatus = DeviceStatus.NotTested;
+
+                MacInfo.devices.Add(device);
+            }
+            catch (System.ComponentModel.Win32Exception exception)
+            {
+
+            }
+        }
+
+        public void GetSmartCard()
+        {
+            try
+            {
+                Device device = new Device();
+                device.Category = ConstantData.Categories.Ports;
+                device.DeviceName = ConstantData.DeviceNames.SmartCard_Port;
+                device.TestName = "SmartCard";
+                device.TestLable = "SmartCard";
+                device.TestResultLable = "Optional";
+                device.TestDone = false;
+                device.deviceStatus = DeviceStatus.NotTested;
+
+                MacInfo.devices.Add(device);
+            }
+            catch (System.ComponentModel.Win32Exception exception)
+            {
+
+            }
+        }
+
+        public void GetPortTest()
+        {
+            try
+            {
+                Device device = new Device();
+                device.Category = ConstantData.Categories.Ports;
+                device.DeviceName = ConstantData.DeviceNames.Ports;
+                device.TestName = "PortTest";
+                device.TestLable = "PortTest";
+                device.TestResultLable = "Optional";
+                device.TestDone = false;
+                device.deviceStatus = DeviceStatus.NotTested;
+
+                MacInfo.devices.Add(device);
+            }
+            catch (System.ComponentModel.Win32Exception exception)
+            {
+
+            }
+        }
     }
 }

@@ -351,6 +351,30 @@ namespace EDNIFF.Controllers
                     Device objDeviceTouchScreen = MacInfo.devices.Where(x => x.TestName == TestName).FirstOrDefault();
                     strResult = GetTouchScreen(objDeviceTouchScreen);
                     break;
+                case "Microphone":
+                    Device objDeviceMicrophone = MacInfo.devices.Where(x => x.TestName == TestName).FirstOrDefault();
+                    strResult = GetMicrophone(objDeviceMicrophone);
+                    break;
+                case "SDCard":
+                    Device objDeviceSDCard = MacInfo.devices.Where(x => x.TestName == TestName).FirstOrDefault();
+                    strResult = GetSDCard(objDeviceSDCard);
+                    break;
+                case "Biometric":
+                    Device objDeviceBiometric = MacInfo.devices.Where(x => x.TestName == TestName).FirstOrDefault();
+                    strResult = GetBiometric(objDeviceBiometric);
+                    break;
+                case "SmartCard":
+                    Device objDeviceSmartCard = MacInfo.devices.Where(x => x.TestName == TestName).FirstOrDefault();
+                    strResult = GetSmartCard(objDeviceSmartCard);
+                    break;
+                case "Display":
+                    Device objDeviceDisplay = MacInfo.devices.Where(x => x.TestName == TestName).FirstOrDefault();
+                    strResult = GetDisplay(objDeviceDisplay);
+                    break;
+                case "PortTest":
+                    Device objDevicePortTest = MacInfo.devices.Where(x => x.TestName == TestName).FirstOrDefault();
+                    strResult = GetPortTest(objDevicePortTest);
+                    break;                
                 default:
                     break;
             }
@@ -1297,5 +1321,420 @@ namespace EDNIFF.Controllers
             }
             return strResult;
         }
+
+        public string GetMicrophone(Device objDevice)
+        {
+            string strResult = string.Empty;
+            if (objDevice != null)
+            {
+                strResult = "<table class='table'>" +
+                        "<thead class='thead-dark'><tr> " +
+                            "<th colspan='4'>" + objDevice.TestName + " Test" +
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                            "</th>" +
+                        "</tr></thead> " +
+                        "<tbody>" +
+
+                        "<tr>" +
+                        "<td>  </td>" +
+                        "<td>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
+                                "<label class='form-check-label'>Pass</label>" +
+                            "</div>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
+                                "<label class='form-check-label'>Fail</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Result </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Comments </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<input type='text' class='form-control' id='txt" + objDevice.TestName + "Comment' placeholder=''>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "</tbody>" +
+                        "</table>";
+            }
+            else
+            {
+                strResult = "<table class='table'>" +
+                            "<thead class='thead-dark'><tr> " +
+                                "<th colspan='4'>No Object Found" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                                "</th>" +
+                            "</tr></thead> " +
+                            "<tbody>" +
+
+                            "<tr>" +
+                            "<td ></td>" +
+                            "<td ></td>" +
+                            "</tr>" +
+
+                            "</tbody>" +
+                            "</table>";
+            }
+            return strResult;
+        }
+
+        public string GetSDCard(Device objDevice)
+        {
+            string strResult = string.Empty;
+            if (objDevice != null)
+            {
+                strResult = "<table class='table'>" +
+                        "<thead class='thead-dark'><tr> " +
+                            "<th colspan='4'>" + objDevice.TestName + " Test" +
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                            "</th>" +
+                        "</tr></thead> " +
+                        "<tbody>" +
+
+                        "<tr>" +
+                        "<td>  </td>" +
+                        "<td>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
+                                "<label class='form-check-label'>Pass</label>" +
+                            "</div>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
+                                "<label class='form-check-label'>Fail</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Result </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Comments </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<input type='text' class='form-control' id='txt" + objDevice.TestName + "Comment' placeholder=''>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "</tbody>" +
+                        "</table>";
+            }
+            else
+            {
+                strResult = "<table class='table'>" +
+                            "<thead class='thead-dark'><tr> " +
+                                "<th colspan='4'>No Object Found" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                                "</th>" +
+                            "</tr></thead> " +
+                            "<tbody>" +
+
+                            "<tr>" +
+                            "<td ></td>" +
+                            "<td ></td>" +
+                            "</tr>" +
+
+                            "</tbody>" +
+                            "</table>";
+            }
+            return strResult;
+        }
+
+        public string GetBiometric(Device objDevice)
+        {
+            string strResult = string.Empty;
+            if (objDevice != null)
+            {
+                strResult = "<table class='table'>" +
+                        "<thead class='thead-dark'><tr> " +
+                            "<th colspan='4'>" + objDevice.TestName + " Test" +
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                            "</th>" +
+                        "</tr></thead> " +
+                        "<tbody>" +
+
+                        "<tr>" +
+                        "<td>  </td>" +
+                        "<td>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
+                                "<label class='form-check-label'>Pass</label>" +
+                            "</div>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
+                                "<label class='form-check-label'>Fail</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Result </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Comments </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<input type='text' class='form-control' id='txt" + objDevice.TestName + "Comment' placeholder=''>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "</tbody>" +
+                        "</table>";
+            }
+            else
+            {
+                strResult = "<table class='table'>" +
+                            "<thead class='thead-dark'><tr> " +
+                                "<th colspan='4'>No Object Found" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                                "</th>" +
+                            "</tr></thead> " +
+                            "<tbody>" +
+
+                            "<tr>" +
+                            "<td ></td>" +
+                            "<td ></td>" +
+                            "</tr>" +
+
+                            "</tbody>" +
+                            "</table>";
+            }
+            return strResult;
+        }
+
+        public string GetSmartCard(Device objDevice)
+        {
+            string strResult = string.Empty;
+            if (objDevice != null)
+            {
+                strResult = "<table class='table'>" +
+                        "<thead class='thead-dark'><tr> " +
+                            "<th colspan='4'>" + objDevice.TestName + " Test" +
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                            "</th>" +
+                        "</tr></thead> " +
+                        "<tbody>" +
+
+                        "<tr>" +
+                        "<td>  </td>" +
+                        "<td>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
+                                "<label class='form-check-label'>Pass</label>" +
+                            "</div>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
+                                "<label class='form-check-label'>Fail</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Result </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Comments </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<input type='text' class='form-control' id='txt" + objDevice.TestName + "Comment' placeholder=''>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "</tbody>" +
+                        "</table>";
+            }
+            else
+            {
+                strResult = "<table class='table'>" +
+                            "<thead class='thead-dark'><tr> " +
+                                "<th colspan='4'>No Object Found" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                                "</th>" +
+                            "</tr></thead> " +
+                            "<tbody>" +
+
+                            "<tr>" +
+                            "<td ></td>" +
+                            "<td ></td>" +
+                            "</tr>" +
+
+                            "</tbody>" +
+                            "</table>";
+            }
+            return strResult;
+        }
+
+        public string GetDisplay(Device objDevice)
+        {
+            string strResult = string.Empty;
+            if (objDevice != null)
+            {
+                strResult = "<table class='table'>" +
+                        "<thead class='thead-dark'><tr> " +
+                            "<th colspan='4'>" + objDevice.TestName + " Test" +
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                            "</th>" +
+                        "</tr></thead> " +
+                        "<tbody>" +
+
+                        "<tr>" +
+                        "<td>  </td>" +
+                        "<td>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
+                                "<label class='form-check-label'>Pass</label>" +
+                            "</div>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
+                                "<label class='form-check-label'>Fail</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Result </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Comments </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<input type='text' class='form-control' id='txt" + objDevice.TestName + "Comment' placeholder=''>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "</tbody>" +
+                        "</table>";
+            }
+            else
+            {
+                strResult = "<table class='table'>" +
+                            "<thead class='thead-dark'><tr> " +
+                                "<th colspan='4'>No Object Found" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                                "</th>" +
+                            "</tr></thead> " +
+                            "<tbody>" +
+
+                            "<tr>" +
+                            "<td ></td>" +
+                            "<td ></td>" +
+                            "</tr>" +
+
+                            "</tbody>" +
+                            "</table>";
+            }
+            return strResult;
+        }
+
+        public string GetPortTest(Device objDevice)
+        {
+            string strResult = string.Empty;
+            if (objDevice != null)
+            {
+                strResult = "<table class='table'>" +
+                        "<thead class='thead-dark'><tr> " +
+                            "<th colspan='4'>" + objDevice.TestName + " Test" +
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                            "</th>" +
+                        "</tr></thead> " +
+                        "<tbody>" +
+
+                        "<tr>" +
+                        "<td>  </td>" +
+                        "<td>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
+                                "<label class='form-check-label'>Pass</label>" +
+                            "</div>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
+                                "<label class='form-check-label'>Fail</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Result </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Comments </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<input type='text' class='form-control' id='txt" + objDevice.TestName + "Comment' placeholder=''>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "</tbody>" +
+                        "</table>";
+            }
+            else
+            {
+                strResult = "<table class='table'>" +
+                            "<thead class='thead-dark'><tr> " +
+                                "<th colspan='4'>No Object Found" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                                "</th>" +
+                            "</tr></thead> " +
+                            "<tbody>" +
+
+                            "<tr>" +
+                            "<td ></td>" +
+                            "<td ></td>" +
+                            "</tr>" +
+
+                            "</tbody>" +
+                            "</table>";
+            }
+            return strResult;
+        }
+        
     }
 }

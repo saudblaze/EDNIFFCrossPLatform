@@ -17,29 +17,38 @@ namespace EDNIFF.BusinessLogic
                 Device device = new Device();
                 device.Category = ConstantData.Categories.Ports;
                 device.DeviceName = ConstantData.DeviceNames.SDCardPort;
+                device.TestName = "SDCard";
+                device.TestLable = "SDCard";
+                device.TestResultLable = "Optional";
+                device.TestDone = false;
 
                 string strtemp = GetInfoString(ConstantData.DevicePaths.CardReader);
-                if (string.IsNullOrEmpty(strtemp))
+                if (!string.IsNullOrEmpty(strtemp))
                 {
-                    return;
-                }
-                string[] linesArr = strtemp.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+                    string[] linesArr = strtemp.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
 
-                foreach (string items in linesArr)
-                {
-                    if (items.ToString().Contains("Serial Number"))
+                    foreach (string items in linesArr)
                     {
-                        device.Serial = GetPropertyValue(items.ToString());
+                        if (items.ToString().Contains("Serial Number"))
+                        {
+                            device.Serial = GetPropertyValue(items.ToString());
+                        }
+                        if (items.ToString().Contains("Product ID"))
+                        {
+                            device.Model = GetPropertyValue(items.ToString());
+                        }
+                        if (items.ToString().Contains("Vendor ID"))
+                        {
+                            device.Manufacturer = GetPropertyValue(items.ToString());
+                        }
                     }
-                    if (items.ToString().Contains("Product ID"))
-                    {
-                        device.Model = GetPropertyValue(items.ToString());
-                    }
-                    if (items.ToString().Contains("Vendor ID"))
-                    {
-                        device.Manufacturer = GetPropertyValue(items.ToString());
-                    }
+                    device.deviceStatus = DeviceStatus.NotTested;
+
                 }
+                else
+                {
+                    device.deviceStatus = DeviceStatus.NotPresent;
+                }                
 
                 MacInfo.devices.Add(device);
 

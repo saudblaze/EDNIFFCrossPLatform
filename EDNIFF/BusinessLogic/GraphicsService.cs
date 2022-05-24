@@ -156,23 +156,31 @@ namespace EDNIFF.BusinessLogic
                             SPDisplaysDataType.LCD2.ConnectionType = GetPropertyValue(items.ToString());
                         }
                     }
-
+                    Device deviceDisplay = new Device();
+                    deviceDisplay.Category = ConstantData.Categories.Display;
+                    deviceDisplay.DeviceName = ConstantData.DeviceNames.Video;
+                    deviceDisplay.Manufacturer = SPDisplaysDataType.Video.Vendor;
+                    deviceDisplay.Model = SPDisplaysDataType.Video.ChipsetModel;
+                    deviceDisplay.Serial = SPDisplaysDataType.Video.DeviceID;
+                    deviceDisplay.Size = SPDisplaysDataType.Video.VRAM;
+                    deviceDisplay.Speed = "";
+                    deviceDisplay.Info1 = "";
+                    deviceDisplay.Info2 = "";
+                    deviceDisplay.TestName = "Display";
+                    deviceDisplay.TestLable = "Display";
+                    deviceDisplay.TestResultLable = "Optional";
+                    deviceDisplay.TestDone = false;
 
                     if (SPDisplaysDataType.Video != null)
                     {
-                        Device deviceVideo = new Device();
-                        deviceVideo.Category = ConstantData.Categories.Display;
-                        deviceVideo.DeviceName = ConstantData.DeviceNames.Video;
-                        deviceVideo.Manufacturer = SPDisplaysDataType.Video.Vendor;
-                        deviceVideo.Model = SPDisplaysDataType.Video.ChipsetModel;
-                        deviceVideo.Serial = SPDisplaysDataType.Video.DeviceID;
-                        deviceVideo.Size = SPDisplaysDataType.Video.VRAM;
-                        deviceVideo.Speed = "";
-                        deviceVideo.Info1 = "";
-                        deviceVideo.Info2 = "";
-                        
-                        MacInfo.devices.Add(deviceVideo);
+                        deviceDisplay.deviceStatus = DeviceStatus.NotTested;
                     }
+                    else
+                    {
+                        deviceDisplay.deviceStatus = DeviceStatus.NotTested;
+                    }
+
+                    MacInfo.devices.Add(deviceDisplay);
 
                     Device device = new Device();
                     device.Category = ConstantData.Categories.Display;

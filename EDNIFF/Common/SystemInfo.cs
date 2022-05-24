@@ -58,11 +58,26 @@ namespace EDNIFF.Common
             LoadKeyboard();
             LoadTouchpad();
             LoadTouchScreen();
+            LoadBiometric();
+            LoadSmartCard();
+            LoadPortTest();
         }        
 
         private void LoadHardware()
         {
             objHardwareService.GetHardware();
+        }
+        private void LoadBiometric()
+        {
+            objHardwareService.GetBiometric();
+        }
+        private void LoadSmartCard()
+        {
+            objHardwareService.GetSmartCard();
+        }
+        private void LoadPortTest()
+        {
+            objHardwareService.GetPortTest();
         }
         private void LoadDiscBurning()
         {

@@ -123,8 +123,8 @@ namespace EDNIFF.BusinessLogic
                 if (SPAudioDataType.BuiltInOutput != null)
                 {
                     Device device = new Device();
-                    device.Category = ConstantData.Categories.Audio;
-                    device.DeviceName = ConstantData.DeviceNames.Audio;
+                    device.Category = ConstantData.Categories.Microphone;
+                    device.DeviceName = ConstantData.DeviceNames.Microphone;
                     device.Manufacturer = SPAudioDataType.BuiltInOutput.Manufacturer;
                     device.Model = "";
                     device.Serial = "";
@@ -132,6 +132,12 @@ namespace EDNIFF.BusinessLogic
                     device.Speed = SPAudioDataType.BuiltInOutput.CurrentSampleRate;
                     device.Info1 = SPAudioDataType.BuiltInOutput.Transport;
                     device.Info2 = SPAudioDataType.BuiltInOutput.OutputSource;
+
+                    device.TestName = "Microphone";
+                    device.TestLable = "Microphone";
+                    device.TestResultLable = "Optional";
+                    device.TestDone = false;
+
                     MacInfo.devices.Add(device);
                 }
 
