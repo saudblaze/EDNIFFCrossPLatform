@@ -56,6 +56,7 @@ namespace EDNIFF.Common
             LoadWifi();
             LoadDiscBurning();
             LoadKeyboard();
+            LoadTouchpad();
         }        
 
         private void LoadHardware()
@@ -69,6 +70,10 @@ namespace EDNIFF.Common
         private void LoadKeyboard()
         {
             objHardwareService.GetKeyboard();
+        }
+        private void LoadTouchpad()
+        {
+            objHardwareService.GetTouchpad();
         }
         private void LoadAudio()
         {

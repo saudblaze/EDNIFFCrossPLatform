@@ -182,13 +182,34 @@ namespace EDNIFF.BusinessLogic
             {
                 Device device = new Device();
                 device.Category = ConstantData.Categories.Other;
-                device.DeviceName = ConstantData.DeviceNames.CDROMDrive;
+                device.DeviceName = ConstantData.DeviceNames.Keyboard;
                 device.TestName = "Keyboard";
                 device.TestLable = "Keyboard";
                 device.TestResultLable = "Optional";
                 device.TestDone = false;
                 device.deviceStatus = DeviceStatus.NotTested;
                 
+                MacInfo.devices.Add(device);
+            }
+            catch (System.ComponentModel.Win32Exception exception)
+            {
+
+            }
+        }
+
+        public void GetTouchpad()
+        {
+            try
+            {
+                Device device = new Device();
+                device.Category = ConstantData.Categories.Other;
+                device.DeviceName = ConstantData.DeviceNames.Touchpad;
+                device.TestName = "Touchpad";
+                device.TestLable = "Touchpad";
+                device.TestResultLable = "Optional";
+                device.TestDone = false;
+                device.deviceStatus = DeviceStatus.NotTested;
+
                 MacInfo.devices.Add(device);
             }
             catch (System.ComponentModel.Win32Exception exception)
