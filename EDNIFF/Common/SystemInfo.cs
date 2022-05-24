@@ -54,11 +54,16 @@ namespace EDNIFF.Common
             LoadUSB();
             LoadNetwork();
             LoadWifi();
+            LoadDiscBurning();
         }        
 
         private void LoadHardware()
         {
             objHardwareService.GetHardware();
+        }
+        private void LoadDiscBurning()
+        {
+            objHardwareService.GetDiscBurning();
         }
         private void LoadAudio()
         {

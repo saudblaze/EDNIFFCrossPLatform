@@ -319,6 +319,10 @@ namespace EDNIFF.Controllers
                     Device objDeviceLanPort = MacInfo.devices.Where(x => x.TestName == TestName).FirstOrDefault();
                     strResult = GetLanPort(objDeviceLanPort);
                     break;
+                case "Optical":
+                    Device objDeviceOptical = MacInfo.devices.Where(x => x.TestName == TestName).FirstOrDefault();
+                    strResult = GetOptical(objDeviceOptical);
+                    break;
                 default:
                     break;
             }
@@ -658,6 +662,87 @@ namespace EDNIFF.Controllers
                                 "<label class='form-check-label'>Fail</label>" +
                             "</div>" +
                         "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Result </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> Comments </td>" +
+                        "<td>" +
+                            "<div class='form-check'>" +
+                                "<input type='text' class='form-control' id='txt" + objDevice.TestName + "Comment' placeholder=''>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "</tbody>" +
+                        "</table>";
+            }
+            else
+            {
+                strResult = "<table class='table'>" +
+                            "<thead class='thead-dark'><tr> " +
+                                "<th colspan='4'>No Object Found" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                                "</th>" +
+                            "</tr></thead> " +
+                            "<tbody>" +
+
+                            "<tr>" +
+                            "<td ></td>" +
+                            "<td ></td>" +
+                            "</tr>" +
+
+                            "</tbody>" +
+                            "</table>";
+            }
+            return strResult;
+        }
+
+        public string GetOptical(Device objDevice)
+        {
+            string strResult = string.Empty;
+            if (objDevice != null)
+            {
+                strResult = "<table class='table'>" +
+                        "<thead class='thead-dark'><tr> " +
+                            "<th colspan='4'>" + objDevice.TestName + " Test" +
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
+                            "</th>" +
+                        "</tr></thead> " +
+                        "<tbody>" +
+
+                        "<tr>" +
+                            "<td class='td50 AllignCenter' colspan='2'><img src='~/Images/Left.png' alt='No image found' /> </td>" +                        
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td>  </td>" +
+                        "<td>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
+                                "<label class='form-check-label'>Pass</label>" +
+                            "</div>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
+                                "<label class='form-check-label'>Fail</label>" +
+                            "</div>" +
+
+                            "<div class='form-check form-check-inline'>" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btn"+ objDevice.TestName + "StartTest' onclick='StartTest()'>Start Test</button>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                            "<td class='td50 AllignCenter' colspan='2'><img src='~/Images/Left.png' alt='No image found' /> </td>" +
                         "</tr>" +
 
                         "<tr>" +

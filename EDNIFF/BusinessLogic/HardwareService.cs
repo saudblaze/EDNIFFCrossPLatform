@@ -125,6 +125,55 @@ namespace EDNIFF.BusinessLogic
             {
 
             }
-        }                
+        }
+
+        public void GetDiscBurning()
+        {
+            try
+            {
+                Device device = new Device();
+                device.Category = ConstantData.Categories.Other;
+                device.DeviceName = ConstantData.DeviceNames.CDROMDrive;
+                device.TestName = "Optical";
+                device.TestLable = "Optical";
+                device.TestResultLable = "Optional";
+                device.TestDone = false;
+
+                string strtemp = GetInfoString(ConstantData.DevicePaths.Ethernet);
+                if (!string.IsNullOrEmpty(strtemp))
+                {
+                    string[] linesArr = strtemp.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+                    SPPowerDataType obkSPPowerDataType = new SPPowerDataType();
+
+                    device.deviceStatus = DeviceStatus.NotTested;
+
+                    foreach (string items in linesArr)
+                    {
+                        //right now dont have model with ethernet 
+                        if (items.ToString().Contains("Type:"))
+                        {
+                            device.Model = GetPropertyValue(items.ToString());
+                        }
+                        if (items.ToString().Contains("Hardware"))
+                        {
+                            device.Manufacturer = GetPropertyValue(items.ToString());
+                        }
+                        if (items.ToString().Contains("IPv4 Addresses"))
+                        {
+                            device.Info1 = GetPropertyValue(items.ToString());
+                        }
+                    }
+                }
+                else
+                {
+                    device.deviceStatus = DeviceStatus.NotPresent;
+                }
+                MacInfo.devices.Add(device);
+            }
+            catch (System.ComponentModel.Win32Exception exception)
+            {
+
+            }
+        }
     }
 }
