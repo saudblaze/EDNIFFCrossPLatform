@@ -55,6 +55,7 @@ namespace EDNIFF.Common
             LoadNetwork();
             LoadWifi();
             LoadDiscBurning();
+            LoadKeyboard();
         }        
 
         private void LoadHardware()
