@@ -99,6 +99,7 @@ namespace EDNIFF.Common
         private void LoadNetwork()
         {
             objNetworkService.GetNetwork();
+            objNetworkService.GetEthernet();
         }
         private void LoadWifi()
         {

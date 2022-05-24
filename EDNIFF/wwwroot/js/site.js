@@ -273,9 +273,7 @@ var Sound = {
             MarkAsCompleted('Fail');
         }
     }
-
-
-}
+};
 
 var USB = {
     RetestUSB() {
@@ -284,5 +282,66 @@ var USB = {
     USBChange(mResult) {
         MarkAsCompleted(mResult);
     }
-}
+};
+
+var LanPort = {
+
+};
+
+var Optical = {
+
+};
+
+var LCD = {
+
+};
+
+var keyboard = {
+
+};
+
+var Touchpad = {
+
+};
+
+var WifiBluetooth = {
+
+};
+
+var Battery = {
+
+};
+
+var Camera = {
+
+};
+
+var Touchscreen = {
+
+};
+
+var Microphone = {
+
+};
+
+var SDCard = {
+
+};
+
+var Biometrics = {
+
+};
+
+var SmartCard = {
+
+};
+
+var Display = {
+
+};
+
+var Port = {
+
+};
+
 

@@ -62,7 +62,9 @@ namespace EDNIFF.Helpers
 
             public const string Network = "SPNetworkDataType";
 
-            
+            public const string Ethernet = "SPEthernetDataType";
+
+
         }
 
 
