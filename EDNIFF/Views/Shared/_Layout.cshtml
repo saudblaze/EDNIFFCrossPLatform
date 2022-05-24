@@ -44,15 +44,15 @@
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         @*{
-                            <li class="nav-item">
-                                <form method="post" asp-controller="account" asp-action="logout">
-                                    <button type="submit" style="width:auto"
-                                            class="nav-link btn btn-link py-0">
-                                        Logout @userName
-                                    </button>
-                                </form>
-                            </li>
-                       }*@                                        
+                                 <li class="nav-item">
+                                     <form method="post" asp-controller="account" asp-action="logout">
+                                         <button type="submit" style="width:auto"
+                                                 class="nav-link btn btn-link py-0">
+                                             Logout @userName
+                                         </button>
+                                     </form>
+                                 </li>
+                            }*@
                     </ul>
                 </div>
             </div>
@@ -88,9 +88,19 @@
         </table>
 
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
