@@ -14,15 +14,19 @@ namespace EDNIFF.BusinessLogic
         {
             try
             {
+                Device device = new Device();
+                device.Category = ConstantData.Categories.Network;
+                device.DeviceName = ConstantData.DeviceNames.Wifi;
+                device.TestName = "Wifi";
+                device.TestLable = "Wifi";
+                device.TestResultLable = "Optional";
+                device.TestDone = false;
+
                 string strtemp = GetInfoString(ConstantData.DevicePaths.Network);
                 if (!string.IsNullOrEmpty(strtemp))
                 {
                     string[] linesArr = strtemp.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
                     SPPowerDataType obkSPPowerDataType = new SPPowerDataType();
-
-                    Device device = new Device();
-                    device.Category = ConstantData.Categories.Network;
-                    device.DeviceName = ConstantData.DeviceNames.Wifi;
 
                     foreach (string items in linesArr)
                     {
@@ -38,11 +42,16 @@ namespace EDNIFF.BusinessLogic
                         if (items.ToString().Contains("IPv4 Addresses"))
                         {
                             device.Info1 = GetPropertyValue(items.ToString());
-                        }                        
-                    }
-
-                    MacInfo.devices.Add(device);
+                        }
+                    }                    
+                    device.deviceStatus = DeviceStatus.NotTested;                
                 }
+                else
+                {
+                    device.deviceStatus = DeviceStatus.NotPresent;
+                }
+
+                MacInfo.devices.Add(device);
             }
             catch (System.ComponentModel.Win32Exception exception)
             {
