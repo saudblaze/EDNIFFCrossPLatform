@@ -14,15 +14,20 @@ namespace EDNIFF.BusinessLogic
         {
             try
             {
+                Device device = new Device();
+                device.Category = ConstantData.Categories.Storage;
+                device.DeviceName = ConstantData.DeviceNames.Battery;
+                device.TestName = "Battery";
+                device.TestLable = "Battery";
+                device.TestResultLable = "Optional";
+                device.TestDone = false;
+
+
                 string strtemp = GetInfoString(ConstantData.DevicePaths.Storage);
                 if (!string.IsNullOrEmpty(strtemp))
                 {
                     string[] linesArr = strtemp.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
                     SPPowerDataType obkSPPowerDataType = new SPPowerDataType();
-
-                    Device device = new Device();
-                    device.Category = ConstantData.Categories.Storage;
-                    device.DeviceName = ConstantData.DeviceNames.Storage;
 
                     bool blnUntitled = false;
 
@@ -51,8 +56,13 @@ namespace EDNIFF.BusinessLogic
                         }
                     }
 
-                    MacInfo.devices.Add(device);
+                    device.deviceStatus = DeviceStatus.NotTested;
                 }
+                else
+                {
+                    device.deviceStatus = DeviceStatus.NotPresent;
+                }
+                MacInfo.devices.Add(device);
             }
             catch (System.ComponentModel.Win32Exception exception)
             {

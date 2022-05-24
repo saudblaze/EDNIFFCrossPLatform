@@ -221,5 +221,26 @@ namespace EDNIFF.BusinessLogic
 
             }
         }
+
+        public void GetTouchScreen()
+        {
+            try
+            {
+                Device device = new Device();
+                device.Category = ConstantData.Categories.Display;
+                device.DeviceName = ConstantData.DeviceNames.TouchScreen;
+                device.TestName = "TouchScreen";
+                device.TestLable = "TouchScreen";
+                device.TestResultLable = "Optional";
+                device.TestDone = false;
+                device.deviceStatus = DeviceStatus.NotTested;
+
+                MacInfo.devices.Add(device);
+            }
+            catch (System.ComponentModel.Win32Exception exception)
+            {
+
+            }
+        }
     }
 }

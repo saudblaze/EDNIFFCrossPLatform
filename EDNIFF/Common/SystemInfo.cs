@@ -57,6 +57,7 @@ namespace EDNIFF.Common
             LoadDiscBurning();
             LoadKeyboard();
             LoadTouchpad();
+            LoadTouchScreen();
         }        
 
         private void LoadHardware()
@@ -98,6 +99,10 @@ namespace EDNIFF.Common
         private void LoadGraphics()
         {
             objGraphicsService.GetGraphics();
+        }
+        private void LoadTouchScreen()
+        {
+            objGraphicsService.GetTouchScreen();
         }
         private void LoadBattery()
         {
