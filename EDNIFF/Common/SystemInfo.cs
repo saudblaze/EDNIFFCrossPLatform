@@ -65,6 +65,10 @@ namespace EDNIFF.Common
         {
             objHardwareService.GetDiscBurning();
         }
+        private void LoadKeyboard()
+        {
+            objHardwareService.GetKeyboard();
+        }
         private void LoadAudio()
         {
             objAudioService.GetAudio();

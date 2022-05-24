@@ -175,5 +175,26 @@ namespace EDNIFF.BusinessLogic
 
             }
         }
+
+        public void GetKeyboard()
+        {
+            try
+            {
+                Device device = new Device();
+                device.Category = ConstantData.Categories.Other;
+                device.DeviceName = ConstantData.DeviceNames.CDROMDrive;
+                device.TestName = "Keyboard";
+                device.TestLable = "Keyboard";
+                device.TestResultLable = "Optional";
+                device.TestDone = false;
+                device.deviceStatus = DeviceStatus.NotTested;
+                
+                MacInfo.devices.Add(device);
+            }
+            catch (System.ComponentModel.Win32Exception exception)
+            {
+
+            }
+        }
     }
 }
