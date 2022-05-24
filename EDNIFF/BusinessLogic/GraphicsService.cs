@@ -160,46 +160,57 @@ namespace EDNIFF.BusinessLogic
 
                     if (SPDisplaysDataType.Video != null)
                     {
-                        Device device = new Device();
-                        device.Category = ConstantData.Categories.Display;
-                        device.DeviceName = ConstantData.DeviceNames.Video;
-                        device.Manufacturer = SPDisplaysDataType.Video.Vendor;
-                        device.Model = SPDisplaysDataType.Video.ChipsetModel;
-                        device.Serial = SPDisplaysDataType.Video.DeviceID;
-                        device.Size = SPDisplaysDataType.Video.VRAM;
-                        device.Speed = "";
-                        device.Info1 = "";
-                        device.Info2 = "";
-                        MacInfo.devices.Add(device);
+                        Device deviceVideo = new Device();
+                        deviceVideo.Category = ConstantData.Categories.Display;
+                        deviceVideo.DeviceName = ConstantData.DeviceNames.Video;
+                        deviceVideo.Manufacturer = SPDisplaysDataType.Video.Vendor;
+                        deviceVideo.Model = SPDisplaysDataType.Video.ChipsetModel;
+                        deviceVideo.Serial = SPDisplaysDataType.Video.DeviceID;
+                        deviceVideo.Size = SPDisplaysDataType.Video.VRAM;
+                        deviceVideo.Speed = "";
+                        deviceVideo.Info1 = "";
+                        deviceVideo.Info2 = "";
+                        
+                        MacInfo.devices.Add(deviceVideo);
                     }
+
+                    Device device = new Device();
+                    device.Category = ConstantData.Categories.Display;
+                    device.DeviceName = ConstantData.DeviceNames.LCD;
+                    device.Manufacturer = "";
+                    device.Model = SPDisplaysDataType.LCD1.DisplayType;
+                    device.Serial = "";
+                    device.Size = SPDisplaysDataType.LCD1.UILooksLike;
+                    device.Speed = "";
+                    device.Info1 = "";
+                    device.Info2 = "";
+                    device.TestName = "LCD";
+                    device.TestLable = "LCD";
+                    device.TestResultLable = "Optional";
+                    device.TestDone = false;
 
                     if (SPDisplaysDataType.LCD1 != null)
                     {
-                        Device device = new Device();
-                        device.Category = ConstantData.Categories.Display;
-                        device.DeviceName = ConstantData.DeviceNames.LCD;
-                        device.Manufacturer = "";
-                        device.Model = SPDisplaysDataType.LCD1.DisplayType;
-                        device.Serial = "";
-                        device.Size = SPDisplaysDataType.LCD1.UILooksLike;
-                        device.Speed = "";
-                        device.Info1 = "";
-                        device.Info2 = "";
-                        MacInfo.devices.Add(device);
+                        device.deviceStatus = DeviceStatus.NotTested;
                     }
+                    else
+                    {
+                        device.deviceStatus = DeviceStatus.NotPresent;
+                    }
+                    MacInfo.devices.Add(device);
                     if (SPDisplaysDataType.LCD2 != null)
                     {
-                        Device device = new Device();
-                        device.Category = ConstantData.Categories.Display;
-                        device.DeviceName = ConstantData.DeviceNames.LCD;
-                        device.Manufacturer = "";
-                        device.Model = SPDisplaysDataType.LCD2.DisplayType;
-                        device.Serial = "";
-                        device.Size = SPDisplaysDataType.LCD2.UILooksLike;
-                        device.Speed = "";
-                        device.Info1 = "";
-                        device.Info2 = "";
-                        MacInfo.devices.Add(device);
+                        Device deviceLCD2 = new Device();
+                        deviceLCD2.Category = ConstantData.Categories.Display;
+                        deviceLCD2.DeviceName = ConstantData.DeviceNames.LCD;
+                        deviceLCD2.Manufacturer = "";
+                        deviceLCD2.Model = SPDisplaysDataType.LCD2.DisplayType;
+                        deviceLCD2.Serial = "";
+                        deviceLCD2.Size = SPDisplaysDataType.LCD2.UILooksLike;
+                        deviceLCD2.Speed = "";
+                        deviceLCD2.Info1 = "";
+                        deviceLCD2.Info2 = "";
+                        MacInfo.devices.Add(deviceLCD2);
                     }
 
                     
