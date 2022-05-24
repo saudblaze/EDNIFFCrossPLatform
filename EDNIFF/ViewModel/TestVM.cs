@@ -20,4 +20,11 @@ namespace EDNIFF.ViewModel
         public bool TestSelected { get; set; }
         public int TestIndex { get; set; }
     }
+
+    public class MainSaveMethodParam
+    {
+        public List<TestList> TestList { get; set; }
+        public bool IsTestDone { get; set; }
+        
+    }
 }

@@ -198,6 +198,31 @@ function MainSaveMethod() {
     debugger
     if (_objToBeSaved && _objToBeSaved.IsTestDone) {
         alert('you can save data now ');
+        //make ajax call to save data
+        var mdata = _objToBeSaved
+        $.ajax({
+            type: 'POST',
+            url: '/Tests/MainSaveMethod',
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
+            data: mdata,
+            //async:false,
+            success: function (result) {
+                if (result.isSuccess == 1) {
+                    debugger;
+                    ////alert('Successfully received Data ');
+                    //var strHtml = result.data;
+                    //$("#divTest").html(strHtml)
+                } else {
+                    alert('Failed to receive the Data');
+                }
+            },
+            error: function () {
+                alert('Failed to receive the Data');
+                console.log('Failed ');
+            }
+        })
+
+        $("#btnMainSave").prop("disabled", true);
     }
     var temp = _listOfTest;
 }

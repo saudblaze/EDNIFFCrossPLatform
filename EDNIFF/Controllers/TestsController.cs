@@ -295,6 +295,29 @@ namespace EDNIFF.Controllers
             }
         }
 
+        public JsonResult MainSaveMethod(MainSaveMethodParam obj)
+        {
+
+            if (obj != null)
+            {
+                //string strResult = getTestView(obj.TestName);
+
+                //foreach (Device item in MacInfo.devices)
+                //{
+                //    if (item.TestName == obj.TestName)
+                //    {
+                //        item.TestDone = true;
+                //    }
+                //}
+
+                return Json(new { IsSuccess = 1 });
+            }
+            else
+            {
+                return Json(new { IsSuccess = 0 });
+            }
+        }
+
         public string getTestView(string TestName)
         {
 
