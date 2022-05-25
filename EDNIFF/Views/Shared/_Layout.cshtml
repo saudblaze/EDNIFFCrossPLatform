@@ -88,7 +88,18 @@
         </table>
 
     </footer>
-    
+
+
+    @* Hack for Electron workability, must be before all scripts import *@
+    <script>
+        var exports = {};
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+
+
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -102,5 +113,9 @@
     </environment>
 
     @await RenderSectionAsync("Scripts", required: false)
+
+    @* Hack for Electron workability, must be after all scripts import *@
+    <script>if (window.module) module = window.module;</script>
+
 </body>
 </html>
