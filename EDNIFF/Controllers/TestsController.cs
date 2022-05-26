@@ -1052,12 +1052,14 @@ namespace EDNIFF.Controllers
                         "<tbody>" +
 
                         "<tr>" +
-                        "<td colspan='2' class='row'> " +
-                            "<div class='col' style='align-items: center; justify-content: center; '>" +
-                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 150px; height:150px;' id='btnLeftTouch' onclick='Touchpad.SetTouch()'>Left Touch</button>" +
-                            "</div>" +
-                            "<div class='col' style='align-items: center; justify-content: center; '>" +
-                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 150px; height:150px;' id='btnRightTouch' onclick='Touchpad.SetTouch()'>Right Touch</button>" +
+                        "<td colspan='2' > " +
+                            "<div class='row'>" +
+                                "<div class='col' style='align-items: center; justify-content: center; '>" +
+                                    "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 150px; height:150px;' id='btnLeftTouch' onclick='Touchpad.SetTouch()'>Left Touch</button>" +
+                                "</div>" +
+                                "<div class='col' style='align-items: center; justify-content: center; '>" +
+                                    "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 150px; height:150px;' id='btnRightTouch' onclick='Touchpad.SetTouch()'>Right Touch</button>" +
+                                "</div>" +
                             "</div>" +
                         "</td>" +
 
