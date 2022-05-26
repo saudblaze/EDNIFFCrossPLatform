@@ -1052,11 +1052,11 @@ namespace EDNIFF.Controllers
                         "<tbody>" +
 
                         "<tr>" +
-                        "<td colspan='2' style='width:100%;display:flex;'> " +
-                            "<div style='width: 50%; height: 400px; border: 1px solid black; display: flex; align-items: center; justify-content: center; '>" +
+                        "<td colspan='2' class='row'> " +
+                            "<div class='col' style='align-items: center; justify-content: center; '>" +
                                 "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 150px; height:150px;' id='btnLeftTouch' onclick='Touchpad.SetTouch()'>Left Touch</button>" +
                             "</div>" +
-                            "<div style='width: 50%; height: 400px; border: 1px solid black; display: flex; align-items: center; justify-content: center; '>" +
+                            "<div class='col' style='align-items: center; justify-content: center; '>" +
                                 "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 150px; height:150px;' id='btnRightTouch' onclick='Touchpad.SetTouch()'>Right Touch</button>" +
                             "</div>" +
                         "</td>" +
