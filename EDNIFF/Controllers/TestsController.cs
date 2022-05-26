@@ -1072,7 +1072,7 @@ namespace EDNIFF.Controllers
                                 "<label class='form-check-label'>Fail</label>" +
                             "</div>" +
                             "<div class='form-check form-check-inline'>" +
-                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btn" + objDevice.TestName + "StartTest' onclick='StartTest()'>Start Test</button>" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnResetTouch' onclick='Touchpad.ResetTouch()'>Reset Touch</button>" +
                             "</div>" +
 
                         "</td>" +
@@ -1108,7 +1108,9 @@ namespace EDNIFF.Controllers
                                 "<input class='form-check-input' type='radio' id='Fail' name='" + objDevice.TestName + "' onchange='Touchpad.MarkAsPointerCompleted(\"Fail\")' value='Fail' >" +
                                 "<label class='form-check-label'>Fail</label>" +
                             "</div>" +
-                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnResetTouch' onclick='Touchpad.ResetPointerTouch()'> Reset Pointer Touch</button>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnResetTouchPointer' onclick='Touchpad.ResetPointerTouch()'>Reset Touch Pointer</button>" +
+                            "</div>" +
                         "</td>" +
                         "</tr>" +
 
