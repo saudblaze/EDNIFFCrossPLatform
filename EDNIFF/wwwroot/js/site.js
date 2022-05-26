@@ -322,7 +322,15 @@ var LCD = {
 };
 
 var keyboard = {
-
+    StartTest() {
+        alert('start keyboard test');
+    },
+    BacklightKeyboardChecked() {
+        alert('BacklightKeyboard');
+    },
+    BacklightPassFail() {
+        alert('BacklightPassFail');
+    }
 };
 
 var Touchpad = {

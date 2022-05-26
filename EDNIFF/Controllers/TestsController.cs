@@ -959,6 +959,44 @@ namespace EDNIFF.Controllers
                         "</tr>" +
 
                         "<tr>" +
+                        "<td>  </td>" +
+                        "<td>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='checkbox' id='chk" + objDevice.TestName + "Type'  onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
+                                "<label class='form-check-label'>Numeric Keyboard</label>" +
+                            "</div>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<select class='form-select' aria-label='Default select example'> " +
+                                    "<option value='EU'> EU</option>" +
+                                    "<option value='US'> US</option>" +
+                                "</select>" +
+                            "</div>" +
+                            "<div>" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='keyboard.StartTest()'>Start test</button>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td> "+
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='checkbox' id='chk" + objDevice.TestName + "Backlight'  onchange='keyboard.BacklightKeyboardChecked()' value='Pass' >" +
+                                "<label class='form-check-label'>Numeric Keyboard</label>" +
+                            "</div>" +
+                        " </td>" +
+                        "<td>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='" + objDevice.TestName + "Backlight' onchange='keyboard.BacklightPassFail(\"Pass\")' value='Pass' >" +
+                                "<label class='form-check-label'>Pass</label>" +
+                            "</div>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='" + objDevice.TestName + "Backlight' onchange='keyboard.BacklightPassFail(\"Fail\")' value='Fail' >" +
+                                "<label class='form-check-label'>Fail</label>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
                         "<td> Result </td>" +
                         "<td>" +
                             "<div class='form-check'>" +
