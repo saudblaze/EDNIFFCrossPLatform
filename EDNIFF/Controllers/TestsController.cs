@@ -1063,6 +1063,10 @@ namespace EDNIFF.Controllers
 
                         "</tr>" +
 
+                        "<tr><td colspan='2'><div class='row'><div class='col'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>"+
+                            "<div class='col'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Ad omnis quae expedita ipsum nobis praesentium velit animi minus amet perspiciatis laboriosam similique debitis iste ratione nemo ea at corporis aliquam.</div> " +
+                            "</div></td></tr>"+
+
                         "<tr>" +
                         "<td>  </td>" +
                         "<td>" +
