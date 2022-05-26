@@ -1052,12 +1052,15 @@ namespace EDNIFF.Controllers
                         "<tbody>" +
 
                         "<tr>" +
-                        "<td> " +
-                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnLeftTouch' onclick='Touchpad.SetTouch()'>Left Touch</button>" +
+                        "<td colspan='2' style='width:100%;'> " +
+                            "<div class='TouchPadDiv'>" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 150px; height:150px;' id='btnLeftTouch' onclick='Touchpad.SetTouch()'>Left Touch</button>" +
+                            "</div>" +
+                            "<div class='TouchPadDiv'>" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 150px; height:150px;' id='btnRightTouch' onclick='Touchpad.SetTouch()'>Right Touch</button>" +
+                            "</div>" +
                         "</td>" +
-                        "<td>" +
-                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnRightTouch' onclick='Touchpad.SetTouch()'>Right Touch</button>" +
-                        "</td>" +
+
                         "</tr>" +
 
                         "<tr>" +
@@ -1109,7 +1112,7 @@ namespace EDNIFF.Controllers
                                 "<label class='form-check-label'>Fail</label>" +
                             "</div>" +
                             "<div class='form-check form-check-inline'>" +
-                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnResetTouchPointer' onclick='Touchpad.ResetPointerTouch()'>Reset Touch Pointer</button>" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnResetTouchPointer' onclick='Touchpad.ResetPointerTouch()'>Reset Pointer</button>" +
                             "</div>" +
                         "</td>" +
                         "</tr>" +

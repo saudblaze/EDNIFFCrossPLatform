@@ -43,3 +43,14 @@
 .marginleft10 {
     margin-left: 10px;
 }
+
+
+
+.TouchPadDiv {
+    width: 50%;
+    height: 400px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
