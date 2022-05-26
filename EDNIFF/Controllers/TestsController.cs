@@ -397,7 +397,7 @@ namespace EDNIFF.Controllers
                 case "PortTest":
                     Device objDevicePortTest = MacInfo.devices.Where(x => x.TestName == TestName).FirstOrDefault();
                     strResult = GetPortTest(objDevicePortTest);
-                    break;
+                    break;                
                 default:
                     break;
             }
@@ -413,7 +413,7 @@ namespace EDNIFF.Controllers
             {
                 strResult = "<table class='table'>" +
                         "<thead class='thead-dark'><tr> " +
-                            "<th colspan='4'>" + objDevice.TestName + " Test" +
+                            "<th colspan='4'>"+ objDevice.TestName + " Test" +
                             "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
                             "</th>" +
                         "</tr></thead> " +
@@ -564,7 +564,7 @@ namespace EDNIFF.Controllers
                                 "</div>" +
                             "</div>" +
                         "</td>" +
-                        "</tr>" +
+                        "</tr>"+
 
                         "<tr>" +
                         "<td class='td50 Allignleft'> Comments </td>" +
@@ -613,21 +613,21 @@ namespace EDNIFF.Controllers
                         "</tr></thead> " +
                         "<tbody>" +
 
-
+                        
 
 
                         "<tr>" +
                         "<td class='td50 Allignleft'> Total Number of ports to test </td>" +
-                        "<td class='td50 Allignleft'>" +
+                        "<td class='td50 Allignleft'>"+
                         "<div class='form-check paddingleft'>" +
-                                "<input type='text' class='form-control' id='txt" + objDevice.TestName + "Number' placeholder=''>" +
-
+                                "<input type='text' class='form-control' id='txt"+ objDevice.TestName + "Number' placeholder=''>" +
+                                
                             "</div>" +
                         " </td>" +
                         "</tr>" +
 
                         "<tr>" +
-                            "<td class='td50 Allignleft'> " +
+                            "<td class='td50 Allignleft'> " +                            
                             "</td>" +
                             "<td class='td50 Allignleft'>" +
                             "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; ' id='btnNext' onclick='USB.RetestUSB()'>Retest</button>" +
@@ -653,7 +653,7 @@ namespace EDNIFF.Controllers
                                 "<div class='form-check form-check-inline marginleft10' >" +
                                     "<input class='form-check-input' type='radio' id='Fail' name='AudioPort' onchange='USB.USBChange(\"Fail\")' value='Fail' >" +
                                     "<label class='form-check-label'>Fail</label>" +
-                                "</div>" +
+                                "</div>" +                            
                         "</td>" +
                         "</tr>" +
 
@@ -683,7 +683,7 @@ namespace EDNIFF.Controllers
                             "<tr>" +
                             "<td ></td>" +
                             "<td ></td>" +
-                            "</tr>" +
+                            "</tr>" +                            
 
                             "</tbody>" +
                             "</table>";
@@ -729,7 +729,7 @@ namespace EDNIFF.Controllers
                         "<td>  </td>" +
                         "<td>" +
                             "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' id='Pass' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='"+ objDevice.TestName + "' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
                                 "<label class='form-check-label'>Pass</label>" +
                             "</div>" +
                             "<div class='form-check form-check-inline'>" +
@@ -795,7 +795,7 @@ namespace EDNIFF.Controllers
                         "<tbody>" +
 
                         "<tr>" +
-                            "<td class='td50 AllignCenter' colspan='2'><img src='~/Images/Left.png' alt='No image found' /> </td>" +
+                            "<td class='td50 AllignCenter' colspan='2'><img src='~/Images/Left.png' alt='No image found' /> </td>" +                        
                         "</tr>" +
 
                         "<tr>" +
@@ -811,7 +811,7 @@ namespace EDNIFF.Controllers
                             "</div>" +
 
                             "<div class='form-check form-check-inline'>" +
-                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btn" + objDevice.TestName + "StartTest' onclick='StartTest()'>Start Test</button>" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btn"+ objDevice.TestName + "StartTest' onclick='StartTest()'>Start Test</button>" +
                             "</div>" +
                         "</td>" +
                         "</tr>" +
@@ -874,7 +874,7 @@ namespace EDNIFF.Controllers
                             "</th>" +
                         "</tr></thead> " +
                         "<tbody>" +
-
+                        
                         "<tr>" +
                         "<td>  </td>" +
                         "<td>" +
@@ -972,13 +972,13 @@ namespace EDNIFF.Controllers
                                 "</select>" +
                             "</div>" +
                             "<div>" +
-                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; ' id='btnNext' onclick='keyboard.StartTest()'>Start test</button>" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='keyboard.StartTest()'>Start test</button>" +
                             "</div>" +
                         "</td>" +
                         "</tr>" +
 
                         "<tr>" +
-                        "<td> " +
+                        "<td> "+
                             "<div class='form-check form-check-inline'>" +
                                 "<input class='form-check-input' type='checkbox' id='chk" + objDevice.TestName + "Backlight'  onchange='keyboard.BacklightKeyboardChecked()' value='Pass' >" +
                                 "<label class='form-check-label'>Numeric Keyboard</label>" +
@@ -1052,16 +1052,7 @@ namespace EDNIFF.Controllers
                         "<tbody>" +
 
                         "<tr>" +
-                        "<td> " +
-                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px;height:120px' id='btnLeftTouch' onclick='Touchpad.SetTouch()'>Left Button</button>" +
-                        "</td>" +
-                        "<td>" +
-                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px;height:120px' id='btnLeftTouch' onclick='Touchpad.SetTouch()'>Right Button</button>" +
-                        "</td>" +
-                        "</tr>" +
-                      
-                        "<tr>" +
-                        "<td> Test Result </td>" +
+                        "<td>  </td>" +
                         "<td>" +
                             "<div class='form-check form-check-inline'>" +
                                 "<input class='form-check-input' type='radio' id='Pass' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
@@ -1070,31 +1061,6 @@ namespace EDNIFF.Controllers
                             "<div class='form-check form-check-inline'>" +
                                 "<input class='form-check-input' type='radio' id='Fail' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
                                 "<label class='form-check-label'>Fail</label>" +
-                            "</div>" +
-                            "<div>"+
-                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px;' id='btnTouchReset' onclick='Touchpad.TouchReset()'>Reset</button>" +
-                            "</div>" +
-                        "</td>" +
-                        "</tr>" +
-
-                        "<tr>" +
-                        "<td>" +
-                            "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='checkbox' id='chk" + objDevice.TestName + "Pointer'  onchange='Touchpad.KeyboardpointerMarked()' value='Pass' >" +
-                                "<label class='form-check-label'>Keyboard pointer</label>" +
-                            "</div>" +                            
-                        "</td>" +
-                        "<td>" +
-                        "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' id='Pass' name='" + objDevice.TestName + "' onchange='Touchpad.SetTouchResetPointer(\"Pass\")' value='Pass' >" +
-                                "<label class='form-check-label'>Pass</label>" +
-                            "</div>" +
-                            "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' id='Fail' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
-                                "<label class='form-check-label'>Fail</label>" +
-                            "</div>" +
-                            "<div>" +
-                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px;' id='btnTouchReset' onclick='Touchpad.TouchResetPointer()'>Reset</button>" +
                             "</div>" +
                         "</td>" +
                         "</tr>" +
@@ -1830,6 +1796,6 @@ namespace EDNIFF.Controllers
             }
             return strResult;
         }
-
+        
     }
 }
