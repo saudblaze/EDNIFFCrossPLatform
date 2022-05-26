@@ -1052,6 +1052,15 @@ namespace EDNIFF.Controllers
                         "<tbody>" +
 
                         "<tr>" +
+                        "<td> "+
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnLeftTouch' onclick='Touchpad.SetTouch()'>Left Touch</button>" +
+                        "</td>" +
+                        "<td>" +
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnRightTouch' onclick='Touchpad.SetTouch()'>Right Touch</button>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
                         "<td>  </td>" +
                         "<td>" +
                             "<div class='form-check form-check-inline'>" +
@@ -1062,6 +1071,7 @@ namespace EDNIFF.Controllers
                                 "<input class='form-check-input' type='radio' id='Fail' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
                                 "<label class='form-check-label'>Fail</label>" +
                             "</div>" +
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnResetTouch' onclick='Touchpad.ResetTouch()'> Reset Touch</button>" +
                         "</td>" +
                         "</tr>" +
 
@@ -1071,6 +1081,29 @@ namespace EDNIFF.Controllers
                             "<div class='form-check'>" +
                                 "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
                             "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td colspan='2'> " +
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnLeftTouch' onclick='Touchpad.SetPointerTouch()'>Left Button</button>" +
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnLeftTouch' onclick='Touchpad.SetPointerTouch()'>Middle Button</button>" +
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnLeftTouch' onclick='Touchpad.SetPointerTouch()'>Right Button</button>" +
+                        "</td>" +                        
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td>  </td>" +
+                        "<td>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='" + objDevice.TestName + "' onchange='Touchpad.MarkAsPointerCompleted(\"Pass\")' value='Pass' >" +
+                                "<label class='form-check-label'>Pass</label>" +
+                            "</div>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='" + objDevice.TestName + "' onchange='Touchpad.MarkAsPointerCompleted(\"Fail\")' value='Fail' >" +
+                                "<label class='form-check-label'>Fail</label>" +
+                            "</div>" +
+                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnResetTouch' onclick='Touchpad.ResetPointerTouch()'> Reset Pointer Touch</button>" +
                         "</td>" +
                         "</tr>" +
 

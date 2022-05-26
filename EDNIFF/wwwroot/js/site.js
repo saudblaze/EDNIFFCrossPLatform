@@ -334,7 +334,21 @@ var keyboard = {
 };
 
 var Touchpad = {
-
+    SetTouch() {
+        alert('SetTouch');
+    },
+    ResetTouch() {
+        alert('ResetTouch');
+    },
+    SetPointerTouch() {
+        alert('SetPointerTouch');
+    },
+    ResetPointerTouch() {
+        alert('ResetPointerTouch');
+    },
+    MarkAsPointerCompleted() {
+        alert('MarkAsPointerCompleted');
+    }
 };
 
 var WifiBluetooth = {
