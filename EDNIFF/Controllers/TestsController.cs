@@ -1054,22 +1054,16 @@ namespace EDNIFF.Controllers
                         "<tr>" +
                         "<td colspan='2' > " +
                             "<div class='row'>" +
-                                "<div class='col' style='align-items: center; justify-content: center; '>" +
+                                "<div class='col' style='align-items: center; justify-content: center; display: flex;'>" +
                                     "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 150px; height:150px;' id='btnLeftTouch' onclick='Touchpad.SetTouch()'>Left Touch</button>" +
                                 "</div>" +
-                                "<div class='col' style='align-items: center; justify-content: center; '>" +
+                                "<div class='col' style='align-items: center; justify-content: center; display: flex;'>" +
                                     "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 150px; height:150px;' id='btnRightTouch' onclick='Touchpad.SetTouch()'>Right Touch</button>" +
                                 "</div>" +
                             "</div>" +
                         "</td>" +
-
                         "</tr>" +
-
-                        "<tr><td colspan='2'><div class='row'><div class='col'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>"+
-                            "<div class='col'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Ad omnis quae expedita ipsum nobis praesentium velit animi minus amet perspiciatis laboriosam similique debitis iste ratione nemo ea at corporis aliquam.</div> " +
-                            "</div></td></tr>"+
-
-                        "<tr>" +
+                        
                         "<td>  </td>" +
                         "<td>" +
                             "<div class='form-check form-check-inline'>" +
@@ -1098,11 +1092,17 @@ namespace EDNIFF.Controllers
 
                         "<tr>" +
                         "<td colspan='2' > " +
-                            "<div class='form-check-inline'>" +
-                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnLeftTouch' onclick='Touchpad.SetPointerTouch()'>Left Button</button>" +
-                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnLeftTouch' onclick='Touchpad.SetPointerTouch()'>Middle Button</button>" +
-                            "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnLeftTouch' onclick='Touchpad.SetPointerTouch()'>Right Button</button>" +
-                            "</div>" +
+                            "<div class='row'>" +
+                                "<div class='col' style='align-items: center; justify-content: center; display: flex;'>" +
+                                    "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnLeftTouch' onclick='Touchpad.SetPointerTouch()'>Left Button</button>" +
+                                "</div>" +
+                                "<div class='col' style='align-items: center; justify-content: center; display: flex;'>" +
+                                    "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnLeftTouch' onclick='Touchpad.SetPointerTouch()'>Middle Button</button>" +
+                                "</div>" +
+                                "<div class='col' style='align-items: center; justify-content: center; display: flex;'>" +
+                                    "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnLeftTouch' onclick='Touchpad.SetPointerTouch()'>Right Button</button>" +
+                                "</div>" +
+                            "</div>" +                            
                         "</td>" +
                         "</tr>" +
 
