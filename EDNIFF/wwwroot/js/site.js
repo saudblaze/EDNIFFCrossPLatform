@@ -182,6 +182,7 @@ function GetTestHtml() {
         //async: false,
         success: function (result) {
             if (result.isSuccess == 1) {
+                debugger
                 var strHtml = result.data;
                 $("#divTest").html(strHtml)
             } else {
