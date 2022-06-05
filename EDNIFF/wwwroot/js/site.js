@@ -88,6 +88,7 @@ function NextClick() {
                 //bind this test in div
                 _currentTest = item;
                 NextTest = true;
+                return false;
             }
         });
         if (!NextTest) {
@@ -182,7 +183,6 @@ function GetTestHtml() {
         //async: false,
         success: function (result) {
             if (result.isSuccess == 1) {
-                debugger
                 var strHtml = result.data;
                 $("#divTest").html(strHtml)
             } else {
