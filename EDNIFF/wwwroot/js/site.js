@@ -83,6 +83,7 @@ function NextClick() {
 
         var NextTest = false;
         $.each(_listOfTest, function (index, item) {
+            debugger
             if (item.TestSelected == true && item.TestDone == false) {
                 //bind this test in div
                 _currentTest = item;
