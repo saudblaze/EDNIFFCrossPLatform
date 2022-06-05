@@ -25,6 +25,7 @@ namespace EDNIFF.ViewModel
     {
         public List<TestList> TestList { get; set; }
         public bool IsTestDone { get; set; }
-        
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

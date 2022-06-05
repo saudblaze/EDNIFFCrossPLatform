@@ -83,7 +83,6 @@ function NextClick() {
 
         var NextTest = false;
         $.each(_listOfTest, function (index, item) {
-            debugger
             if (item.TestSelected == true && item.TestDone == false) {
                 //bind this test in div
                 _currentTest = item;
@@ -214,6 +213,7 @@ function MainSaveMethod() {
                     ////alert('Successfully received Data ');
                     //var strHtml = result.data;
                     //$("#divTest").html(strHtml)
+                    $("#btnMainSave").prop("disabled", true);
                 } else {
                     alert('Failed to receive the Data');
                 }
@@ -224,7 +224,7 @@ function MainSaveMethod() {
             }
         })
 
-        $("#btnMainSave").prop("disabled", true);
+        
     }
     var temp = _listOfTest;
 }

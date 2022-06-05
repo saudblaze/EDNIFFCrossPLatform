@@ -1,4 +1,5 @@
-﻿using EDNIFF.Common;
+﻿using EDNIFF.BusinessLogic;
+using EDNIFF.Common;
 using EDNIFF.Models;
 using EDNIFF.ViewModel;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +12,12 @@ namespace EDNIFF.Controllers
 {
     public class TestsController : Controller
     {
+        TestServices objTestServices;
+
+        public TestsController()
+        {
+            objTestServices = new TestServices();
+        }
         public IActionResult Index()
         {
             TestVM objTestList = GetTestCheckBox();
@@ -295,21 +302,12 @@ namespace EDNIFF.Controllers
             }
         }
 
-        public JsonResult MainSaveMethod(MainSaveMethodParam obj)
+        public async Task<JsonResult> MainSaveMethodAsync(MainSaveMethodParam obj)
         {
 
             if (obj != null)
             {
-                //string strResult = getTestView(obj.TestName);
-
-                //foreach (Device item in MacInfo.devices)
-                //{
-                //    if (item.TestName == obj.TestName)
-                //    {
-                //        item.TestDone = true;
-                //    }
-                //}
-
+                var objResult = await objTestServices.SaveMethod(obj);
                 return Json(new { IsSuccess = 1 });
             }
             else
