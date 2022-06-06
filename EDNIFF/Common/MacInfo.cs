@@ -32,6 +32,12 @@ namespace EDNIFF.Common
 
         public static string Resolution { get; set; }
 
+        public static string ProcSpeed { get; set; }
+
+        public static string StorageSize { get; set; }
+
+        public static string StorageType { get; set; }
+
         static MacInfo()
         {
             devices = new List<Device>();

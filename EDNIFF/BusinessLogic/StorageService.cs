@@ -16,9 +16,9 @@ namespace EDNIFF.BusinessLogic
             {
                 Device device = new Device();
                 device.Category = ConstantData.Categories.Storage;
-                device.DeviceName = ConstantData.DeviceNames.Battery;
-                device.TestName = "Battery";
-                device.TestLable = "Battery";
+                device.DeviceName = ConstantData.DeviceNames.Storage;
+                device.TestName = "Storage";
+                device.TestLable = "Storage";
                 device.TestResultLable = "Optional";
                 device.TestDone = false;
 
@@ -45,6 +45,7 @@ namespace EDNIFF.BusinessLogic
                         if (blnUntitled == true && items.ToString().Contains("Capacity"))
                         {
                             device.Size = GetPropertyValue(items.ToString());
+                            MacInfo.StorageSize = GetPropertyValue(items.ToString());
                         }
                         if (blnUntitled == true && items.ToString().Contains("Volume UUID"))
                         {
@@ -53,6 +54,10 @@ namespace EDNIFF.BusinessLogic
                         if (blnUntitled == true && items.ToString().Contains("Device Name"))
                         {
                             device.Manufacturer = GetPropertyValue(items.ToString());
+                        }
+                        if (blnUntitled == true && items.ToString().Contains("Medium Type"))
+                        {
+                            MacInfo.StorageType = GetPropertyValue(items.ToString());
                         }
                     }
 

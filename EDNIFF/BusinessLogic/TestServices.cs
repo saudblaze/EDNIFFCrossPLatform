@@ -33,7 +33,11 @@ namespace EDNIFF.BusinessLogic
                 objParam.PartNumber = "";
                 objParam.Manufacturer = "Apple";
                 objParam.Model = objMotherBoard.Info1;
-                objParam.Processor = objProcessor.Info1;
+                objParam.Processor = objProcessor.Model;
+                objParam.ProcSpeed = objProcessor.Speed;
+                objParam.RAM = objProcessor.Size;
+                objParam.StorageSize = MacInfo.StorageSize;
+                objParam.StorageType = MacInfo.StorageType;
 
 
 
