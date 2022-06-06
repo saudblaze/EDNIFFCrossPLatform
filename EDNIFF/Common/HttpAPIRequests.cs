@@ -24,11 +24,19 @@ namespace EDNIFF.Common
                     var postdata = Newtonsoft.Json.JsonConvert.SerializeObject(postData);
 
 
-                    if (PublicVariables.authDetails != null)
+                    //if (PublicVariables.authDetails != null)
+                    //{
+                    //    if (!string.IsNullOrEmpty(PublicVariables.authDetails.access_token))
+                    //        httpClient.DefaultRequestHeaders.Add("Authorization", PublicVariables.authDetails.token_type + " " + PublicVariables.authDetails.access_token);
+                    //}
+
+                    if (Global.token_type != null && Global.access_token != null)
                     {
-                        if (!string.IsNullOrEmpty(PublicVariables.authDetails.access_token))
-                            httpClient.DefaultRequestHeaders.Add("Authorization", PublicVariables.authDetails.token_type + " " + PublicVariables.authDetails.access_token);
+                        httpClient.DefaultRequestHeaders.Add("Authorization", Global.token_type + " " + Global.access_token);
                     }
+
+                    PublicVariables.WebApiURL = "http://127.0.0.1:8080/api";
+
                     var httpContent = new StringContent(postdata, Encoding.UTF8, "application/json");
                     HttpResponseMessage HttpResponseMessage = await httpClient.PostAsync(PublicVariables.WebApiURL + "/" + relativeUrl, httpContent);
                     if (HttpResponseMessage.StatusCode == HttpStatusCode.OK || HttpResponseMessage.StatusCode == HttpStatusCode.Created || HttpResponseMessage.StatusCode == HttpStatusCode.NoContent)
