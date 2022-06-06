@@ -19,6 +19,8 @@ namespace EDNIFF.ViewModel
         public bool TestDone { get; set; }
         public bool TestSelected { get; set; }
         public int TestIndex { get; set; }
+        public string TestResult { get; set; }
+        
     }
 
     public class MainSaveMethodParam
