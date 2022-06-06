@@ -2,6 +2,7 @@
 using EDNIFF.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Management;
 using System.Net;
@@ -36,7 +37,10 @@ namespace EDNIFF.Controllers
 
             String MachineName = Environment.MachineName;
 
-            _SPHardwareDataType = MacInfo.Hardware;
+            Device objHardware = MacInfo.devices.Find(x => x.TestName == "CMOS");
+
+            _SPHardwareDataType.SerialNumber = objHardware.Serial;
+            //_SPHardwareDataType.SerialNumber = objHardware.Serial;
 
             return View(_SPHardwareDataType);
         }
