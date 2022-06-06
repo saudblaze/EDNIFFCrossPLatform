@@ -15,6 +15,15 @@ namespace EDNIFF.BusinessLogic
         {
             try
             {
+                vwSystemInfoDetail objParam = new vwSystemInfoDetail();
+
+                objParam.UnitId = 212297;
+                objParam.SerialNumber = "8C2H322";
+                objParam.InhouseSerialNo = "101601527962";
+                
+
+
+
                 var dict = new Dictionary<string, object>();
                 foreach (ReportProps prop in Enum.GetValues(typeof(ReportProps)))
                 {
@@ -80,26 +89,22 @@ namespace EDNIFF.BusinessLogic
 
 
 
-                //HttpAPIRequests httpRequest = new HttpAPIRequests();
-                //var response = await httpRequest.PostRequest<AuthDetails>(obj.Username.Trim(), obj.Password);
-                //if (response.hasError)
-                //{
-                    
-                //}
-                //else
-                //{
-                //}
-
-
-                return 1;
+                HttpAPIRequests httpRequest = new HttpAPIRequests();
+                var response = await httpRequest.PostRequest<long>("Macos/MainSaveMethod", objParam);
+                if (response.hasError)
+                {
+                    //MessageBox.Show(response.message, "Error");
+                    return 0;
+                }
+                else
+                {
+                    return 1;
+                }                
             }
             catch (Exception ex)
             {
-                return 0;
-            }
-
-
-            
+                return 101;
+            }            
         }
     }
 }
