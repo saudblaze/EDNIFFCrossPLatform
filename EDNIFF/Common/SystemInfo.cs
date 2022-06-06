@@ -1,6 +1,8 @@
 ﻿using EDNIFF.BusinessLogic;
 using EDNIFF.Models;
 using System.Collections.Generic;
+using System.Linq;
+using static EDNIFF.Helpers.ConstantData;
 
 namespace EDNIFF.Common
 {
@@ -142,5 +144,17 @@ namespace EDNIFF.Common
         }
         #endregion
 
+
+
+
+        public Device GetDevice(Categories Categories, DeviceNames DeviceName)
+        {
+            Device objReturn = new Device();
+            if (MacInfo.devices != null && MacInfo.devices.Count > 0)
+            {
+                objReturn = MacInfo.devices.Where(x => x.Category == Categories && x.DeviceName == DeviceName).FirstOrDefault();
+            }
+            return objReturn;
+        }
     }
 }

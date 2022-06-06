@@ -16,12 +16,11 @@ namespace EDNIFF.Controllers
     {
         
         SPHardwareDataType _SPHardwareDataType;
-        BaseHardwareInfo _BaseHardwareInfo;
-
+        CommonMethods _CommonMethods;
         public DashboardController()
         {
-            _SPHardwareDataType = new SPHardwareDataType();          
-
+            _SPHardwareDataType = new SPHardwareDataType();
+            _CommonMethods = new CommonMethods();
         }
 
         public IActionResult Index()
@@ -41,9 +40,9 @@ namespace EDNIFF.Controllers
 
             String MachineName = Environment.MachineName;
 
-            Device objProcessor = _BaseHardwareInfo.GetDevice(ConstantData.Categories.Processor , ConstantData.DeviceNames.Processor);
+            Device objProcessor = _CommonMethods.GetDevice(ConstantData.Categories.Processor , ConstantData.DeviceNames.Processor);
 
-            Device objMotherBoard = _BaseHardwareInfo.GetDevice(ConstantData.Categories.MotherBoard, ConstantData.DeviceNames.MotherBoard);  
+            Device objMotherBoard = _CommonMethods.GetDevice(ConstantData.Categories.MotherBoard, ConstantData.DeviceNames.MotherBoard);  
 
             _SPHardwareDataType.ProcessorName = objProcessor.Model;
             _SPHardwareDataType.Memory = objProcessor.Size;

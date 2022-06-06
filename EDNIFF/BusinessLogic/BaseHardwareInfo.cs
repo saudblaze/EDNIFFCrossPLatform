@@ -59,17 +59,7 @@ namespace EDNIFF.BusinessLogic
             string[] strValueArr = items.Split(':');
             string strValue = strValueArr[1].Trim();
             return strValue;
-        }
-
-        public Device GetDevice(Categories Categories, DeviceNames DeviceName)
-        {
-            Device objReturn = new Device();
-            if (MacInfo.devices != null && MacInfo.devices.Count > 0)
-            {
-                objReturn = MacInfo.devices.Where(x => x.Category == Categories && x.DeviceName == DeviceName).FirstOrDefault();
-            }
-            return objReturn;
-        }
+        }       
 
     }
 }
