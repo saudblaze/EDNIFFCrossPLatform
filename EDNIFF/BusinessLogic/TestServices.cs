@@ -1,6 +1,7 @@
 ﻿using EDNIFF.APIModels;
 using EDNIFF.Common;
 using EDNIFF.Helpers;
+using EDNIFF.Models;
 using EDNIFF.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -16,12 +17,24 @@ namespace EDNIFF.BusinessLogic
         {
             try
             {
+                CommonMethods objCommonMethods = new CommonMethods();
+
+                Device objProcessor = objCommonMethods.GetDevice(ConstantData.Categories.Processor, ConstantData.DeviceNames.Processor);
+
+                Device objMotherBoard = objCommonMethods.GetDevice(ConstantData.Categories.MotherBoard, ConstantData.DeviceNames.MotherBoard);
+
                 vwSystemInfoDetail objParam = new vwSystemInfoDetail();
 
                 objParam.UnitId = 212297;
                 objParam.SerialNumber = MacInfo.devices.Where(x => x.Category == ConstantData.Categories.Processor && x.DeviceName == ConstantData.DeviceNames.Processor).Select(x => x.Serial).FirstOrDefault(); 
                 objParam.InhouseSerialNo = "101601527962";
-                
+                objParam.COA = MacInfo.OSCOA;
+                objParam.Resolution = MacInfo.Resolution;
+                objParam.PartNumber = "";
+                objParam.Manufacturer = "Apple";
+                objParam.Model = objMotherBoard.Info1;
+                objParam.Processor = objProcessor.Info1;
+
 
 
 

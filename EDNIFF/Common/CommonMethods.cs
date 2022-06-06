@@ -18,6 +18,17 @@ namespace EDNIFF.Common
             }
             return objReturn;
         }
+
+        public string GetDeviceProperty(Categories Categories, DeviceNames DeviceName)
+        {
+            string strReturn = string.Empty;
+            Device objReturn = new Device();
+            if (MacInfo.devices != null && MacInfo.devices.Count > 0)
+            {
+                strReturn = MacInfo.devices.Where(x => x.Category == Categories && x.DeviceName == DeviceName).Select(x => x.TestResult).FirstOrDefault();
+            }
+            return strReturn;
+        }
     }
     
 }
