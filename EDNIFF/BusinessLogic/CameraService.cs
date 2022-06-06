@@ -10,7 +10,7 @@ namespace EDNIFF.BusinessLogic
 {
     class CameraService : BaseHardwareInfo
     {
-        public void GetBluetooth()
+        public void GetCamera()
         {
             try
             {

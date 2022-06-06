@@ -108,7 +108,7 @@ namespace EDNIFF.Common
         }
         private void LoadCamera()
         {
-            objCameraService.GetBluetooth();
+            objCameraService.GetCamera();
         }
         private void LoadSDCard()
         {

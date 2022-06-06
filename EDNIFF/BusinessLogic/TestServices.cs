@@ -43,6 +43,10 @@ namespace EDNIFF.BusinessLogic
 
                 objParam.Optical = obj._listOfTest.Where(x => x.TestName == "Optical").Select(x => x.TestResult).FirstOrDefault();
 
+                objParam.SpeakerTest = obj._listOfTest.Where(x => x.TestName == "Sound").Select(x => x.TestResult).FirstOrDefault();
+                objParam.Webcam = obj._listOfTest.Where(x => x.TestName == "Camera").Select(x => x.TestResult).FirstOrDefault();
+                objParam.LAN = obj._listOfTest.Where(x => x.TestName == "LanPort").Select(x => x.TestResult).FirstOrDefault();
+
 
 
 
