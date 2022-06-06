@@ -45,7 +45,13 @@ namespace EDNIFF.BusinessLogic
                         if (blnUntitled == true && items.ToString().Contains("Capacity"))
                         {
                             device.Size = GetPropertyValue(items.ToString());
-                            MacInfo.StorageSize = GetPropertyValue(items.ToString());
+
+                            string strProperty = GetPropertyValue(items.ToString());
+                            string[] strValueArr = strProperty.Split('(');
+                            string strValue = strValueArr[1].Trim();
+                            MacInfo.StorageSize = strValue;
+
+                            //MacInfo.StorageSize = GetPropertyValue(items.ToString());
                         }
                         if (blnUntitled == true && items.ToString().Contains("Volume UUID"))
                         {

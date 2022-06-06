@@ -22,6 +22,7 @@ namespace EDNIFF.BusinessLogic
                 Device objProcessor = objCommonMethods.GetDevice(ConstantData.Categories.Processor, ConstantData.DeviceNames.Processor);
 
                 Device objMotherBoard = objCommonMethods.GetDevice(ConstantData.Categories.MotherBoard, ConstantData.DeviceNames.MotherBoard);
+                Device objOptical = objCommonMethods.GetDevice(ConstantData.Categories.Other, ConstantData.DeviceNames.CDROMDrive);
 
                 vwSystemInfoDetail objParam = new vwSystemInfoDetail();
 
@@ -38,6 +39,9 @@ namespace EDNIFF.BusinessLogic
                 objParam.RAM = objProcessor.Size;
                 objParam.StorageSize = MacInfo.StorageSize;
                 objParam.StorageType = MacInfo.StorageType;
+
+
+                objParam.Optical = obj._listOfTest.Where(x => x.TestName == "Optical").Select(x => x.TestResult).FirstOrDefault();
 
 
 
