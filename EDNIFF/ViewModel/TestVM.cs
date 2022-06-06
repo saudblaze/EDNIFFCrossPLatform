@@ -23,7 +23,7 @@ namespace EDNIFF.ViewModel
 
     public class MainSaveMethodParam
     {
-        public List<TestList> TestList { get; set; }
+        public List<TestList> _listOfTest { get; set; }
         public bool IsTestDone { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
