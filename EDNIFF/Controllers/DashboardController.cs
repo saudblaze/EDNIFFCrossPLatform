@@ -50,6 +50,7 @@ namespace EDNIFF.Controllers
 
             _SPHardwareDataType.ModelIdentifier = objMotherBoard.Info1;
             _SPHardwareDataType.OSCOA = MacInfo.OSCOA;
+            _SPHardwareDataType.Resolution = MacInfo.Resolution;
 
             return View(_SPHardwareDataType);
         }

@@ -30,6 +30,8 @@ namespace EDNIFF.Common
 
         public static string OSCOA { get; set; }
 
+        public static string Resolution { get; set; }
+
         static MacInfo()
         {
             devices = new List<Device>();

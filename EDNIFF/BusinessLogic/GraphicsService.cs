@@ -91,6 +91,7 @@ namespace EDNIFF.BusinessLogic
                         if (iLCDCount == 1 && items.ToString().Contains("UI Looks like"))
                         {
                             SPDisplaysDataType.LCD1.UILooksLike = GetPropertyValue(items.ToString());
+                            MacInfo.Resolution = GetPropertyValue(items.ToString());
                         }
                         if (iLCDCount == 1 && items.ToString().Contains("Framebuffer Depth"))
                         {

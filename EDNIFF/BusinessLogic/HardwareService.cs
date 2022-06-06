@@ -147,7 +147,7 @@ namespace EDNIFF.BusinessLogic
                     }
                     if (items.ToString().Contains("ProductVersion"))
                     {
-                        strOSCOA = strOSCOA + GetPropertyValue(items.ToString());
+                        strOSCOA = strOSCOA + " " + GetPropertyValue(items.ToString());
                     }
                 }
                 MacInfo.OSCOA = strOSCOA;               

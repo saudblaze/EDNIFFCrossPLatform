@@ -25,5 +25,8 @@ namespace EDNIFF.Models
 
 
         public string OSCOA { get; set; }
+
+        public string Resolution { get; set; }
+        
     }
 }
