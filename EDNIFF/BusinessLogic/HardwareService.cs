@@ -98,7 +98,7 @@ namespace EDNIFF.BusinessLogic
                     }
                 }
 
-                //MacInfo.Hardware = sPHardwareDataType;
+                
                 MacInfo.devices.Add(device);
 
                 if (!string.IsNullOrEmpty(sPHardwareDataType.SystemFirmwareVersion) && !string.IsNullOrEmpty(sPHardwareDataType.SMCVersion) && !string.IsNullOrEmpty(sPHardwareDataType.ModelIdentifier))
