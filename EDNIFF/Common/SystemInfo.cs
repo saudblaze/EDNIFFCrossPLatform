@@ -68,6 +68,7 @@ namespace EDNIFF.Common
         private void LoadHardware()
         {
             objHardwareService.GetHardware();
+            objHardwareService.GetOSCOA();
         }
         private void LoadBiometric()
         {

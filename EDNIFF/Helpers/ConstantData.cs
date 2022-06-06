@@ -65,6 +65,8 @@ namespace EDNIFF.Helpers
             public const string Ethernet = "SPEthernetDataType";
 
             public const string DiskBurning = "SPDiskBurningDataType";
+
+            public const string OSCOA = "sw_vers";
         }
 
 

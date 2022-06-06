@@ -22,5 +22,8 @@ namespace EDNIFF.Models
         public string SerialNumber { get; set; }
         public string HardwareUUID { get; set; }
         public string ProvisioningUDID { get; set; }
+
+
+        public string OSCOA { get; set; }
     }
 }

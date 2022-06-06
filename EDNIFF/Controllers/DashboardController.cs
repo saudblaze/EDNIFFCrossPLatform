@@ -49,6 +49,7 @@ namespace EDNIFF.Controllers
             _SPHardwareDataType.SerialNumber = objProcessor.Serial;
 
             _SPHardwareDataType.ModelIdentifier = objMotherBoard.Info1;
+            _SPHardwareDataType.OSCOA = MacInfo.OSCOA;
 
             return View(_SPHardwareDataType);
         }

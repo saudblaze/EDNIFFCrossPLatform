@@ -15,7 +15,7 @@ namespace EDNIFF.BusinessLogic
 {
     abstract class BaseHardwareInfo
     {
-        public string GetInfoString(string InfoVariable)
+        public string GetInfoString(string InfoVariable,bool DirectQuery = true)
         {
             string strReturn = string.Empty;
 
@@ -33,7 +33,15 @@ namespace EDNIFF.BusinessLogic
             else if (System.OperatingSystem.IsMacOS())
             {
                 cmd.FileName = "sh";
-                cmd.Arguments = "-c \"system_profiler " + InfoVariable + " \"";
+                if (DirectQuery)
+                {
+                    cmd.Arguments = "-c \"system_profiler " + InfoVariable + " \"";
+                }
+                else
+                {
+                    cmd.Arguments = "-c \"" + InfoVariable + " \"";
+                }
+                
             }
             else
             {

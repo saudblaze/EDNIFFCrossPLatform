@@ -28,6 +28,8 @@ namespace EDNIFF.Common
 
         public static bool IsTestCompleted { get; set; }
 
+        public static string OSCOA { get; set; }
+
         static MacInfo()
         {
             devices = new List<Device>();

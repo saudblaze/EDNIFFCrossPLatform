@@ -127,6 +127,38 @@ namespace EDNIFF.BusinessLogic
             }
         }
 
+        public void GetOSCOA()
+        {
+            try
+            {
+                string strOSCOA = string.Empty;
+                string strtemp = GetInfoString(ConstantData.DevicePaths.OSCOA, false);
+                if (string.IsNullOrEmpty(strtemp))
+                {
+                    return;
+                }
+                string[] linesArr = strtemp.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+                SPHardwareDataType sPHardwareDataType = new SPHardwareDataType();
+                foreach (string items in linesArr)
+                {
+                    if (items.ToString().Contains("ProductName"))
+                    {
+                        strOSCOA = strOSCOA + GetPropertyValue(items.ToString());
+                    }
+                    if (items.ToString().Contains("ProductVersion"))
+                    {
+                        strOSCOA = strOSCOA + GetPropertyValue(items.ToString());
+                    }
+                }
+                MacInfo.OSCOA = strOSCOA;               
+
+            }
+            catch (System.ComponentModel.Win32Exception exception)
+            {
+
+            }
+        }
+
         public void GetDiscBurning()
         {
             try
