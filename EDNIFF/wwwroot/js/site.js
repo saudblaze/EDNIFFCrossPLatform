@@ -240,6 +240,7 @@ function MarkAsCompleted(objResultText) {
 
                 item.TestDone = true;
                 _currentTest.TestDone = true;
+                item.TestResult = objResultText;
                 //$("#lbl" + _currentTest.TestName).text(objResultText);
                 //$("#lblResult" + _currentTest.TestName).text(objResultText);
                 SetLable($("#lbl" + _currentTest.TestName), objResultText);
