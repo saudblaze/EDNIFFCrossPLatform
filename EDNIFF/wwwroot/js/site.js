@@ -7,6 +7,7 @@ var _objToBeSaved = {
 
     IsTestDone: false,
     _listOfTest: [],
+    Grade:'',
 }
 
 var _listOfTest;
@@ -194,11 +195,23 @@ function GetTestHtml() {
         }
     })
 }
-
+function Validation()
+{
+    debugger;
+    if (!_objToBeSaved.IsTestDone) {
+        alert("Please do the testing first .");
+        return false;
+    }
+    if (!_objToBeSaved.Grade) {
+        alert("Please select the grade .");
+        return false;
+    }
+}
 function MainSaveMethod() {
     debugger
-    if (_objToBeSaved && _objToBeSaved.IsTestDone) {
-        alert('you can save data now ');
+
+
+    if (Validation()) {
         //make ajax call to save data
         var mdata = _objToBeSaved
         $.ajax({
@@ -223,10 +236,7 @@ function MainSaveMethod() {
                 console.log('Failed ');
             }
         })
-
-        
-    }
-    var temp = _listOfTest;
+    }    
 }
 
 
@@ -397,7 +407,12 @@ var Port = {
 var Dashboard = {
 
     SetGrade() {
-        alert($("#ddlGrade").val());
+        //alert($("#ddlGrade").val());
+        var SelectedGrade = $("#ddlGrade").val();
+        if (SelectedGrade) {
+            _objToBeSaved.Grade = SelectedGrade;
+        }
+        
         var mdata = {
             Grade : $("#ddlGrade").val()
         };
