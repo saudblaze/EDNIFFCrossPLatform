@@ -396,9 +396,8 @@ var Port = {
 
 var Dashboard = {
 
-    SetGrade(obj) {
-        debugger
-        alert(obj);
+    SetGrade() {
+        alert($("#ddlGrade").val());
     },
 
 };
