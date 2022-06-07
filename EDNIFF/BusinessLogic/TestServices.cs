@@ -55,7 +55,7 @@ namespace EDNIFF.BusinessLogic
                 objParam.BatteryHealth = objBattery.Info1;
                 objParam.VideoCard = objDisplay.Model;
                 objParam.GRADE = MacInfo.Grade;
-
+                objParam.BoardTest = obj._listOfTest.Where(x => x.TestName == "CMOS").Select(x => x.TestResult).FirstOrDefault();
 
 
 
