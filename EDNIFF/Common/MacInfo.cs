@@ -40,6 +40,8 @@ namespace EDNIFF.Common
 
         public static string MACAddress { get; set; }
 
+        public static string Grade { get; set; }
+
         static MacInfo()
         {
             devices = new List<Device>();

@@ -398,6 +398,27 @@ var Dashboard = {
 
     SetGrade() {
         alert($("#ddlGrade").val());
+        var mdata = {
+            Grade : $("#ddlGrade").val()
+        };
+        $.ajax({
+            type: 'POST',
+            url: '/Tests/SetGradeMethod',
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
+            data: mdata,
+            //async:false,
+            success: function (result) {
+                if (result.isSuccess == 1) {
+                    
+                } else {
+                    alert('Failed to receive the Data');
+                }
+            },
+            error: function () {
+                alert('Failed to receive the Data');
+                console.log('Failed ');
+            }
+        })
     },
 
 };

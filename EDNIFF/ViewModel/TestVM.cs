@@ -23,6 +23,11 @@ namespace EDNIFF.ViewModel
         
     }
 
+    public class SetGrade
+    {
+        public string Grade { get; set; }
+    }
+
     public class MainSaveMethodParam
     {
         public List<TestList> _listOfTest { get; set; }

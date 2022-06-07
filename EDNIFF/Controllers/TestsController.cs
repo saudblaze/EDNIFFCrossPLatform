@@ -302,6 +302,21 @@ namespace EDNIFF.Controllers
             }
         }
 
+        public JsonResult SetGradeMethod(SetGrade obj)
+        {
+
+            if (obj != null)
+            {
+                MacInfo.Grade = obj.Grade;
+
+                return Json(new { IsSuccess = 1 });
+            }
+            else
+            {
+                return Json(new { IsSuccess = 0 });
+            }
+        }
+
         public async Task<JsonResult> MainSaveMethodAsync(MainSaveMethodParam obj)
         {
 
