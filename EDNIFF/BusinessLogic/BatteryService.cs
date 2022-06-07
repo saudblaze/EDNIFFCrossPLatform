@@ -86,6 +86,10 @@ namespace EDNIFF.BusinessLogic
                         }
                     }
 
+                    device.TestName = "Battery";
+                    device.TestLable = "Battery";
+                    device.TestResultLable = "Optional";
+                    device.TestDone = false;
                     MacInfo.devices.Add(device);
                 }
             }
