@@ -54,6 +54,7 @@ namespace EDNIFF.Controllers
             _DashboardVM.ModelIdentifier = objMotherBoard.Info1;
             _DashboardVM.OSCOA = MacInfo.OSCOA;
             _DashboardVM.Resolution = MacInfo.Resolution;
+            _DashboardVM.Grade = MacInfo.Grade;
 
             return View(_DashboardVM);
         }

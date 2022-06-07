@@ -205,11 +205,7 @@ function Validation()
     if (!_objToBeSaved.Grade) {
         alert("Please select the grade .");
         return false;
-    }
-    if (!_objToBeSaved.Grade) {
-        alert("Please select the grade .");
-        return false;
-    }
+    }    
 }
 function MainSaveMethod() {
     debugger
