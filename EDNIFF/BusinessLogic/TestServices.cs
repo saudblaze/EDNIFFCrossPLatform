@@ -46,6 +46,11 @@ namespace EDNIFF.BusinessLogic
                 objParam.SpeakerTest = obj._listOfTest.Where(x => x.TestName == "Sound").Select(x => x.TestResult).FirstOrDefault();
                 objParam.Webcam = obj._listOfTest.Where(x => x.TestName == "Camera").Select(x => x.TestResult).FirstOrDefault();
                 objParam.LAN = obj._listOfTest.Where(x => x.TestName == "LanPort").Select(x => x.TestResult).FirstOrDefault();
+                objParam.Wifi = obj._listOfTest.Where(x => x.TestName == "Wifi").Select(x => x.TestResult).FirstOrDefault();
+                objParam.Keyboard = obj._listOfTest.Where(x => x.TestName == "Keyboard").Select(x => x.TestResult).FirstOrDefault();
+                objParam.MACADD = MacInfo.MACAddress;
+                objParam.Touchpad = obj._listOfTest.Where(x => x.TestName == "Touchpad").Select(x => x.TestResult).FirstOrDefault();
+                
 
 
 

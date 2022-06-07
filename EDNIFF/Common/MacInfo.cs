@@ -38,6 +38,8 @@ namespace EDNIFF.Common
 
         public static string StorageType { get; set; }
 
+        public static string MACAddress { get; set; }
+
         static MacInfo()
         {
             devices = new List<Device>();

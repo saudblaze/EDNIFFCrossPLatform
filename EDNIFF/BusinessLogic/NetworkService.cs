@@ -43,6 +43,10 @@ namespace EDNIFF.BusinessLogic
                         {
                             device.Info1 = GetPropertyValue(items.ToString());
                         }
+                        if (items.ToString().Contains("MAC Address"))
+                        {
+                            MacInfo.MACAddress = GetPropertyValue(items.ToString());
+                        }
                     }                    
                     device.deviceStatus = DeviceStatus.NotTested;                
                 }
