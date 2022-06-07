@@ -20,9 +20,10 @@ namespace EDNIFF.BusinessLogic
                 CommonMethods objCommonMethods = new CommonMethods();
 
                 Device objProcessor = objCommonMethods.GetDevice(ConstantData.Categories.Processor, ConstantData.DeviceNames.Processor);
-
                 Device objMotherBoard = objCommonMethods.GetDevice(ConstantData.Categories.MotherBoard, ConstantData.DeviceNames.MotherBoard);
                 Device objOptical = objCommonMethods.GetDevice(ConstantData.Categories.Other, ConstantData.DeviceNames.CDROMDrive);
+                Device objBattery = objCommonMethods.GetDevice(ConstantData.Categories.Battery, ConstantData.DeviceNames.Battery);
+                Device objDisplay = objCommonMethods.GetDevice(ConstantData.Categories.Display, ConstantData.DeviceNames.Video);
 
                 vwSystemInfoDetail objParam = new vwSystemInfoDetail();
 
@@ -50,7 +51,11 @@ namespace EDNIFF.BusinessLogic
                 objParam.Keyboard = obj._listOfTest.Where(x => x.TestName == "Keyboard").Select(x => x.TestResult).FirstOrDefault();
                 objParam.MACADD = MacInfo.MACAddress;
                 objParam.Touchpad = obj._listOfTest.Where(x => x.TestName == "Touchpad").Select(x => x.TestResult).FirstOrDefault();
-                
+                objParam.BatteryTest = obj._listOfTest.Where(x => x.TestName == "Battery").Select(x => x.TestResult).FirstOrDefault();
+                objParam.BatteryHealth = objBattery.Info1;
+                objParam.VideoCard = objDisplay.Model;
+
+
 
 
 

@@ -48,7 +48,7 @@ namespace EDNIFF.BusinessLogic
 
                             string strProperty = GetPropertyValue(items.ToString());
                             string[] strValueArr = strProperty.Split('(');
-                            string strValue = strValueArr[1].Trim();
+                            string strValue = strValueArr[0].Trim();
                             MacInfo.StorageSize = strValue;
 
                             //MacInfo.StorageSize = GetPropertyValue(items.ToString());
