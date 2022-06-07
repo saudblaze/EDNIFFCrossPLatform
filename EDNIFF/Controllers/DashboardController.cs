@@ -2,6 +2,7 @@
 using EDNIFF.Common;
 using EDNIFF.Helpers;
 using EDNIFF.Models;
+using EDNIFF.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,12 @@ namespace EDNIFF.Controllers
         
         SPHardwareDataType _SPHardwareDataType;
         CommonMethods _CommonMethods;
+        DashboardVM _DashboardVM;
         public DashboardController()
         {
             _SPHardwareDataType = new SPHardwareDataType();
             _CommonMethods = new CommonMethods();
+            _DashboardVM = new DashboardVM();
         }
 
         public IActionResult Index()
@@ -42,17 +45,17 @@ namespace EDNIFF.Controllers
 
             Device objProcessor = _CommonMethods.GetDevice(ConstantData.Categories.Processor , ConstantData.DeviceNames.Processor);
 
-            Device objMotherBoard = _CommonMethods.GetDevice(ConstantData.Categories.MotherBoard, ConstantData.DeviceNames.MotherBoard);  
+            Device objMotherBoard = _CommonMethods.GetDevice(ConstantData.Categories.MotherBoard, ConstantData.DeviceNames.MotherBoard);
 
-            _SPHardwareDataType.ProcessorName = objProcessor.Model;
-            _SPHardwareDataType.Memory = objProcessor.Size;
-            _SPHardwareDataType.SerialNumber = objProcessor.Serial;
+            _DashboardVM.ProcessorName = objProcessor.Model;
+            _DashboardVM.Memory = objProcessor.Size;
+            _DashboardVM.SerialNumber = objProcessor.Serial;
 
-            _SPHardwareDataType.ModelIdentifier = objMotherBoard.Info1;
-            _SPHardwareDataType.OSCOA = MacInfo.OSCOA;
-            _SPHardwareDataType.Resolution = MacInfo.Resolution;
+            _DashboardVM.ModelIdentifier = objMotherBoard.Info1;
+            _DashboardVM.OSCOA = MacInfo.OSCOA;
+            _DashboardVM.Resolution = MacInfo.Resolution;
 
-            return View(_SPHardwareDataType);
+            return View(_DashboardVM);
         }
 
         public void GetSPHardwareDataType()

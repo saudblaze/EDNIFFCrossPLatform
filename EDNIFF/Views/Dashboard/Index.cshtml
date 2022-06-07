@@ -1,4 +1,4 @@
-﻿@model EDNIFF.Models.SPHardwareDataType
+﻿@model EDNIFF.ViewModel.DashboardVM
 
 
 <h3>Dashboard</h3>
@@ -87,9 +87,14 @@
 
             <div class="col-sm-4 form-group">
                 <label for="Grade">Grade</label>
-                <select id="Grade" class="form-control browser-default custom-select">
-                    <option value="Belgium">Belgium</option>
-                    <option value="Hebrew">Hebrew</option>
+                <select id="Grade" asp-for="Grade" class="form-control browser-default custom-select" onchange="SetGrade(this)">
+                    <option value="">Select</option>
+                    <option value="INITIAL-OK">INITIAL-OK</option>
+                    <option value="INITIAL-PROBLEM">INITIAL-PROBLEM</option>
+                    <option value="OK-A">OK-A</option>
+                    <option value="OK-B">OK-B</option>
+                    <option value="PROBLEM">PROBLEM</option>
+                    <option value="SILVER-OK">SILVER-OK</option>
                 </select>
             </div>
 
