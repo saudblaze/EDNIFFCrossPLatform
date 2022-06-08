@@ -4,7 +4,6 @@
 // Write your JavaScript code.
 
 
-debugger
 
 var _objToBeSaved = {
 
@@ -114,6 +113,7 @@ function NextClick() {
 
 
 function StartTest(obj, isAllSelected) {
+    debugger
     _listOfTest = obj;
     var isAnyTest = false;
     if (isAllSelected) {

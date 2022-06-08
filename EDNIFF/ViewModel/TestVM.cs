@@ -11,8 +11,8 @@ namespace EDNIFF.ViewModel
     }
     public class TestList
     {
-        public string Id { get; set; }
-        public string LableId { get; set; }
+        //public string Id { get; set; }
+        //public string LableId { get; set; }
         public string TestName { get; set; }
         public string TestLable { get; set; }
         public string TestResultLable { get; set; }
@@ -20,7 +20,8 @@ namespace EDNIFF.ViewModel
         public bool TestSelected { get; set; }
         public int TestIndex { get; set; }
         public string TestResult { get; set; }
-        
+        public string ClassName { get; set; }
+
     }
 
     public class SetGrade
