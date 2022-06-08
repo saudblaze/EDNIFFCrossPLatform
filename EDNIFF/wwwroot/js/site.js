@@ -82,11 +82,11 @@ $(".singleselect").change(function () {
 
 function NextClick() {
     //check if current test is marked as complete than only check for next test
-    if (_currentTest && _currentTest.TestDone == true) {
+    if (_currentTest && _currentTest.testDone == true) {
 
         var NextTest = false;
         $.each(_listOfTest, function (index, item) {
-            if (item.TestSelected == true && item.TestDone == false) {
+            if (item.testSelected == true && item.testDone == false) {
                 //bind this test in div
                 _currentTest = item;
                 NextTest = true;
@@ -99,13 +99,13 @@ function NextClick() {
             alert("test completed");
         } else {
             GetTestHtml();
-            $("#lbl" + _currentTest.TestName).text("Running");
-            $("#lblResult" + _currentTest.TestName).text("Not Tested");
+            $("#lbl" + _currentTest.testName).text("Running");
+            $("#lblResult" + _currentTest.testName).text("Not Tested");
         }
 
 
     } else {
-        alert("Please complete " + _currentTest.TestLable);
+        alert("Please complete " + _currentTest.testLable);
     }
 
 
