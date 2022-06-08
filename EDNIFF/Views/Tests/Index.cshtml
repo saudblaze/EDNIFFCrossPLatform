@@ -339,9 +339,9 @@
                 //var tt1 = JSON.parse(tt);
                 //var tt2 = JSON.Serialize(tt);
 
-                if (tt) {
+                if (tt && tt.TestList) {
                     debugger
-                    $.each(tt, function (index, item) {
+                    $.each(tt.TestList, function (index, item) {
                         debugger
                         item.TestSelected = $("#chk" + item.TestName).prop("checked");
                     });
