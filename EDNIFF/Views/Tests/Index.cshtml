@@ -333,8 +333,11 @@
 
 
             $('#btnStart').click(function () {
-                
+
                 var tt = @temp;
+
+                var tt1 = JSON.parse(tt);
+                var tt2 = JSON.Serialize(tt);
 
                 if (tt) {
                     debugger
