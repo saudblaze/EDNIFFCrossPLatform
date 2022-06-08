@@ -336,6 +336,15 @@
                 debugger
                 var tt = @temp;
 
+                if (tt) {
+                    debugger
+                    $.each(tt, function (index, item) {
+                        item.TestSelected = $("#chk" + item.TestName).prop("checked");
+                    });
+                    debugger
+
+                }
+
                 var objMain = [];
                 var objCMOS = {
                     //Id: 'chkCMOS',
