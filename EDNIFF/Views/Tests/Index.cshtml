@@ -333,12 +333,7 @@
 
 
             $('#btnStart').click(function () {
-                debugger
                 var tt = @temp;
-
-                //var tt1 = JSON.parse(tt);
-                //var tt2 = JSON.Serialize(tt);
-
                 if (tt && tt.testList) {
                     $.each(tt.testList, function (index, item) {
                         item.testSelected = $("#chk" + item.testName).prop("checked");
@@ -346,7 +341,7 @@
 
                     var isAllSelected = $("#AllSelect").prop("checked");
                     //StartTest(objMain, isAllSelected);
-                    StartTest(tt.testList, isAllSelected);
+                    StartTest(tt, isAllSelected);
                 }                
             });
         });

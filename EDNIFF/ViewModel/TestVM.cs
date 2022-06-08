@@ -7,7 +7,8 @@ namespace EDNIFF.ViewModel
 {
     public class TestVM
     {
-        public List<TestList> TestList { get; set; }        
+        public List<TestList> TestList { get; set; }
+        public string Grade { get; set; }
     }
     public class TestList
     {

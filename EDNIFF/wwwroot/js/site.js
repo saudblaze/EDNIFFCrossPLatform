@@ -114,7 +114,8 @@ function NextClick() {
 
 function StartTest(obj, isAllSelected) {
     debugger
-    _listOfTest = obj;
+    _listOfTest = obj.testList;
+    _objToBeSaved.Grade = obj.grade; // 
     var isAnyTest = false;
     if (isAllSelected) {
         //get cmos test
