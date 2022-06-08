@@ -317,6 +317,17 @@ namespace EDNIFF.Controllers
             }
         }
 
+        public JsonResult GetValidation()
+        {
+            return Json(new
+            {
+                Grade = MacInfo.Grade,
+                IsTestDone = MacInfo.IsTestCompleted,
+                isSuccess = 1
+            });
+
+        }
+
         public async Task<JsonResult> MainSaveMethodAsync(MainSaveMethodParam obj)
         {
 
@@ -1076,7 +1087,7 @@ namespace EDNIFF.Controllers
                             "</div>" +
                         "</td>" +
                         "</tr>" +
-                        
+
                         "<td>  </td>" +
                         "<td>" +
                             "<div class='form-check form-check-inline'>" +
@@ -1115,7 +1126,7 @@ namespace EDNIFF.Controllers
                                 "<div class='col' style='align-items: center; justify-content: center; display: flex;'>" +
                                     "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 120px; height:120px;' id='btnLeftTouch' onclick='Touchpad.SetPointerTouch()'>Right Button</button>" +
                                 "</div>" +
-                            "</div>" +                            
+                            "</div>" +
                         "</td>" +
                         "</tr>" +
 

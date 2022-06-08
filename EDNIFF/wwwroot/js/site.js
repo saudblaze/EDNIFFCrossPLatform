@@ -200,15 +200,37 @@ function GetTestHtml() {
 }
 function Validation()
 {
-    debugger;
-    if (!_objToBeSaved.IsTestDone) {
-        alert("Please do the testing first .");
-        return false;
-    }
-    if (!_objToBeSaved.Grade) {
-        alert("Please select the grade .");
-        return false;
-    }    
+    //cal api method so these detail can be confirmed
+    
+    $.ajax({
+        type: 'POST',
+        url: '/Tests/GetValidation',
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8', 
+        data: null,
+        //async:false,
+        success: function (result) {
+            if (result.isSuccess == 1) {
+                debugger;
+                if (!result.IsTestDone) {
+                    alert("Please do the testing first .");
+                    return false;
+                }
+                if (!result.Grade) {
+                    alert("Please select the grade .");
+                    return false;
+                }  
+            } else {
+                alert('Failed to receive the Data');
+            }
+        },
+        error: function () {
+            alert('Failed to receive the Data');
+            console.log('Failed ');
+        }
+    })
+
+
+      
 }
 function MainSaveMethod() {
     debugger
