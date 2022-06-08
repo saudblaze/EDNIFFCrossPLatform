@@ -340,13 +340,9 @@
                 //var tt2 = JSON.Serialize(tt);
 
                 if (tt && tt.testList) {
-                    debugger
                     $.each(tt.testList, function (index, item) {
-                        debugger
                         item.testSelected = $("#chk" + item.testName).prop("checked");
-                    });
-                    debugger
-
+                    });                    
                 }
 
                 var objMain = [];

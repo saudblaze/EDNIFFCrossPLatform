@@ -119,7 +119,7 @@ function StartTest(obj, isAllSelected) {
     if (isAllSelected) {
         //get cmos test
         var temp = _listOfTest.filter(obj => {
-            return obj.TestName === "CMOS"
+            return obj.testName === "CMOS"
         });
         if (temp && temp[0]) {
             _currentTest = temp[0];
@@ -130,11 +130,10 @@ function StartTest(obj, isAllSelected) {
         //check for first selected test and TestDone = false 
 
         $.each(_listOfTest, function (index, item) {
-            if (item.TestSelected == true && item.TestDone == false && isAnyTest == false) {
+            if (item.testSelected == true && item.testDone == false && isAnyTest == false) {
                 //call ajax and bind this test in div                 
                 _currentTest = item;
                 isAnyTest = true;
-
             }
         });
     }
@@ -145,8 +144,8 @@ function StartTest(obj, isAllSelected) {
         $("#btnNext").show();
         $("#btnMarkAsCompleted").show();
         $("#btnStart").prop("disabled", true);
-        $("#lbl" + _currentTest.TestName).text("Running");
-        $("#lblResult" + _currentTest.TestName).text("Not Tested");
+        $("#lbl" + _currentTest.testName).text("Running");
+        $("#lblResult" + _currentTest.testName).text("Not Tested");
     } else {
         alert("Please select atleast one task .");
     }
@@ -247,17 +246,17 @@ function MarkAsCompleted(objResultText) {
     if (_currentTest) {
         $.each(_listOfTest, function (index, item) {
 
-            if (_currentTest.TestName == item.TestName) {
+            if (_currentTest.testName == item.testName) {
                 //also make ajax call and marked static object with is testdone = true
                 MarkItAsCompleted();
 
-                item.TestDone = true;
-                _currentTest.TestDone = true;
-                item.TestResult = objResultText;
+                item.testDone = true;
+                _currentTest.testDone = true;
+                item.testResult = objResultText;
                 //$("#lbl" + _currentTest.TestName).text(objResultText);
                 //$("#lblResult" + _currentTest.TestName).text(objResultText);
-                SetLable($("#lbl" + _currentTest.TestName), objResultText);
-                SetLable($("#lblResult" + _currentTest.TestName), objResultText);
+                SetLable($("#lbl" + _currentTest.testName), objResultText);
+                SetLable($("#lblResult" + _currentTest.testName), objResultText);
             }
         });
     }

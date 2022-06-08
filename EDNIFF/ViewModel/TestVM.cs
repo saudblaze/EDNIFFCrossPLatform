@@ -13,14 +13,14 @@ namespace EDNIFF.ViewModel
     {
         //public string Id { get; set; }
         //public string LableId { get; set; }
-        public string TestName { get; set; }
-        public string TestLable { get; set; }
-        public string TestResultLable { get; set; }
-        public bool TestDone { get; set; }
-        public bool TestSelected { get; set; }
-        public int TestIndex { get; set; }
-        public string TestResult { get; set; }
-        public string ClassName { get; set; }
+        public string testName { get; set; }
+        public string testLable { get; set; }
+        public string testResultLable { get; set; }
+        public bool testDone { get; set; }
+        public bool testSelected { get; set; }
+        public int testIndex { get; set; }
+        public string testResult { get; set; }
+        public string className { get; set; }
 
     }
 

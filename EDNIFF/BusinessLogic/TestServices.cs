@@ -42,20 +42,20 @@ namespace EDNIFF.BusinessLogic
                 objParam.StorageType = MacInfo.StorageType;
 
 
-                objParam.Optical = obj._listOfTest.Where(x => x.TestName == "Optical").Select(x => x.TestResult).FirstOrDefault();
+                objParam.Optical = obj._listOfTest.Where(x => x.testName == "Optical").Select(x => x.testResult).FirstOrDefault();
 
-                objParam.SpeakerTest = obj._listOfTest.Where(x => x.TestName == "Sound").Select(x => x.TestResult).FirstOrDefault();
-                objParam.Webcam = obj._listOfTest.Where(x => x.TestName == "Camera").Select(x => x.TestResult).FirstOrDefault();
-                objParam.LAN = obj._listOfTest.Where(x => x.TestName == "LanPort").Select(x => x.TestResult).FirstOrDefault();
-                objParam.Wifi = obj._listOfTest.Where(x => x.TestName == "Wifi").Select(x => x.TestResult).FirstOrDefault();
-                objParam.Keyboard = obj._listOfTest.Where(x => x.TestName == "Keyboard").Select(x => x.TestResult).FirstOrDefault();
+                objParam.SpeakerTest = obj._listOfTest.Where(x => x.testName == "Sound").Select(x => x.testResult).FirstOrDefault();
+                objParam.Webcam = obj._listOfTest.Where(x => x.testName == "Camera").Select(x => x.testResult).FirstOrDefault();
+                objParam.LAN = obj._listOfTest.Where(x => x.testName == "LanPort").Select(x => x.testResult).FirstOrDefault();
+                objParam.Wifi = obj._listOfTest.Where(x => x.testName == "Wifi").Select(x => x.testResult).FirstOrDefault();
+                objParam.Keyboard = obj._listOfTest.Where(x => x.testName == "Keyboard").Select(x => x.testResult).FirstOrDefault();
                 objParam.MACADD = MacInfo.MACAddress;
-                objParam.Touchpad = obj._listOfTest.Where(x => x.TestName == "Touchpad").Select(x => x.TestResult).FirstOrDefault();
-                objParam.BatteryTest = obj._listOfTest.Where(x => x.TestName == "Battery").Select(x => x.TestResult).FirstOrDefault();
+                objParam.Touchpad = obj._listOfTest.Where(x => x.testName == "Touchpad").Select(x => x.testResult).FirstOrDefault();
+                objParam.BatteryTest = obj._listOfTest.Where(x => x.testName == "Battery").Select(x => x.testResult).FirstOrDefault();
                 objParam.BatteryHealth = objBattery.Info1;
                 objParam.VideoCard = objDisplay.Model;
                 objParam.GRADE = MacInfo.Grade;
-                objParam.BoardTest = obj._listOfTest.Where(x => x.TestName == "CMOS").Select(x => x.TestResult).FirstOrDefault();
+                objParam.BoardTest = obj._listOfTest.Where(x => x.testName == "CMOS").Select(x => x.testResult).FirstOrDefault();
 
 
 

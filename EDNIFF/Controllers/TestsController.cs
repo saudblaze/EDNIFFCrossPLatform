@@ -39,220 +39,220 @@ namespace EDNIFF.Controllers
 
             //Sound
             TestList objTestCMOS = new TestList();
-            objTestCMOS.TestName = "CMOS";
-            objTestCMOS.TestLable = "CMOS";
-            objTestCMOS.TestResultLable = "Optional";
-            objTestCMOS.TestDone = false;
-            objTestCMOS.TestSelected = false;
-            objTestCMOS.TestIndex = 0;
-            objTestCMOS.ClassName = "NotTestedText";
-            objTestCMOS.TestResult = "NotTested";
+            objTestCMOS.testName = "CMOS";
+            objTestCMOS.testLable = "CMOS";
+            objTestCMOS.testResultLable = "Optional";
+            objTestCMOS.testDone = false;
+            objTestCMOS.testSelected = false;
+            objTestCMOS.testIndex = 0;
+            objTestCMOS.className = "NotTestedText";
+            objTestCMOS.testResult = "NotTested";
             objTestList.TestList.Add(objTestCMOS);
 
 
             //Sound
             TestList objTestSound = new TestList();
-            objTestSound.TestName = "Sound";
-            objTestSound.TestLable = "Sound";
-            objTestSound.TestResultLable = "Optional";
-            objTestSound.TestDone = false;
-            objTestSound.TestSelected = false;
-            objTestSound.TestIndex = 1;
-            objTestSound.ClassName = "NotTestedText";
-            objTestSound.TestResult = "NotTested";
+            objTestSound.testName = "Sound";
+            objTestSound.testLable = "Sound";
+            objTestSound.testResultLable = "Optional";
+            objTestSound.testDone = false;
+            objTestSound.testSelected = false;
+            objTestSound.testIndex = 1;
+            objTestSound.className = "NotTestedText";
+            objTestSound.testResult = "NotTested";
             objTestList.TestList.Add(objTestSound);
 
             //USB
             TestList objTestUSB = new TestList();
-            objTestUSB.TestName = "USB";
-            objTestUSB.TestLable = "USB";
-            objTestUSB.TestResultLable = "Optional";
-            objTestUSB.TestDone = false;
-            objTestUSB.TestSelected = false;
-            objTestUSB.TestIndex = 2;
-            objTestUSB.ClassName = "NotTestedText";
-            objTestUSB.TestResult = "NotTested";
+            objTestUSB.testName = "USB";
+            objTestUSB.testLable = "USB";
+            objTestUSB.testResultLable = "Optional";
+            objTestUSB.testDone = false;
+            objTestUSB.testSelected = false;
+            objTestUSB.testIndex = 2;
+            objTestUSB.className = "NotTestedText";
+            objTestUSB.testResult = "NotTested";
             objTestList.TestList.Add(objTestUSB);
 
             //LanPort
             TestList objTestLanPort = new TestList();
-            objTestLanPort.TestName = "LanPort";
-            objTestLanPort.TestLable = "Lan Port";
-            objTestLanPort.TestResultLable = "Optional";
-            objTestLanPort.TestDone = false;
-            objTestLanPort.TestSelected = false;
-            objTestLanPort.TestIndex = 3;
-            objTestLanPort.ClassName = "NotTestedText";
-            objTestLanPort.TestResult = "NotTested";
+            objTestLanPort.testName = "LanPort";
+            objTestLanPort.testLable = "Lan Port";
+            objTestLanPort.testResultLable = "Optional";
+            objTestLanPort.testDone = false;
+            objTestLanPort.testSelected = false;
+            objTestLanPort.testIndex = 3;
+            objTestLanPort.className = "NotTestedText";
+            objTestLanPort.testResult = "NotTested";
             objTestList.TestList.Add(objTestLanPort);
 
             //Optical
             TestList objTestOptical = new TestList();
-            objTestOptical.TestName = "Optical";
-            objTestOptical.TestLable = "Optical";
-            objTestOptical.TestResultLable = "Optional";
-            objTestOptical.TestDone = false;
-            objTestOptical.TestSelected = false;
-            objTestOptical.TestIndex = 4;
-            objTestOptical.ClassName = "NotTestedText";
-            objTestOptical.TestResult = "NotTested";
+            objTestOptical.testName = "Optical";
+            objTestOptical.testLable = "Optical";
+            objTestOptical.testResultLable = "Optional";
+            objTestOptical.testDone = false;
+            objTestOptical.testSelected = false;
+            objTestOptical.testIndex = 4;
+            objTestOptical.className = "NotTestedText";
+            objTestOptical.testResult = "NotTested";
             objTestList.TestList.Add(objTestOptical);
 
             //LCD
             TestList objTestLCD = new TestList();
-            objTestLCD.TestName = "LCD";
-            objTestLCD.TestLable = "LCD";
-            objTestLCD.TestResultLable = "Optional";
-            objTestLCD.TestDone = false;
-            objTestLCD.TestSelected = false;
-            objTestLCD.TestIndex = 5;
-            objTestLCD.ClassName = "NotTestedText";
-            objTestLCD.TestResult = "NotTested";
+            objTestLCD.testName = "LCD";
+            objTestLCD.testLable = "LCD";
+            objTestLCD.testResultLable = "Optional";
+            objTestLCD.testDone = false;
+            objTestLCD.testSelected = false;
+            objTestLCD.testIndex = 5;
+            objTestLCD.className = "NotTestedText";
+            objTestLCD.testResult = "NotTested";
             objTestList.TestList.Add(objTestLCD);
 
             //Keyboard
             TestList objTestKeyboard = new TestList();
-            objTestKeyboard.TestName = "Keyboard";
-            objTestKeyboard.TestLable = "Keyboard";
-            objTestKeyboard.TestResultLable = "Optional";
-            objTestKeyboard.TestDone = false;
-            objTestKeyboard.TestSelected = false;
-            objTestKeyboard.TestIndex = 6;
-            objTestKeyboard.ClassName = "NotTestedText";
-            objTestKeyboard.TestResult = "NotTested";
+            objTestKeyboard.testName = "Keyboard";
+            objTestKeyboard.testLable = "Keyboard";
+            objTestKeyboard.testResultLable = "Optional";
+            objTestKeyboard.testDone = false;
+            objTestKeyboard.testSelected = false;
+            objTestKeyboard.testIndex = 6;
+            objTestKeyboard.className = "NotTestedText";
+            objTestKeyboard.testResult = "NotTested";
             objTestList.TestList.Add(objTestKeyboard);
 
             //Touchpad
             TestList objTestTouchpad = new TestList();
-            objTestTouchpad.TestName = "Touchpad";
-            objTestTouchpad.TestLable = "Touchpad";
-            objTestTouchpad.TestResultLable = "Optional";
-            objTestTouchpad.TestDone = false;
-            objTestTouchpad.TestSelected = false;
-            objTestTouchpad.TestIndex = 7;
-            objTestTouchpad.ClassName = "NotTestedText";
-            objTestTouchpad.TestResult = "NotTested";
+            objTestTouchpad.testName = "Touchpad";
+            objTestTouchpad.testLable = "Touchpad";
+            objTestTouchpad.testResultLable = "Optional";
+            objTestTouchpad.testDone = false;
+            objTestTouchpad.testSelected = false;
+            objTestTouchpad.testIndex = 7;
+            objTestTouchpad.className = "NotTestedText";
+            objTestTouchpad.testResult = "NotTested";
             objTestList.TestList.Add(objTestTouchpad);
 
             //Wifi
             TestList objTestWifi = new TestList();
-            objTestWifi.TestName = "Wifi";
-            objTestWifi.TestLable = "Wifi / Blue";
-            objTestWifi.TestResultLable = "Optional";
-            objTestWifi.TestDone = false;
-            objTestWifi.TestSelected = false;
-            objTestWifi.TestIndex = 8;
-            objTestWifi.ClassName = "NotTestedText";
-            objTestWifi.TestResult = "NotTested";
+            objTestWifi.testName = "Wifi";
+            objTestWifi.testLable = "Wifi / Blue";
+            objTestWifi.testResultLable = "Optional";
+            objTestWifi.testDone = false;
+            objTestWifi.testSelected = false;
+            objTestWifi.testIndex = 8;
+            objTestWifi.className = "NotTestedText";
+            objTestWifi.testResult = "NotTested";
             objTestList.TestList.Add(objTestWifi);
 
             //Battery
             TestList objTestBattery = new TestList();
-            objTestBattery.TestName = "Battery";
-            objTestBattery.TestLable = "Battery";
-            objTestBattery.TestResultLable = "Optional";
-            objTestBattery.TestDone = false;
-            objTestBattery.TestSelected = false;
-            objTestBattery.TestIndex = 9;
-            objTestBattery.ClassName = "NotTestedText";
-            objTestBattery.TestResult = "NotTested";
+            objTestBattery.testName = "Battery";
+            objTestBattery.testLable = "Battery";
+            objTestBattery.testResultLable = "Optional";
+            objTestBattery.testDone = false;
+            objTestBattery.testSelected = false;
+            objTestBattery.testIndex = 9;
+            objTestBattery.className = "NotTestedText";
+            objTestBattery.testResult = "NotTested";
             objTestList.TestList.Add(objTestBattery);
 
             //Camera
             TestList objTestCamera = new TestList();
-            objTestCamera.TestName = "Camera";
-            objTestCamera.TestLable = "Camera";
-            objTestCamera.TestResultLable = "Optional";
-            objTestCamera.TestDone = false;
-            objTestCamera.TestSelected = false;
-            objTestCamera.TestIndex = 10;
-            objTestCamera.ClassName = "NotTestedText";
-            objTestCamera.TestResult = "NotTested";
+            objTestCamera.testName = "Camera";
+            objTestCamera.testLable = "Camera";
+            objTestCamera.testResultLable = "Optional";
+            objTestCamera.testDone = false;
+            objTestCamera.testSelected = false;
+            objTestCamera.testIndex = 10;
+            objTestCamera.className = "NotTestedText";
+            objTestCamera.testResult = "NotTested";
             objTestList.TestList.Add(objTestCamera);
 
             //TouchScreen
             TestList objTestTouchScreen = new TestList();
-            objTestTouchScreen.TestName = "TouchScreen";
-            objTestTouchScreen.TestLable = "TouchScreen";
-            objTestTouchScreen.TestResultLable = "Optional";
-            objTestTouchScreen.TestDone = false;
-            objTestTouchScreen.TestSelected = false;
-            objTestTouchScreen.TestIndex = 11;
-            objTestTouchScreen.ClassName = "NotTestedText";
-            objTestTouchScreen.TestResult = "NotTested";
+            objTestTouchScreen.testName = "TouchScreen";
+            objTestTouchScreen.testLable = "TouchScreen";
+            objTestTouchScreen.testResultLable = "Optional";
+            objTestTouchScreen.testDone = false;
+            objTestTouchScreen.testSelected = false;
+            objTestTouchScreen.testIndex = 11;
+            objTestTouchScreen.className = "NotTestedText";
+            objTestTouchScreen.testResult = "NotTested";
             objTestList.TestList.Add(objTestTouchScreen);
 
 
             //Microphone
             TestList objTestMicrophone = new TestList();
-            objTestMicrophone.TestName = "Microphone";
-            objTestMicrophone.TestLable = "Microphone";
-            objTestMicrophone.TestResultLable = "Optional";
-            objTestMicrophone.TestDone = false;
-            objTestMicrophone.TestSelected = false;
-            objTestMicrophone.TestIndex = 12;
-            objTestMicrophone.ClassName = "NotTestedText";
-            objTestMicrophone.TestResult = "NotTested";
+            objTestMicrophone.testName = "Microphone";
+            objTestMicrophone.testLable = "Microphone";
+            objTestMicrophone.testResultLable = "Optional";
+            objTestMicrophone.testDone = false;
+            objTestMicrophone.testSelected = false;
+            objTestMicrophone.testIndex = 12;
+            objTestMicrophone.className = "NotTestedText";
+            objTestMicrophone.testResult = "NotTested";
             objTestList.TestList.Add(objTestMicrophone);
 
             //SDCard
             TestList objTestSDCard = new TestList();
-            objTestSDCard.TestName = "SDCard";
-            objTestSDCard.TestLable = "SD Card Test";
-            objTestSDCard.TestResultLable = "Optional";
-            objTestSDCard.TestDone = false;
-            objTestSDCard.TestSelected = false;
-            objTestSDCard.TestIndex = 13;
-            objTestSDCard.ClassName = "NotTestedText";
-            objTestSDCard.TestResult = "NotTested";
+            objTestSDCard.testName = "SDCard";
+            objTestSDCard.testLable = "SD Card Test";
+            objTestSDCard.testResultLable = "Optional";
+            objTestSDCard.testDone = false;
+            objTestSDCard.testSelected = false;
+            objTestSDCard.testIndex = 13;
+            objTestSDCard.className = "NotTestedText";
+            objTestSDCard.testResult = "NotTested";
             objTestList.TestList.Add(objTestSDCard);
 
             //Biometric
             TestList objTestBiometric = new TestList();
-            objTestBiometric.TestName = "Biometric";
-            objTestBiometric.TestLable = "Biometric";
-            objTestBiometric.TestResultLable = "Optional";
-            objTestBiometric.TestDone = false;
-            objTestBiometric.TestSelected = false;
-            objTestBiometric.TestIndex = 14;
-            objTestBiometric.ClassName = "NotTestedText";
-            objTestBiometric.TestResult = "NotTested";
+            objTestBiometric.testName = "Biometric";
+            objTestBiometric.testLable = "Biometric";
+            objTestBiometric.testResultLable = "Optional";
+            objTestBiometric.testDone = false;
+            objTestBiometric.testSelected = false;
+            objTestBiometric.testIndex = 14;
+            objTestBiometric.className = "NotTestedText";
+            objTestBiometric.testResult = "NotTested";
             objTestList.TestList.Add(objTestBiometric);
 
             //SmartCard
             TestList objTestSmartCard = new TestList();
-            objTestSmartCard.TestName = "SmartCard";
-            objTestSmartCard.TestLable = "Smart Card";
-            objTestSmartCard.TestResultLable = "Optional";
-            objTestSmartCard.TestDone = false;
-            objTestSmartCard.TestSelected = false;
-            objTestSmartCard.TestIndex = 15;
-            objTestSmartCard.ClassName = "NotTestedText";
-            objTestSmartCard.TestResult = "NotTested";
+            objTestSmartCard.testName = "SmartCard";
+            objTestSmartCard.testLable = "Smart Card";
+            objTestSmartCard.testResultLable = "Optional";
+            objTestSmartCard.testDone = false;
+            objTestSmartCard.testSelected = false;
+            objTestSmartCard.testIndex = 15;
+            objTestSmartCard.className = "NotTestedText";
+            objTestSmartCard.testResult = "NotTested";
             objTestList.TestList.Add(objTestSmartCard);
 
             //Display
             TestList objTestDisplay = new TestList();
-            objTestDisplay.TestName = "Display";
-            objTestDisplay.TestLable = "Display";
-            objTestDisplay.TestResultLable = "Optional";
-            objTestDisplay.TestDone = false;
-            objTestDisplay.TestSelected = false;
-            objTestDisplay.TestIndex = 16;
-            objTestDisplay.ClassName = "NotTestedText";
-            objTestDisplay.TestResult = "NotTested";
+            objTestDisplay.testName = "Display";
+            objTestDisplay.testLable = "Display";
+            objTestDisplay.testResultLable = "Optional";
+            objTestDisplay.testDone = false;
+            objTestDisplay.testSelected = false;
+            objTestDisplay.testIndex = 16;
+            objTestDisplay.className = "NotTestedText";
+            objTestDisplay.testResult = "NotTested";
             objTestList.TestList.Add(objTestDisplay);
 
             //PortTest
             TestList objTestPortTest = new TestList();
-            objTestPortTest.TestName = "PortTest";
-            objTestPortTest.TestLable = "Port Test";
-            objTestPortTest.TestResultLable = "Optional";
-            objTestPortTest.TestDone = false;
-            objTestPortTest.TestSelected = false;
-            objTestPortTest.TestIndex = 17;
-            objTestPortTest.ClassName = "NotTestedText";
-            objTestPortTest.TestResult = "NotTested";
+            objTestPortTest.testName = "PortTest";
+            objTestPortTest.testLable = "Port Test";
+            objTestPortTest.testResultLable = "Optional";
+            objTestPortTest.testDone = false;
+            objTestPortTest.testSelected = false;
+            objTestPortTest.testIndex = 17;
+            objTestPortTest.className = "NotTestedText";
+            objTestPortTest.testResult = "NotTested";
             objTestList.TestList.Add(objTestPortTest);
 
             return objTestList;
@@ -269,7 +269,7 @@ namespace EDNIFF.Controllers
 
             if (obj != null)
             {
-                string strResult = getTestView(obj.TestName);
+                string strResult = getTestView(obj.testName);
                 return Json(new { data = strResult, IsSuccess = 1 });
             }
             else
@@ -288,7 +288,7 @@ namespace EDNIFF.Controllers
 
                 foreach (Device item in MacInfo.devices)
                 {
-                    if (item.TestName == obj.TestName)
+                    if (item.TestName == obj.testName)
                     {
                         item.TestDone = true;
                     }
