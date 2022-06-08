@@ -333,12 +333,13 @@
 
 
             $('#btnStart').click(function () {
-                debugger
+                
                 var tt = @temp;
 
                 if (tt) {
                     debugger
                     $.each(tt, function (index, item) {
+                        debugger
                         item.TestSelected = $("#chk" + item.TestName).prop("checked");
                     });
                     debugger
