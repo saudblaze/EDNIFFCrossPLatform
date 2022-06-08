@@ -42,6 +42,8 @@ namespace EDNIFF.Common
 
         public static string Grade { get; set; }
 
+        public static List<TestList> TestList { get; set; }
+
         static MacInfo()
         {
             devices = new List<Device>();

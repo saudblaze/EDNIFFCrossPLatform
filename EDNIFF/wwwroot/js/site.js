@@ -96,6 +96,37 @@ function NextClick() {
         if (!NextTest) {
             _objToBeSaved._listOfTest = _listOfTest;
             _objToBeSaved.IsTestDone = true;
+            //here need to update MacInfo.IsTestCompleted
+            var mobject = {
+                IsTestDone: _objToBeSaved.IsTestDone,
+                TestList: _objToBeSaved._listOfTest,
+            }
+            $.ajax({
+                type: 'POST',
+                url: '/Tests/SetTestDone',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: mobject,
+                //async:false,
+                success: function (result) {
+                    if (result.isSuccess == 1) {
+                        debugger;
+                        if (!result.IsTestDone) {
+                            alert("Please do the testing first .");
+                            return false;
+                        }
+                        if (!result.Grade) {
+                            alert("Please select the grade .");
+                            return false;
+                        }
+                    } else {
+                        alert('Failed to receive the Data');
+                    }
+                },
+                error: function () {
+                    alert('Failed to receive the Data');
+                    console.log('Failed ');
+                }
+            })
             alert("test completed");
         } else {
             GetTestHtml();

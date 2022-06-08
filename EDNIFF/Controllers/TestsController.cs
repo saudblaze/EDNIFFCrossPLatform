@@ -317,6 +317,22 @@ namespace EDNIFF.Controllers
             }
         }
 
+        public JsonResult SetTestDone(SetTestDone obj)
+        {
+
+            if (obj != null)
+            {
+                MacInfo.IsTestCompleted = obj.IsTestCompleted;
+                MacInfo.TestList = obj.TestList;
+
+                return Json(new { IsSuccess = 1 });
+            }
+            else
+            {
+                return Json(new { IsSuccess = 0 });
+            }
+        }
+
         public JsonResult GetValidation()
         {
             return Json(new

@@ -30,6 +30,12 @@ namespace EDNIFF.ViewModel
         public string Grade { get; set; }
     }
 
+    public class SetTestDone
+    {
+        public bool IsTestCompleted { get; set; }
+        public List<TestList> TestList { get; set; }
+    }
+
     public class MainSaveMethodParam
     {
         public List<TestList> _listOfTest { get; set; }
