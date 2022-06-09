@@ -33,10 +33,10 @@ namespace EDNIFF.Controllers
             TestVM objTestList = new TestVM();
             objTestList.TestList = MacInfo.TestList;
             objTestList.Grade = MacInfo.Grade;
-            
+
             //condition for each test whether it is present or not
 
-            return objTestList
+            return objTestList;
 
 
 
