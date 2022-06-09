@@ -148,7 +148,9 @@ namespace EDNIFF.Common
 
         private void SetTestList()
         {
-            TestVM objTestList = new TestVM();
+            //TestVM objTestList = new TestVM();
+
+            List<TestList> objTestList = new List<TestList>();
 
             //Sound
             TestList objTestCMOS = new TestList();
@@ -160,7 +162,7 @@ namespace EDNIFF.Common
             objTestCMOS.testIndex = 0;
             objTestCMOS.className = "NotTestedText";
             objTestCMOS.testResult = "NotTested";
-            objTestList.TestList.Add(objTestCMOS);
+            objTestList.Add(objTestCMOS);
 
 
             //Sound
@@ -173,7 +175,7 @@ namespace EDNIFF.Common
             objTestSound.testIndex = 1;
             objTestSound.className = "NotTestedText";
             objTestSound.testResult = "NotTested";
-            objTestList.TestList.Add(objTestSound);
+            objTestList.Add(objTestSound);
 
             //USB
             TestList objTestUSB = new TestList();
@@ -185,7 +187,7 @@ namespace EDNIFF.Common
             objTestUSB.testIndex = 2;
             objTestUSB.className = "NotTestedText";
             objTestUSB.testResult = "NotTested";
-            objTestList.TestList.Add(objTestUSB);
+            objTestList.Add(objTestUSB);
 
             //LanPort
             TestList objTestLanPort = new TestList();
@@ -197,7 +199,7 @@ namespace EDNIFF.Common
             objTestLanPort.testIndex = 3;
             objTestLanPort.className = "NotTestedText";
             objTestLanPort.testResult = "NotTested";
-            objTestList.TestList.Add(objTestLanPort);
+            objTestList.Add(objTestLanPort);
 
             //Optical
             TestList objTestOptical = new TestList();
@@ -209,7 +211,7 @@ namespace EDNIFF.Common
             objTestOptical.testIndex = 4;
             objTestOptical.className = "NotTestedText";
             objTestOptical.testResult = "NotTested";
-            objTestList.TestList.Add(objTestOptical);
+            objTestList.Add(objTestOptical);
 
             //LCD
             TestList objTestLCD = new TestList();
@@ -221,7 +223,7 @@ namespace EDNIFF.Common
             objTestLCD.testIndex = 5;
             objTestLCD.className = "NotTestedText";
             objTestLCD.testResult = "NotTested";
-            objTestList.TestList.Add(objTestLCD);
+            objTestList.Add(objTestLCD);
 
             //Keyboard
             TestList objTestKeyboard = new TestList();
@@ -233,7 +235,7 @@ namespace EDNIFF.Common
             objTestKeyboard.testIndex = 6;
             objTestKeyboard.className = "NotTestedText";
             objTestKeyboard.testResult = "NotTested";
-            objTestList.TestList.Add(objTestKeyboard);
+            objTestList.Add(objTestKeyboard);
 
             //Touchpad
             TestList objTestTouchpad = new TestList();
@@ -245,7 +247,7 @@ namespace EDNIFF.Common
             objTestTouchpad.testIndex = 7;
             objTestTouchpad.className = "NotTestedText";
             objTestTouchpad.testResult = "NotTested";
-            objTestList.TestList.Add(objTestTouchpad);
+            objTestList.Add(objTestTouchpad);
 
             //Wifi
             TestList objTestWifi = new TestList();
@@ -257,7 +259,7 @@ namespace EDNIFF.Common
             objTestWifi.testIndex = 8;
             objTestWifi.className = "NotTestedText";
             objTestWifi.testResult = "NotTested";
-            objTestList.TestList.Add(objTestWifi);
+            objTestList.Add(objTestWifi);
 
             //Battery
             TestList objTestBattery = new TestList();
@@ -269,7 +271,7 @@ namespace EDNIFF.Common
             objTestBattery.testIndex = 9;
             objTestBattery.className = "NotTestedText";
             objTestBattery.testResult = "NotTested";
-            objTestList.TestList.Add(objTestBattery);
+            objTestList.Add(objTestBattery);
 
             //Camera
             TestList objTestCamera = new TestList();
@@ -281,7 +283,7 @@ namespace EDNIFF.Common
             objTestCamera.testIndex = 10;
             objTestCamera.className = "NotTestedText";
             objTestCamera.testResult = "NotTested";
-            objTestList.TestList.Add(objTestCamera);
+            objTestList.Add(objTestCamera);
 
             //TouchScreen
             TestList objTestTouchScreen = new TestList();
@@ -293,7 +295,7 @@ namespace EDNIFF.Common
             objTestTouchScreen.testIndex = 11;
             objTestTouchScreen.className = "NotTestedText";
             objTestTouchScreen.testResult = "NotTested";
-            objTestList.TestList.Add(objTestTouchScreen);
+            objTestList.Add(objTestTouchScreen);
 
 
             //Microphone
@@ -306,7 +308,7 @@ namespace EDNIFF.Common
             objTestMicrophone.testIndex = 12;
             objTestMicrophone.className = "NotTestedText";
             objTestMicrophone.testResult = "NotTested";
-            objTestList.TestList.Add(objTestMicrophone);
+            objTestList.Add(objTestMicrophone);
 
             //SDCard
             TestList objTestSDCard = new TestList();
@@ -318,7 +320,7 @@ namespace EDNIFF.Common
             objTestSDCard.testIndex = 13;
             objTestSDCard.className = "NotTestedText";
             objTestSDCard.testResult = "NotTested";
-            objTestList.TestList.Add(objTestSDCard);
+            objTestList.Add(objTestSDCard);
 
             //Biometric
             TestList objTestBiometric = new TestList();
@@ -330,7 +332,7 @@ namespace EDNIFF.Common
             objTestBiometric.testIndex = 14;
             objTestBiometric.className = "NotTestedText";
             objTestBiometric.testResult = "NotTested";
-            objTestList.TestList.Add(objTestBiometric);
+            objTestList.Add(objTestBiometric);
 
             //SmartCard
             TestList objTestSmartCard = new TestList();
@@ -342,7 +344,7 @@ namespace EDNIFF.Common
             objTestSmartCard.testIndex = 15;
             objTestSmartCard.className = "NotTestedText";
             objTestSmartCard.testResult = "NotTested";
-            objTestList.TestList.Add(objTestSmartCard);
+            objTestList.Add(objTestSmartCard);
 
             //Display
             TestList objTestDisplay = new TestList();
@@ -354,7 +356,7 @@ namespace EDNIFF.Common
             objTestDisplay.testIndex = 16;
             objTestDisplay.className = "NotTestedText";
             objTestDisplay.testResult = "NotTested";
-            objTestList.TestList.Add(objTestDisplay);
+            objTestList.Add(objTestDisplay);
 
             //PortTest
             TestList objTestPortTest = new TestList();
@@ -366,7 +368,10 @@ namespace EDNIFF.Common
             objTestPortTest.testIndex = 17;
             objTestPortTest.className = "NotTestedText";
             objTestPortTest.testResult = "NotTested";
-            objTestList.TestList.Add(objTestPortTest);
+            objTestList.Add(objTestPortTest);
+
+
+            MacInfo.TestList = objTestList;
         }
 
         #endregion

@@ -37,10 +37,6 @@ namespace EDNIFF.Controllers
             //condition for each test whether it is present or not
 
             return objTestList;
-
-
-
-
         }
 
         public ActionResult DisplaySearchResults()
