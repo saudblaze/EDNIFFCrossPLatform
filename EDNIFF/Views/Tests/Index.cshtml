@@ -325,6 +325,20 @@
         $(function () {
             //debugger
 
+            //bind data from MACKINFO
+            var tt = @temp;
+            if (tt && tt.testList) {
+                $.each(tt.testList, function (index, item) {
+                    debugger
+                    if (item.testSelected) {
+                        $("#chk" + item.testName).prop("checked") = item.testSelected;
+                        $("#lbl" + item.testName).prop("checked") = item.testResult;
+                        $("#lbl" + item.testName).css(item.className);
+                        
+                    }
+                    
+                });                
+            }
 
             $("#btnNext").hide();
             $("#btnMarkAsCompleted").hide();
@@ -337,12 +351,12 @@
                 if (tt && tt.testList) {
                     $.each(tt.testList, function (index, item) {
                         item.testSelected = $("#chk" + item.testName).prop("checked");
-                    });             
+                    });
 
                     var isAllSelected = $("#AllSelect").prop("checked");
                     //StartTest(objMain, isAllSelected);
                     StartTest(tt, isAllSelected);
-                }                
+                }
             });
         });
     </script>

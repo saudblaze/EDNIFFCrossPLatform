@@ -44,6 +44,8 @@ namespace EDNIFF.Common
 
         public static List<TestList> TestList { get; set; }
 
+        public static bool IsAllTestSelected { get; set; }
+
         static MacInfo()
         {
             devices = new List<Device>();
