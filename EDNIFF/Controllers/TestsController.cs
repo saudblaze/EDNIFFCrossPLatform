@@ -114,6 +114,22 @@ namespace EDNIFF.Controllers
             }
         }
 
+        public JsonResult SetIsSelectedTestList(List<TestList> obj)
+        {
+
+            if (obj != null)
+            {
+                //MacInfo.IsTestCompleted = obj.IsTestCompleted;
+                MacInfo.TestList = obj;
+
+                return Json(new { IsSuccess = 1 });
+            }
+            else
+            {
+                return Json(new { IsSuccess = 0 });
+            }
+        }
+
         public JsonResult GetValidation()
         {
             return Json(new

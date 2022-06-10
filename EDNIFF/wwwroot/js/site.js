@@ -147,6 +147,32 @@ function StartTest(obj, isAllSelected) {
     debugger
     _listOfTest = obj.testList;
     _objToBeSaved.Grade = obj.grade; // 
+
+    //set MACKINFO TestList
+    var mdata = obj.testList
+    $.ajax({
+        type: 'POST',
+        url: '/Tests/SetIsSelectedTestList',
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
+        data: mdata,
+        //async:false,
+        success: function (result) {
+            if (result.isSuccess == 1) {
+                ////alert('Successfully received Data ');
+                //var strHtml = result.data;
+                //$("#divTest").html(strHtml)
+            } else {
+                alert('Failed to receive the Data');
+            }
+        },
+        error: function () {
+            alert('Failed to receive the Data');
+            console.log('Failed ');
+        }
+    })
+
+
+
     var isAnyTest = false;
     if (isAllSelected) {
         //get cmos test
