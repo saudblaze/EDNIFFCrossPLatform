@@ -149,7 +149,9 @@ function StartTest(obj, isAllSelected) {
     _objToBeSaved.Grade = obj.grade; // 
 
     //set MACKINFO TestList
-    var mdata = obj.testList
+    var mdata = {
+        obj: obj.testList
+    }
     $.ajax({
         type: 'POST',
         url: '/Tests/SetIsSelectedTestList',
