@@ -104,7 +104,7 @@ namespace EDNIFF.Controllers
             if (obj != null)
             {
                 MacInfo.IsTestCompleted = obj.IsTestCompleted;
-                MacInfo.TestList = obj.TestList;
+                //MacInfo.TestList = obj.TestList;
 
                 return Json(new { IsSuccess = 1 });
             }
