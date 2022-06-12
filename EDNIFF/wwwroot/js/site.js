@@ -406,6 +406,7 @@ var Sound = {
         alert('AudioPortChange');
     },
     MarkSoundTested() {
+        debugger;
         var LeftSpeaker = $("input:radio[name='LeftSpeaker']:checked").val();
         var RightSpeaker = $("input:radio[name='RightSpeaker']:checked").val();
         if (LeftSpeaker && RightSpeaker) {
