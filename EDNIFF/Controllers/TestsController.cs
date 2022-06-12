@@ -143,12 +143,12 @@ namespace EDNIFF.Controllers
 
         }
 
-        public async Task<JsonResult> MainSaveMethodAsync(MainSaveMethodParam obj)
+        public async Task<JsonResult> MainSaveMethodAsync()
         {
 
             if (obj != null)
             {
-                var objResult = await objTestServices.SaveMethod(obj);
+                var objResult = await objTestServices.SaveMethod();
                 return Json(new { IsSuccess = 1 });
             }
             else

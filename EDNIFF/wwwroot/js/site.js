@@ -286,12 +286,12 @@ function MainSaveMethod() {
 
     if (Validation()) {
         //make ajax call to save data
-        var mdata = _objToBeSaved
+        //var mdata = _objToBeSaved
         $.ajax({
             type: 'POST',
-            url: '/Tests/MainSaveMethod',
+            url: '/Tests/MainSaveMethodAsync',
             contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
-            data: mdata,
+            data: null,
             //async:false,
             success: function (result) {
                 if (result.isSuccess == 1) {
