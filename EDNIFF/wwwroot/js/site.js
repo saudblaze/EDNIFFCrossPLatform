@@ -333,12 +333,15 @@ function MarkAsCompleted(objResultText) {
 
                 item.testDone = true;
                 _currentTest.testDone = true;
+
                 item.testResult = objResultText;
-                //$("#lbl" + _currentTest.TestName).text(objResultText);
-                //$("#lblResult" + _currentTest.TestName).text(objResultText);
+                _currentTest.testResult = objResultText;
+
+                
                 SetLable($("#lbl" + _currentTest.testName,item), objResultText);
-                SetLable($("#lblResult" + _currentTest.testName), objResultText);
-                MarkItAsCompleted();
+                SetLable($("#lblResult" + _currentTest.testName, item), objResultText);
+
+                setTimeout(MarkItAsCompleted(), 500);                
             }
         });
     }
@@ -352,18 +355,22 @@ function SetLable(InputId, objResult, _listOfTestItem) {
         if (objResult == 'Pass') {
             $(InputId).addClass('form-check-label PassText');
             _listOfTestItem.className = 'form-check-label PassText';
+            _currentTest.className = 'form-check-label PassText';
         }
         else if (objResult == 'Fail') {
             $(InputId).addClass('form-check-label FailText');
             _listOfTestItem.className = 'form-check-label FailText';
+            _currentTest.className = 'form-check-label FailText';
         }
         else if (objResult == 'NoDevice') {
             $(InputId).addClass('form-check-label NoDeviceText');
             _listOfTestItem.className = 'form-check-label NoDeviceText';
+            _currentTest.className = 'form-check-label NoDeviceText';
         }
         else if (objResult == 'NotTested') {
             $(InputId).addClass('form-check-label NotTestedText');
             _listOfTestItem.className = 'form-check-label NotTestedText';
+            _currentTest.className = 'form-check-label NotTestedText';
         }
     }
 }
