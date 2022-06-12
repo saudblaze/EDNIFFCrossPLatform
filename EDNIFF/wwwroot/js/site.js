@@ -260,6 +260,7 @@ function Validation()
         //async:false,
         success: function (result) {
             if (result.isSuccess == 1) {
+                debugger
                 if (!result.IsTestCompleted) {
                     alert("Please do the testing first .");
                     return false;
