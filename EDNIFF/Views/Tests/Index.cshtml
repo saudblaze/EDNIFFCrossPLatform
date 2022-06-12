@@ -323,6 +323,8 @@
             if (tt && tt.testList) {
 
                 _listOfTest = tt.testList;
+                _objToBeSaved.Grade = tt.grade; // 
+                _objToBeSaved.IsTestCompleted = tt.isTestCompleted;
 
                 $.each(tt.testList, function (index, item) {
                     if (item.testSelected) {
@@ -347,19 +349,13 @@
                         }
                     });
                     if (isAnyTest) {
-                        debugger
                         GetTestHtml();
                         $("#btnStart").prop("disabled", true);
                         $("#lbl" + _currentTest.testName).text("Running");
                         $("#lblResult" + _currentTest.testName).text("Not Tested");
                     }
-                }
-
-
-                
-            }
-
-            
+                }                   
+            }                   
             
 
             $('#btnStart').click(function () {
@@ -368,14 +364,10 @@
                     $.each(tt.testList, function (index, item) {
                         item.testSelected = $("#chk" + item.testName).prop("checked");
                     });
-
                     var isAllSelected = $("#AllSelect").prop("checked");
-                    //StartTest(objMain, isAllSelected);
                     StartTest(tt, isAllSelected);
                 }
             });
         });
     </script>
 }
-
-
