@@ -317,17 +317,15 @@
 {
     <script>
         $(function () {
-            alert(1);
-            debugger
-
+            
             //bind data from MACKINFO
             var tt = @temp;
             if (tt && tt.testList) {
                 $.each(tt.testList, function (index, item) {
                     if (item.testSelected) {
                         debugger
-                        $("#chk" + item.testName).prop("checked") = item.testSelected;
-                        $("#lbl" + item.testName).prop("checked") = item.testResult;
+                        $("#chk" + item.testName).prop("checked", item.testSelected);
+                        $("#lbl" + item.testName).text(item.testResult);
                         $("#lbl" + item.testName).css(item.className);                           
                     }                                                                        
                 });                
