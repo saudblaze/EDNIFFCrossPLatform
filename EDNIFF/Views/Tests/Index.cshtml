@@ -329,7 +329,6 @@
             var tt = @temp;
             if (tt && tt.testList) {
                 $.each(tt.testList, function (index, item) {
-                    debugger
                     if (item.testSelected) {
                         $("#chk" + item.testName).prop("checked") = item.testSelected;
                         $("#lbl" + item.testName).prop("checked") = item.testResult;

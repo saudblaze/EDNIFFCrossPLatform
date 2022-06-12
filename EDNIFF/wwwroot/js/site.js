@@ -148,33 +148,6 @@ function StartTest(obj, isAllSelected) {
     _listOfTest = obj.testList;
     _objToBeSaved.Grade = obj.grade; // 
 
-    //set MACKINFO TestList
-    var mdata = {
-        obj: obj.testList
-    }
-    $.ajax({
-        type: 'POST',
-        url: '/Tests/SetIsSelectedTestList',
-        contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
-        data: mdata,
-        //async:false,
-        success: function (result) {
-            if (result.isSuccess == 1) {
-                ////alert('Successfully received Data ');
-                //var strHtml = result.data;
-                //$("#divTest").html(strHtml)
-            } else {
-                alert('Failed to receive the Data');
-            }
-        },
-        error: function () {
-            alert('Failed to receive the Data');
-            console.log('Failed ');
-        }
-    })
-
-
-
     var isAnyTest = false;
     if (isAllSelected) {
         //get cmos test
@@ -196,6 +169,36 @@ function StartTest(obj, isAllSelected) {
                 isAnyTest = true;
             }
         });
+    }
+
+    debugger;
+    if (_currentTest) {
+
+        //set MACKINFO TestList
+        var mdata = {
+            obj: _listOfTest
+        }
+        $.ajax({
+            type: 'POST',
+            url: '/Tests/SetIsSelectedTestList',
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
+            data: mdata,
+            //async:false,
+            success: function (result) {
+                if (result.isSuccess == 1) {
+                    ////alert('Successfully received Data ');
+                    //var strHtml = result.data;
+                    //$("#divTest").html(strHtml)
+                } else {
+                    alert('Failed to receive the Data');
+                }
+            },
+            error: function () {
+                alert('Failed to receive the Data');
+                console.log('Failed ');
+            }
+        });
+
     }
 
 
@@ -339,6 +342,7 @@ function MarkAsCompleted(objResultText) {
                 //$("#lblResult" + _currentTest.TestName).text(objResultText);
                 SetLable($("#lbl" + _currentTest.testName), objResultText);
                 SetLable($("#lblResult" + _currentTest.testName), objResultText);
+                MarkItAsCompleted();
             }
         });
     }

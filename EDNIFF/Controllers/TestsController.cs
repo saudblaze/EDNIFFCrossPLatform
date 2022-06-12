@@ -72,6 +72,7 @@ namespace EDNIFF.Controllers
                     if (item.testName == obj.testName)
                     {
                         item.testDone = true;
+                        item.className = obj.className;
                     }
                 }
 
@@ -119,9 +120,9 @@ namespace EDNIFF.Controllers
 
             if (obj != null)
             {
-                //MacInfo.IsTestCompleted = obj.IsTestCompleted;
-                MacInfo.TestList = obj;
 
+                MacInfo.TestList = new List<TestList>();
+                MacInfo.TestList = obj;                
                 return Json(new { IsSuccess = 1 });
             }
             else
