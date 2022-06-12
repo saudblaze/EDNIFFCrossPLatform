@@ -328,7 +328,30 @@
                         $("#lbl" + item.testName).text(item.testResult);
                         $("#lbl" + item.testName).css(item.className);                           
                     }                                                                        
-                });                
+                });      
+
+
+                if (tt.IsTestCompleted) {
+                    $("#divTest").html("<p> Test Completed . </p>");
+                    $("#btnStart").prop("disabled", true);
+                } else {
+                    debugger
+                    //get the test which is not completed yet and bind its html here 
+                    var isAnyTest = false;
+                    $.each(tt.testList, function (index, item) {
+                        if (item.testSelected == true && item.testDone == false && isAnyTest == false) {
+                            //call ajax and bind this test in div                 
+                            _currentTest = item;
+                            isAnyTest = true;
+                        }
+                    });
+                    if (isAnyTest) {
+                        GetTestHtml();
+                        $("#btnStart").prop("disabled", true);
+                        $("#lbl" + _currentTest.testName).text("Running");
+                        $("#lblResult" + _currentTest.testName).text("Not Tested");
+                    }
+                }
             }
 
             

@@ -198,8 +198,6 @@ function StartTest(obj, isAllSelected) {
 
     if (isAnyTest) {
         GetTestHtml();
-        $("#btnNext").show();
-        $("#btnMarkAsCompleted").show();
         $("#btnStart").prop("disabled", true);
         $("#lbl" + _currentTest.testName).text("Running");
         $("#lblResult" + _currentTest.testName).text("Not Tested");
@@ -367,7 +365,6 @@ function MarkAsCompleted(objResultText) {
 }
 
 function SetLable(InputId, objResult, _listOfTestItem) {
-    debugger
     if (InputId) {
         $(InputId).text(objResult);
         $(InputId).removeClass();
