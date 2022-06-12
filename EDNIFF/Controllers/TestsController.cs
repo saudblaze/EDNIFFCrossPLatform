@@ -123,7 +123,7 @@ namespace EDNIFF.Controllers
             {
 
                 MacInfo.TestList = new List<TestList>();
-                MacInfo.TestList = obj;                
+                MacInfo.TestList = obj;
                 return Json(new { IsSuccess = 1 });
             }
             else
@@ -146,15 +146,9 @@ namespace EDNIFF.Controllers
         public async Task<JsonResult> MainSaveMethodAsync()
         {
 
-            if (obj != null)
-            {
-                var objResult = await objTestServices.SaveMethod();
-                return Json(new { IsSuccess = 1 });
-            }
-            else
-            {
-                return Json(new { IsSuccess = 0 });
-            }
+            var objResult = await objTestServices.SaveMethod();
+            return Json(new { IsSuccess = objResult });
+
         }
 
         public string getTestView(string TestName)
