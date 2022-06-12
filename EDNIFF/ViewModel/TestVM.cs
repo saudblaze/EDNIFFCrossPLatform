@@ -9,6 +9,7 @@ namespace EDNIFF.ViewModel
     {
         public List<TestList> TestList { get; set; }
         public string Grade { get; set; }
+        public bool IsTestCompleted { get; set; }
     }
     public class TestList
     {

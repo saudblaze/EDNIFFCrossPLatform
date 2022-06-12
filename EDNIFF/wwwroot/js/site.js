@@ -7,7 +7,7 @@
 
 var _objToBeSaved = {
 
-    IsTestDone: false,
+    IsTestCompleted: false,
     _listOfTest: [],
     Grade:'',
 }
@@ -94,11 +94,12 @@ function NextClick() {
             }
         });
         if (!NextTest) {
+            debugger
             _objToBeSaved._listOfTest = _listOfTest;
-            _objToBeSaved.IsTestDone = true;
+            _objToBeSaved.IsTestCompleted = true;
             //here need to update MacInfo.IsTestCompleted
             var mobject = {
-                IsTestDone: _objToBeSaved.IsTestDone,
+                IsTestCompleted: _objToBeSaved.IsTestCompleted,
                 TestList: _objToBeSaved._listOfTest,
             }
             $.ajax({
@@ -110,14 +111,7 @@ function NextClick() {
                 success: function (result) {
                     if (result.isSuccess == 1) {
                         debugger;
-                        if (!result.IsTestDone) {
-                            alert("Please do the testing first .");
-                            return false;
-                        }
-                        if (!result.Grade) {
-                            alert("Please select the grade .");
-                            return false;
-                        }
+                        
                     } else {
                         alert('Failed to receive the Data');
                     }
@@ -147,6 +141,7 @@ function StartTest(obj, isAllSelected) {
     debugger
     _listOfTest = obj.testList;
     _objToBeSaved.Grade = obj.grade; // 
+    _objToBeSaved.IsTestCompleted
 
     var isAnyTest = false;
     if (isAllSelected) {
@@ -274,7 +269,7 @@ function Validation()
         success: function (result) {
             if (result.isSuccess == 1) {
                 debugger;
-                if (!result.IsTestDone) {
+                if (!result.IsTestCompleted) {
                     alert("Please do the testing first .");
                     return false;
                 }

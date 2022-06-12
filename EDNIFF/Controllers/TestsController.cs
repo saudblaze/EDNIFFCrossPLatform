@@ -99,7 +99,7 @@ namespace EDNIFF.Controllers
             }
         }
 
-        public JsonResult SetTestDone(SetTestDone obj)
+        public JsonResult SetTestDone(TestVM obj)
         {
 
             if (obj != null)
@@ -136,7 +136,7 @@ namespace EDNIFF.Controllers
             return Json(new
             {
                 Grade = MacInfo.Grade,
-                IsTestDone = MacInfo.IsTestCompleted,
+                IsTestCompleted = MacInfo.IsTestCompleted,
                 isSuccess = 1
             });
 
