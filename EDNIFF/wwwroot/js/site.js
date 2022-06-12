@@ -215,6 +215,7 @@ function StartTest(obj, isAllSelected) {
 }
 
 function MarkItAsCompleted() {
+    debugger
     var mdata = _currentTest
     $.ajax({
         type: 'POST',
@@ -333,7 +334,7 @@ function MarkAsCompleted(objResultText) {
 
             if (_currentTest.testName == item.testName) {
                 //also make ajax call and marked static object with is testdone = true
-                MarkItAsCompleted();
+                //MarkItAsCompleted();
 
                 item.testDone = true;
                 _currentTest.testDone = true;
