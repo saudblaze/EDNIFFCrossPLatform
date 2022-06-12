@@ -16,8 +16,7 @@ var _listOfTest;
 var _currentTest;
 
 function testmethod() {
-    var mtemp = _listOfTest
-
+    alert('Display Report');
 }
 
 
@@ -331,6 +330,8 @@ function MarkAsCompleted(objResultText) {
                 //also make ajax call and marked static object with is testdone = true
                 //MarkItAsCompleted();
 
+                debugger
+
                 item.testDone = true;
                 _currentTest.testDone = true;
 
@@ -338,8 +339,26 @@ function MarkAsCompleted(objResultText) {
                 _currentTest.testResult = objResultText;
 
                 
-                SetLable($("#lbl" + _currentTest.testName,item), objResultText);
-                SetLable($("#lblResult" + _currentTest.testName, item), objResultText);
+                SetLable($("#lbl" + _currentTest.testName), objResultText);
+                SetLable($("#lblResult" + _currentTest.testName), objResultText);
+
+
+                if (objResultText == 'Pass') {
+                    item.className = 'form-check-label PassText';
+                    _currentTest.className = 'form-check-label PassText';
+                }
+                else if (objResultText == 'Fail') {
+                    item.className = 'form-check-label FailText';
+                    _currentTest.className = 'form-check-label FailText';
+                }
+                else if (objResultText == 'NoDevice') {
+                    item.className = 'form-check-label NoDeviceText';
+                    _currentTest.className = 'form-check-label NoDeviceText';
+                }
+                else if (objResultText == 'NotTested') {
+                    item.className = 'form-check-label NotTestedText';
+                    _currentTest.className = 'form-check-label NotTestedText';
+                }
 
                 setTimeout(MarkItAsCompleted(), 500);                
             }
@@ -348,29 +367,21 @@ function MarkAsCompleted(objResultText) {
 }
 
 function SetLable(InputId, objResult, _listOfTestItem) {
-
+    debugger
     if (InputId) {
         $(InputId).text(objResult);
         $(InputId).removeClass();
         if (objResult == 'Pass') {
-            $(InputId).addClass('form-check-label PassText');
-            _listOfTestItem.className = 'form-check-label PassText';
-            _currentTest.className = 'form-check-label PassText';
+            $(InputId).addClass('form-check-label PassText');            
         }
         else if (objResult == 'Fail') {
-            $(InputId).addClass('form-check-label FailText');
-            _listOfTestItem.className = 'form-check-label FailText';
-            _currentTest.className = 'form-check-label FailText';
+            $(InputId).addClass('form-check-label FailText');            
         }
         else if (objResult == 'NoDevice') {
-            $(InputId).addClass('form-check-label NoDeviceText');
-            _listOfTestItem.className = 'form-check-label NoDeviceText';
-            _currentTest.className = 'form-check-label NoDeviceText';
+            $(InputId).addClass('form-check-label NoDeviceText');            
         }
         else if (objResult == 'NotTested') {
-            $(InputId).addClass('form-check-label NotTestedText');
-            _listOfTestItem.className = 'form-check-label NotTestedText';
-            _currentTest.className = 'form-check-label NotTestedText';
+            $(InputId).addClass('form-check-label NotTestedText');            
         }
     }
 }
