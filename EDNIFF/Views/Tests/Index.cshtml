@@ -323,7 +323,7 @@
 {
     <script>
         $(function () {
-            //debugger
+            debugger
 
             //bind data from MACKINFO
             var tt = @temp;
@@ -341,6 +341,7 @@
             
 
             $('#btnStart').click(function () {
+                debugger
                 var tt = @temp;
                 if (tt && tt.testList) {
                     $.each(tt.testList, function (index, item) {
