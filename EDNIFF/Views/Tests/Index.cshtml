@@ -323,7 +323,6 @@
             if (tt && tt.testList) {
                 $.each(tt.testList, function (index, item) {
                     if (item.testSelected) {
-                        debugger
                         $("#chk" + item.testName).prop("checked", item.testSelected);
                         $("#lbl" + item.testName).text(item.testResult);
                         $("#lbl" + item.testName).removeClass().addClass(item.className);                           
@@ -335,7 +334,6 @@
                     $("#divTest").html("<p> Test Completed . </p>");
                     $("#btnStart").prop("disabled", true);
                 } else {
-                    debugger
                     //get the test which is not completed yet and bind its html here 
                     var isAnyTest = false;
                     $.each(tt.testList, function (index, item) {
@@ -359,7 +357,6 @@
             
 
             $('#btnStart').click(function () {
-                debugger
                 var tt = @temp;
                 if (tt && tt.testList) {
                     $.each(tt.testList, function (index, item) {

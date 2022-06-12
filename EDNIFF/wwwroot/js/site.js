@@ -313,6 +313,7 @@ function MainSaveMethod() {
 
 
 function MarkAsCompleted(objResultText) {
+    debugger
     if (_currentTest) {
         $.each(_listOfTest, function (index, item) {
             debugger
@@ -378,11 +379,11 @@ function SetLable(InputId, objResult, _listOfTestItem) {
 var Sound = {
 
     LeftSpeakerChange() {
-        alert('LeftSpeakerChange');
+        //alert('LeftSpeakerChange');
         Sound.MarkSoundTested();
     },
     RightSpeakerChange() {
-        alert('RightSpeakerChange');
+        //alert('RightSpeakerChange');
         Sound.MarkSoundTested();
     },
     LeftSpeakerTest() {
