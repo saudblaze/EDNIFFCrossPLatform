@@ -93,7 +93,6 @@ function NextClick() {
             }
         });
         if (!NextTest) {
-            debugger
             _objToBeSaved._listOfTest = _listOfTest;
             _objToBeSaved.IsTestCompleted = true;
             //here need to update MacInfo.IsTestCompleted
@@ -109,7 +108,6 @@ function NextClick() {
                 //async:false,
                 success: function (result) {
                     if (result.isSuccess == 1) {
-                        debugger;
                         
                     } else {
                         alert('Failed to receive the Data');
@@ -137,7 +135,6 @@ function NextClick() {
 
 
 function StartTest(obj, isAllSelected) {
-    debugger
     _listOfTest = obj.testList;
     _objToBeSaved.Grade = obj.grade; // 
     _objToBeSaved.IsTestCompleted
@@ -165,7 +162,6 @@ function StartTest(obj, isAllSelected) {
         });
     }
 
-    debugger;
     if (_currentTest) {
 
         //set MACKINFO TestList
@@ -265,7 +261,6 @@ function Validation()
         //async:false,
         success: function (result) {
             if (result.isSuccess == 1) {
-                debugger;
                 if (!result.IsTestCompleted) {
                     alert("Please do the testing first .");
                     return false;
@@ -288,8 +283,7 @@ function Validation()
       
 }
 function MainSaveMethod() {
-    debugger
-
+    
 
     if (Validation()) {
         //make ajax call to save data
@@ -302,7 +296,6 @@ function MainSaveMethod() {
             //async:false,
             success: function (result) {
                 if (result.isSuccess == 1) {
-                    debugger;
                     ////alert('Successfully received Data ');
                     //var strHtml = result.data;
                     //$("#divTest").html(strHtml)
@@ -324,13 +317,11 @@ function MarkAsCompleted(objResultText) {
     debugger
     if (_currentTest) {
         $.each(_listOfTest, function (index, item) {
-            debugger
             if (_currentTest.testName == item.testName) {
                 //also make ajax call and marked static object with is testdone = true
                 //MarkItAsCompleted();
-
                 debugger
-
+                
                 item.testDone = true;
                 _currentTest.testDone = true;
 
