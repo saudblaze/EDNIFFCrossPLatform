@@ -321,6 +321,9 @@
             //bind data from MACKINFO
             var tt = @temp;
             if (tt && tt.testList) {
+
+                _listOfTest = obj.testList;
+
                 $.each(tt.testList, function (index, item) {
                     if (item.testSelected) {
                         $("#chk" + item.testName).prop("checked", item.testSelected);
@@ -351,6 +354,9 @@
                         $("#lblResult" + _currentTest.testName).text("Not Tested");
                     }
                 }
+
+
+                
             }
 
             
