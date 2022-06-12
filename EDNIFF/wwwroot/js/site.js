@@ -321,9 +321,10 @@ function MainSaveMethod() {
 
 
 function MarkAsCompleted(objResultText) {
+    debugger
     if (_currentTest) {
         $.each(_listOfTest, function (index, item) {
-
+            debugger
             if (_currentTest.testName == item.testName) {
                 //also make ajax call and marked static object with is testdone = true
                 //MarkItAsCompleted();
