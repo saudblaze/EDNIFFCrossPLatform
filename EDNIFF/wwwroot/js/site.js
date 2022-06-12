@@ -261,11 +261,11 @@ function Validation()
         success: function (result) {
             if (result.isSuccess == 1) {
                 debugger
-                if (!result.IsTestCompleted) {
+                if (!result.isTestCompleted) {
                     alert("Please do the testing first .");
                     return false;
                 }
-                if (!result.Grade) {
+                if (!result.grade) {
                     alert("Please select the grade .");
                     return false;
                 }  
