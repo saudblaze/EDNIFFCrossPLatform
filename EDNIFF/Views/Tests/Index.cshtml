@@ -326,7 +326,7 @@
                         debugger
                         $("#chk" + item.testName).prop("checked", item.testSelected);
                         $("#lbl" + item.testName).text(item.testResult);
-                        $("#lbl" + item.testName).css(item.className);                           
+                        $("#lbl" + item.testName).removeClass().addClass(item.className);                           
                     }                                                                        
                 });      
 
