@@ -332,18 +332,13 @@
                     if (item.testSelected) {
                         $("#chk" + item.testName).prop("checked") = item.testSelected;
                         $("#lbl" + item.testName).prop("checked") = item.testResult;
-                        $("#lbl" + item.testName).css(item.className);
-                        
-                    }
-                    
+                        $("#lbl" + item.testName).css(item.className);                           
+                    }                                                                        
                 });                
             }
 
             $("#btnNext").hide();
-            $("#btnMarkAsCompleted").hide();
-
-            //alert("All good");
-
+            
 
             $('#btnStart').click(function () {
                 var tt = @temp;
