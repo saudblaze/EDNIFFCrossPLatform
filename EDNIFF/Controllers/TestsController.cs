@@ -73,6 +73,7 @@ namespace EDNIFF.Controllers
                     {
                         item.testDone = true;
                         item.className = obj.className;
+                        item.testResult = obj.testResult;
                     }
                 }
 
