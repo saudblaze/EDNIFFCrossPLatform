@@ -286,6 +286,7 @@ function MainSaveMethod() {
     debugger;
 
     if (Validation()) {
+        debugger;
         //make ajax call to save data
         //var mdata = _objToBeSaved
         $.ajax({
