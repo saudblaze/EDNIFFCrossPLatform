@@ -366,7 +366,10 @@ var Sound = {
         debugger;
         $("#chkLeftSpeakerPass").attr('checked', 'checked');
 
-        var audio = new Audio("../Files/leftSpeaker.wav");
+        //var audio = new Audio("../Files/leftSpeaker.wav");
+        //audio.play();
+
+        var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
         audio.play();
 
 
