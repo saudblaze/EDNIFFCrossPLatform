@@ -317,22 +317,25 @@ namespace EDNIFF.Controllers
         public void PlayLeftSpeaker()
         {
 
-            SoundPlayer player = new SoundPlayer();
-            MMDevice defaultDevice;
-            MMDeviceEnumerator devEnum = new MMDeviceEnumerator();
-            defaultDevice = devEnum.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
-            defaultDevice.AudioEndpointVolume.Mute = false;
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"~/Files/leftSpeaker.wav");
+            player.Play();
+
+            //SoundPlayer player = new SoundPlayer();
+            //MMDevice defaultDevice;
+            //MMDeviceEnumerator devEnum = new MMDeviceEnumerator();
+            //defaultDevice = devEnum.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
+            //defaultDevice.AudioEndpointVolume.Mute = false;
             
-            defaultDevice.AudioEndpointVolume.Channels[0].VolumeLevelScalar = 1F;
-            defaultDevice.AudioEndpointVolume.Channels[1].VolumeLevelScalar = 0F;
-            player.SoundLocation = "Files/leftSpeaker.wav";
-            //changeColor(pictureBox1, 50);
-            //changeColor(pictureBox2, 0);
-            player.LoadAsync();
-            player.PlaySync();
-            //this is required bcoz there is a delay on switching channel volume
-            defaultDevice.AudioEndpointVolume.Channels[0].VolumeLevelScalar = 1F;
-            defaultDevice.AudioEndpointVolume.Channels[1].VolumeLevelScalar = 1F;
+            //defaultDevice.AudioEndpointVolume.Channels[0].VolumeLevelScalar = 1F;
+            //defaultDevice.AudioEndpointVolume.Channels[1].VolumeLevelScalar = 0F;
+            //player.SoundLocation = "Files/leftSpeaker.wav";
+            ////changeColor(pictureBox1, 50);
+            ////changeColor(pictureBox2, 0);
+            //player.LoadAsync();
+            //player.PlaySync();
+            ////this is required bcoz there is a delay on switching channel volume
+            //defaultDevice.AudioEndpointVolume.Channels[0].VolumeLevelScalar = 1F;
+            //defaultDevice.AudioEndpointVolume.Channels[1].VolumeLevelScalar = 1F;
             
 
         }
