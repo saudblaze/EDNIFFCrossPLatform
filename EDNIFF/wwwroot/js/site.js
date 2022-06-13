@@ -237,57 +237,22 @@ function GetTestHtml() {
         success: function (result) {
             if (result.isSuccess == 1) {
                 var strHtml = result.data;
-                $("#divTest").html(strHtml)
-            } else {
-                alert('Failed to receive the Data');
-            }
-        },
-        error: function () {
-            alert('Failed to receive the Data');
-            console.log('Failed ');
-        }
-    })
-}
-function Validation()
-{
-    //cal api method so these detail can be confirmed
-    var mResult = true;
-    $.ajax({
-        type: 'POST',
-        url: '/Tests/GetValidation',
-        contentType: 'application/x-www-form-urlencoded; charset=UTF-8', 
-        data: null,
-        //async:false,
-        success: function (result) {
-            debugger
-            if (result.isSuccess == 1) {                
-                if (!result.isTestCompleted) {
-                    alert("Please do the testing first .");
-                    mResult = false;
+                $("#divTest").html(strHtml);
+                if (_currentTest.testName == "CMOS") {
+                    $("#rd" + _currentTest.testName + "Pass").prop("checked",true);
                 }
-                if (!result.grade) {
-                    alert("Please select the grade .");
-                    mResult = false;
-                }                  
             } else {
                 alert('Failed to receive the Data');
-                mResult = false;
             }
-            return mResult;
         },
         error: function () {
             alert('Failed to receive the Data');
             console.log('Failed ');
         }
     })
-
-
-      
 }
-function MainSaveMethod() {
-    debugger;
 
-    //if (Validation()) {
+function MainSaveMethod() {
         debugger;
         //make ajax call to save data
         //var mdata = _objToBeSaved
@@ -300,11 +265,19 @@ function MainSaveMethod() {
             success: function (res) {
                 debugger;
                 if (res.isSuccess == 1) {
-                    ////alert('Successfully received Data ');
-                    //var strHtml = result.data;
-                    //$("#divTest").html(strHtml)
+
+                    alert("Please select the grade .");
                     $("#btnMainSave").prop("disabled", true);
-                } else {
+                }
+
+                else if (re.isSuccess == 101)
+                {
+                    alert("Please select the grade .");
+                }
+                else if (re.isSuccess == 102) {
+                    alert("Please do the testing first .");
+                }
+                else {
                     alert('Failed to receive the Data');
                 }
             },
@@ -312,8 +285,7 @@ function MainSaveMethod() {
                 alert('Failed to receive the Data');
                 console.log('Failed ');
             }
-        })
-    //}    
+        })      
 }
 
 

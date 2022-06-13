@@ -132,21 +132,11 @@ namespace EDNIFF.Controllers
             }
         }
 
-        public JsonResult GetValidation()
-        {
-            return Json(new
-            {
-                Grade = MacInfo.Grade,
-                IsTestCompleted = MacInfo.IsTestCompleted,
-                isSuccess = 1
-            });
-
-        }
-
+        
         public async Task<JsonResult> MainSaveMethod()
         {
             var objResult = await objTestServices.SaveMethod();
-            return Json(new { IsSuccess = 1 });
+            return Json(new { isSuccess = objResult });
         }
 
         public string getTestView(string TestName)
@@ -270,11 +260,11 @@ namespace EDNIFF.Controllers
                         "<td>  </td>" +
                         "<td>" +
                             "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' id='Pass' name='CMOS' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
+                                "<input class='form-check-input' type='radio' id='rd"+ objDevice.TestName + "Pass' name='CMOS' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
                                 "<label class='form-check-label'>Pass</label>" +
                             "</div>" +
                             "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' id='Fail' name='CMOS' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
+                                "<input class='form-check-input' type='radio' id='rd"+ objDevice.TestName + "Fail' name='CMOS' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
                                 "<label class='form-check-label'>Fail</label>" +
                             "</div>" +
                         "</td>" +
@@ -283,7 +273,7 @@ namespace EDNIFF.Controllers
                         "<tr>" +
                         "<td> Result </td>" +
                         "<td>" +
-                            "<div class='form-check'>" +
+                            "<div>" +
                                 "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
                             "</div>" +
                         "</td>" +
@@ -292,7 +282,7 @@ namespace EDNIFF.Controllers
                         "<tr>" +
                         "<td> Comments </td>" +
                         "<td>" +
-                            "<div class='form-check'>" +
+                            "<div >" +
                                 "<input type='text' class='form-control' id='txt" + objDevice.TestName + "Comment' placeholder=''>" +
                             "</div>" +
                         "</td>" +

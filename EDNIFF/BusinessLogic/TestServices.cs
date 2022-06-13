@@ -20,9 +20,17 @@ namespace EDNIFF.BusinessLogic
                 //MainSaveMethodParam obj = new MainSaveMethodParam();
 
                 //obj._listOfTest = MacInfo.TestList;
-                
 
-                CommonMethods objCommonMethods = new CommonMethods();
+                if (string.IsNullOrEmpty(MacInfo.Grade))
+                {
+                    return 101;
+                }
+                if (MacInfo.IsTestCompleted == false)
+                {
+                    return 102;
+                }
+
+                    CommonMethods objCommonMethods = new CommonMethods();
 
                 Device objProcessor = objCommonMethods.GetDevice(ConstantData.Categories.Processor, ConstantData.DeviceNames.Processor);
                 Device objMotherBoard = objCommonMethods.GetDevice(ConstantData.Categories.MotherBoard, ConstantData.DeviceNames.MotherBoard);
