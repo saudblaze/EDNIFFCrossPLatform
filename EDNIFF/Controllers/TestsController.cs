@@ -468,9 +468,6 @@ namespace EDNIFF.Controllers
                         "</tr></thead> " +
                         "<tbody>" +
 
-
-
-
                         "<tr>" +
                         "<td class='td50 Allignleft'> Total Number of ports to test </td>" +
                         "<td class='td50 Allignleft'>" +
@@ -501,7 +498,7 @@ namespace EDNIFF.Controllers
                         "<tr>" +
                         "<td class='td50 Allignleft'>  </td>" +
                         "<td class='td50 Allignleft'>" +
-                                "<div class='form-check form-check-inline marginleft10' >" +
+                                "<div class='form-check form-check-inline ' >" +
                                     "<input class='form-check-input' type='radio' id='Pass' name='AudioPort' onchange='USB.USBChange(\"Pass\")' value='Pass' >" +
                                     "<label class='form-check-label'>Pass</label>" +
                                 "</div>" +
