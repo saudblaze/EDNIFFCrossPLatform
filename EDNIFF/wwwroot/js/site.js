@@ -363,9 +363,10 @@ var Sound = {
         Sound.MarkSoundTested();
     },
     LeftSpeakerTest() {
+        debugger;
         $("#chkLeftSpeakerPass").attr('checked', 'checked');
 
-        var audio = new Audio("~/Files/leftSpeaker.wav");
+        var audio = new Audio("../Files/leftSpeaker.wav");
         audio.play();
 
 
