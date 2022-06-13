@@ -17,9 +17,9 @@ namespace EDNIFF.BusinessLogic
         {
             try
             {
-                MainSaveMethodParam obj = new MainSaveMethodParam();
+                //MainSaveMethodParam obj = new MainSaveMethodParam();
 
-                obj._listOfTest = MacInfo.TestList;
+                //obj._listOfTest = MacInfo.TestList;
                 
 
                 CommonMethods objCommonMethods = new CommonMethods();

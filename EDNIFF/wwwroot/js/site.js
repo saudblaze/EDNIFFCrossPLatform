@@ -283,7 +283,7 @@ function Validation()
       
 }
 function MainSaveMethod() {
-    
+    debugger;
 
     if (Validation()) {
         //make ajax call to save data
@@ -295,6 +295,7 @@ function MainSaveMethod() {
             data: null,
             //async:false,
             success: function (result) {
+                debugger;
                 if (result.isSuccess == 1) {
                     ////alert('Successfully received Data ');
                     //var strHtml = result.data;
