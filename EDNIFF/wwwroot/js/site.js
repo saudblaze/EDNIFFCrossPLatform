@@ -251,7 +251,7 @@ function GetTestHtml() {
 function Validation()
 {
     //cal api method so these detail can be confirmed
-    
+    var mResult = true;
     $.ajax({
         type: 'POST',
         url: '/Tests/GetValidation',
@@ -259,20 +259,21 @@ function Validation()
         data: null,
         //async:false,
         success: function (result) {
-            if (result.isSuccess == 1) {
-                //debugger
+            debugger
+            if (result.isSuccess == 1) {                
                 if (!result.isTestCompleted) {
                     alert("Please do the testing first .");
-                    return false;
+                    mResult = false;
                 }
                 if (!result.grade) {
                     alert("Please select the grade .");
-                    return false;
-                }  
-                return true;
+                    mResult = false;
+                }                  
             } else {
                 alert('Failed to receive the Data');
+                mResult = false;
             }
+            return mResult;
         },
         error: function () {
             alert('Failed to receive the Data');
