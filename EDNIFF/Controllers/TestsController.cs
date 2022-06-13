@@ -10,6 +10,8 @@ using System.Linq;
 using System.Media;
 using System.Threading.Tasks;
 
+
+
 namespace EDNIFF.Controllers
 {
     public class TestsController : Controller
@@ -316,9 +318,13 @@ namespace EDNIFF.Controllers
 
         public void PlayLeftSpeaker()
         {
+            Console.Beep(32767, 1000);
 
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"~/Files/leftSpeaker.wav");
-            player.Play();
+
+
+
+            //System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"~/Files/leftSpeaker.wav");
+            //player.Play();
 
             //SoundPlayer player = new SoundPlayer();
             //MMDevice defaultDevice;
