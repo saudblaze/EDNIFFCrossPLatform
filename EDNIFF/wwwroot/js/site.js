@@ -260,7 +260,7 @@ function Validation()
         //async:false,
         success: function (result) {
             if (result.isSuccess == 1) {
-                debugger
+                //debugger
                 if (!result.isTestCompleted) {
                     alert("Please do the testing first .");
                     return false;
@@ -268,10 +268,7 @@ function Validation()
                 if (!result.grade) {
                     alert("Please select the grade .");
                     return false;
-                }
-                
-                MainSaveMethod();
-                
+                }  
             } else {
                 alert('Failed to receive the Data');
             }
@@ -288,19 +285,19 @@ function Validation()
 function MainSaveMethod() {
     debugger;
 
-    //if (Validation()) {
-    //    debugger;
+    if (Validation()) {
+        debugger;
         //make ajax call to save data
         //var mdata = _objToBeSaved
         $.ajax({
             type: 'POST',
-            url: '/Tests/MainSaveMethodAsync',
+            url: '/Tests/MainSaveMethod',
             contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
             data: null,
             //async:false,
-            success: function (result) {
+            success: function (res) {
                 debugger;
-                if (result.isSuccess == 1) {
+                if (res.isSuccess == 1) {
                     ////alert('Successfully received Data ');
                     //var strHtml = result.data;
                     //$("#divTest").html(strHtml)
@@ -314,7 +311,7 @@ function MainSaveMethod() {
                 console.log('Failed ');
             }
         })
-    //}    
+    }    
 }
 
 
