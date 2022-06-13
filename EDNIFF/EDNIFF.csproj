@@ -33,7 +33,4 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="wwwroot\img\" />
-	</ItemGroup>
 </Project>

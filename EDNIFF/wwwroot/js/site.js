@@ -369,7 +369,7 @@ var Sound = {
         //var audio = new Audio("../Files/leftSpeaker.wav");
         //audio.play();
 
-        var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
+        var audio = new Audio('http://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3');
         audio.play();
 
 
