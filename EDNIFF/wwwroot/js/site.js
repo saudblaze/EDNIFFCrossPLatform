@@ -268,7 +268,10 @@ function Validation()
                 if (!result.grade) {
                     alert("Please select the grade .");
                     return false;
-                }  
+                }
+                
+                MainSaveMethod();
+                
             } else {
                 alert('Failed to receive the Data');
             }
@@ -285,8 +288,8 @@ function Validation()
 function MainSaveMethod() {
     debugger;
 
-    if (Validation()) {
-        debugger;
+    //if (Validation()) {
+    //    debugger;
         //make ajax call to save data
         //var mdata = _objToBeSaved
         $.ajax({
@@ -311,7 +314,7 @@ function MainSaveMethod() {
                 console.log('Failed ');
             }
         })
-    }    
+    //}    
 }
 
 
