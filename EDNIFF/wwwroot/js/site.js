@@ -269,6 +269,7 @@ function Validation()
                     alert("Please select the grade .");
                     return false;
                 }  
+                return true;
             } else {
                 alert('Failed to receive the Data');
             }
