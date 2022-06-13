@@ -354,15 +354,13 @@ function SetLable(InputId, objResult, _listOfTestItem) {
 
 var Sound = {
 
-    LeftSpeakerChange() {
-        //alert('LeftSpeakerChange');
-        Sound.MarkSoundTested();
-    },
-    RightSpeakerChange() {
+    
+    SpeakerChange() {
+        debugger;
         //alert('RightSpeakerChange');
         Sound.MarkSoundTested();
     },
-    LeftSpeakerTest() {
+    SpeakerTest() {
         debugger;
         $("#chkLeftSpeakerPass").attr('checked', 'checked');
 
@@ -371,41 +369,17 @@ var Sound = {
 
         var audio = new Audio('http://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3');
         audio.play();
-
-
-        //$.ajax({
-        //    type: 'POST',
-        //    url: '/Tests/PlayLeftSpeaker',
-        //    contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
-        //    data: null,
-        //    //async:false,
-        //    success: function (result) {
-        //        if (result.isSuccess == 1) {
-        //            ////alert('Successfully received Data ');
-        //            //var strHtml = result.data;
-        //            //$("#divTest").html(strHtml)
-        //        } else {
-        //            alert('Failed to play sound .');
-        //        }
-        //    },
-        //    error: function () {
-        //        alert('Failed to receive the Data');
-        //        console.log('Failed ');
-        //    }
-        //});
+        
         Sound.MarkSoundTested();
-    },
-    RightSpeakerTest() {
-        $("#chkRightSpeakerPass").attr('checked', 'checked');
-        Sound.MarkSoundTested();
-    },
+    },    
     AudioPortChange() {
         alert('AudioPortChange');
     },
     MarkSoundTested() {
-        var LeftSpeaker = $("input:radio[name='LeftSpeaker']:checked").val();
-        var RightSpeaker = $("input:radio[name='RightSpeaker']:checked").val();
-        if (LeftSpeaker && RightSpeaker) {
+        debugger;
+        var SpeakerPass = $("input:radio[name='chkSpeakerPass']:checked").val();
+        var SpeakerFail = $("input:radio[name='chkSpeakerFail']:checked").val();
+        if (SpeakerPass) {
             MarkAsCompleted('Pass');
         } else {
             MarkAsCompleted('Fail');
