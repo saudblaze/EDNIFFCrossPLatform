@@ -377,13 +377,10 @@ var Sound = {
     },
     MarkSoundTested() {
         debugger;
-        var SpeakerPass = $("input:radio[name='chkSpeakerPass']:checked").val();
-        var SpeakerFail = $("input:radio[name='chkSpeakerFail']:checked").val();
+        var SpeakerPass = $("input:radio[name='RightSpeaker']:checked").val();        
         if (SpeakerPass) {
-            MarkAsCompleted('Pass');
-        } else {
-            MarkAsCompleted('Fail');
-        }
+            MarkAsCompleted(SpeakerPass);
+        } 
     }
 };
 
