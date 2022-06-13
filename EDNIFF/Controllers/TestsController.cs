@@ -360,11 +360,12 @@ namespace EDNIFF.Controllers
                         "<tbody>" +
 
                         "<tr>" +
-                            "<td span='2' class='td50 AllignCenter'><img style='height:250px;width:250px;' src='Images/speaker48.png' alt='No image found' /> </td>" +                        
+                            "<td span='2' class='td50 AllignCenter'><img  src='Images/speaker48.png' alt='No image found' /> </td>" +                        
                         "</tr>" +
 
 
                         "<tr>" +
+                            "<td></td>"+
                             "<td class='td50 Allignleft'> <button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; ' id='btnLeftSpeaker' onclick='Sound.SpeakerTest()'>Play Sound</button> </td>" +                        
                         "</tr>" +
 

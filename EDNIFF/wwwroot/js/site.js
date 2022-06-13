@@ -362,13 +362,13 @@ var Sound = {
     },
     SpeakerTest() {
         debugger;
-        $("#chkLeftSpeakerPass").attr('checked', 'checked');
-
         //var audio = new Audio("../Files/leftSpeaker.wav");
         //audio.play();
 
         var audio = new Audio('http://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3');
         audio.play();
+
+        $("#chkSpeakerPass").attr('checked', 'checked');
         
         Sound.MarkSoundTested();
     },    
