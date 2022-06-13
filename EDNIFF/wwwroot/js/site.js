@@ -292,6 +292,7 @@ function MainSaveMethod() {
 
 
 function MarkAsCompleted(objResultText) {
+    debugger
     if (_currentTest) {
         $.each(_listOfTest, function (index, item) {
             if (_currentTest.testName == item.testName) {
@@ -362,25 +363,24 @@ var Sound = {
     },
     SpeakerTest() {
         debugger;
-        //var audio = new Audio("../Files/leftSpeaker.wav");
-        //audio.play();
-
-        var audio = new Audio('http://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3');
-        audio.play();
-
-        $("#chkSpeakerPass").attr('checked', 'checked');
         
-        Sound.MarkSoundTested();
+        var audio = new Audio('http://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3');
+        if (audio.play()) {
+            $("#chkSpeakerPass").prop('checked', true);
+            Sound.MarkSoundTested();
+        }
+
+        
     },    
     AudioPortChange() {
         alert('AudioPortChange');
     },
     MarkSoundTested() {
         debugger;
-        var SpeakerPass = $("input:radio[name='RightSpeaker']:checked").val();        
-        if (SpeakerPass) {
-            MarkAsCompleted(SpeakerPass);
-        } 
+        //var SpeakerPass = $("input:radio[name='RightSpeaker']:checked").val();        
+        //if (SpeakerPass) {
+            MarkAsCompleted($("input:radio[name='RightSpeaker']:checked").val());
+        //} 
     }
 };
 
