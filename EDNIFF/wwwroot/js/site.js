@@ -287,7 +287,7 @@ function Validation()
 function MainSaveMethod() {
     debugger;
 
-    if (Validation()) {
+    //if (Validation()) {
         debugger;
         //make ajax call to save data
         //var mdata = _objToBeSaved
@@ -313,7 +313,7 @@ function MainSaveMethod() {
                 console.log('Failed ');
             }
         })
-    }    
+    //}    
 }
 
 
