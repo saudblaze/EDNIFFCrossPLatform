@@ -9,7 +9,8 @@ var _objToBeSaved = {
 
     IsTestCompleted: false,
     _listOfTest: [],
-    Grade:'',
+    Grade: '',
+
 }
 
 var _listOfTest;
@@ -239,7 +240,8 @@ function GetTestHtml() {
                 var strHtml = result.data;
                 $("#divTest").html(strHtml);
                 if (_currentTest.testName == "CMOS") {
-                    $("#rd" + _currentTest.testName + "Pass").prop("checked",true);
+                    $("#rd" + _currentTest.testName + "Pass").prop("checked", true);
+
                 }
             } else {
                 alert('Failed to receive the Data');
@@ -362,6 +364,26 @@ var Sound = {
     },
     LeftSpeakerTest() {
         $("#chkLeftSpeakerPass").attr('checked', 'checked');
+        $.ajax({
+            type: 'POST',
+            url: '/Tests/PlayLeftSpeaker',
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
+            data: null,
+            //async:false,
+            success: function (result) {
+                if (result.isSuccess == 1) {
+                    ////alert('Successfully received Data ');
+                    //var strHtml = result.data;
+                    //$("#divTest").html(strHtml)
+                } else {
+                    alert('Failed to play sound .');
+                }
+            },
+            error: function () {
+                alert('Failed to receive the Data');
+                console.log('Failed ');
+            }
+        });
         Sound.MarkSoundTested();
     },
     RightSpeakerTest() {

@@ -3,9 +3,11 @@ using EDNIFF.Common;
 using EDNIFF.Models;
 using EDNIFF.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using NAudio.CoreAudioApi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Threading.Tasks;
 
 namespace EDNIFF.Controllers
@@ -309,7 +311,30 @@ namespace EDNIFF.Controllers
                             "</tbody>" +
                             "</table>";
             }
-            return strResult;
+            return strResult;            
+        }
+
+        public void PlayLeftSpeaker()
+        {
+
+            SoundPlayer player = new SoundPlayer();
+            MMDevice defaultDevice;
+            MMDeviceEnumerator devEnum = new MMDeviceEnumerator();
+            defaultDevice = devEnum.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
+            defaultDevice.AudioEndpointVolume.Mute = false;
+            
+            defaultDevice.AudioEndpointVolume.Channels[0].VolumeLevelScalar = 1F;
+            defaultDevice.AudioEndpointVolume.Channels[1].VolumeLevelScalar = 0F;
+            player.SoundLocation = "Files/leftSpeaker.wav";
+            //changeColor(pictureBox1, 50);
+            //changeColor(pictureBox2, 0);
+            player.LoadAsync();
+            player.PlaySync();
+            //this is required bcoz there is a delay on switching channel volume
+            defaultDevice.AudioEndpointVolume.Channels[0].VolumeLevelScalar = 1F;
+            defaultDevice.AudioEndpointVolume.Channels[1].VolumeLevelScalar = 1F;
+            
+
         }
 
         public string GetSoundString(Device objDevice)
