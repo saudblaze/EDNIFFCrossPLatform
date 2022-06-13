@@ -360,7 +360,8 @@ namespace EDNIFF.Controllers
                         "<tbody>" +
 
                         "<tr>" +
-                            "<td span='2' class='td50 AllignCenter'><img  src='Images/speaker48.png' alt='No image found' /> </td>" +                        
+                            "<td></td>"+
+                            "<td class='td50 AllignCenter'><img  src='Images/speaker48.png' alt='No image found' /> </td>" +                        
                         "</tr>" +
 
 
