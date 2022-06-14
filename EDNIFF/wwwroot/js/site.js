@@ -241,7 +241,8 @@ function GetTestHtml() {
                 $("#divTest").html(strHtml);
                 if (_currentTest.testName == "CMOS") {
                     $("#rd" + _currentTest.testName + "Pass").prop("checked", true);
-
+                    _currentTest.testDone = true;
+                    MarkAsCompleted('Pass');
                 }
             } else {
                 alert('Failed to receive the Data');
@@ -292,7 +293,6 @@ function MainSaveMethod() {
 
 
 function MarkAsCompleted(objResultText) {
-    debugger
     if (_currentTest) {
         $.each(_listOfTest, function (index, item) {
             if (_currentTest.testName == item.testName) {
