@@ -80,6 +80,29 @@ namespace EDNIFF.Controllers
                         item.testResult = obj.testResult;
                     }
                 }
+                foreach (Device item in MacInfo.devices)
+                {
+                    if (item.TestName == obj.testName)
+                    {
+                        item.TestDone = true;
+                        if (obj.testResult == "Pass")
+                        {
+                            item.deviceStatus = DeviceStatus.Pass;
+                        }
+                        else if (obj.testResult == "Fail")
+                        {
+                            item.deviceStatus = DeviceStatus.Fail;
+                        }
+                        else if (obj.testResult == "NoDevice")
+                        {
+                            item.deviceStatus = DeviceStatus.NotPresent;
+                        }
+                        else 
+                        {
+                            item.deviceStatus = DeviceStatus.NotTested;
+                        }                                                
+                    }
+                }
 
                 return Json(new { IsSuccess = 1 });
             }
