@@ -617,7 +617,7 @@ namespace EDNIFF.Controllers
                         "<tr>" +
                         "<td> Result </td>" +
                         "<td>" +
-                            "<div class='form-check'>" +
+                            "<div class=''>" +
                                 "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
                             "</div>" +
                         "</td>" +
@@ -626,7 +626,7 @@ namespace EDNIFF.Controllers
                         "<tr>" +
                         "<td> Comments </td>" +
                         "<td>" +
-                            "<div class='form-check'>" +
+                            "<div class=''>" +
                                 "<input type='text' class='form-control' id='txt" + objDevice.TestName + "Comment' placeholder=''>" +
                             "</div>" +
                         "</td>" +
@@ -698,7 +698,7 @@ namespace EDNIFF.Controllers
                         "<tr>" +
                         "<td> Result </td>" +
                         "<td>" +
-                            "<div class='form-check'>" +
+                            "<div class=''>" +
                                 "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
                             "</div>" +
                         "</td>" +
@@ -707,7 +707,7 @@ namespace EDNIFF.Controllers
                         "<tr>" +
                         "<td> Comments </td>" +
                         "<td>" +
-                            "<div class='form-check'>" +
+                            "<div class=''>" +
                                 "<input type='text' class='form-control' id='txt" + objDevice.TestName + "Comment' placeholder=''>" +
                             "</div>" +
                         "</td>" +
@@ -767,7 +767,7 @@ namespace EDNIFF.Controllers
                         "<tr>" +
                         "<td> Result </td>" +
                         "<td>" +
-                            "<div class='form-check'>" +
+                            "<div class=''>" +
                                 "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
                             "</div>" +
                         "</td>" +
@@ -776,7 +776,7 @@ namespace EDNIFF.Controllers
                         "<tr>" +
                         "<td> Comments </td>" +
                         "<td>" +
-                            "<div class='form-check'>" +
+                            "<div class=''>" +
                                 "<input type='text' class='form-control' id='txt" + objDevice.TestName + "Comment' placeholder=''>" +
                             "</div>" +
                         "</td>" +

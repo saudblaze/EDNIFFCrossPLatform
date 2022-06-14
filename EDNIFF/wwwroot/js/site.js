@@ -109,7 +109,7 @@ function NextClick() {
                 //async:false,
                 success: function (result) {
                     if (result.isSuccess == 1) {
-                        
+
                     } else {
                         alert('Failed to receive the Data');
                     }
@@ -256,39 +256,34 @@ function GetTestHtml() {
 }
 
 function MainSaveMethod() {
-        debugger;
-        //make ajax call to save data
-        //var mdata = _objToBeSaved
-        $.ajax({
-            type: 'POST',
-            url: '/Tests/MainSaveMethod',
-            contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
-            data: null,
-            //async:false,
-            success: function (res) {
-                debugger;
-                if (res.isSuccess == 1) {
-
-                    alert("Please select the grade .");
-                    $("#btnMainSave").prop("disabled", true);
-                }
-
-                else if (re.isSuccess == 101)
-                {
-                    alert("Please select the grade .");
-                }
-                else if (re.isSuccess == 102) {
-                    alert("Please do the testing first .");
-                }
-                else {
-                    alert('Failed to receive the Data');
-                }
-            },
-            error: function () {
-                alert('Failed to receive the Data');
-                console.log('Failed ');
+    //make ajax call to save data
+    //var mdata = _objToBeSaved
+    $.ajax({
+        type: 'POST',
+        url: '/Tests/MainSaveMethod',
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
+        data: null,
+        //async:false,
+        success: function (res) {
+            if (res.isSuccess == 1) {
+                alert("Please select the grade .");
+                $("#btnMainSave").prop("disabled", true);
             }
-        })      
+            else if (re.isSuccess == 101) {
+                alert("Please select the grade .");
+            }
+            else if (re.isSuccess == 102) {
+                alert("Please do the testing first .");
+            }
+            else {
+                alert('Failed to receive the Data');
+            }
+        },
+        error: function () {
+            alert('Failed to receive the Data');
+            console.log('Failed ');
+        }
+    })
 }
 
 
@@ -298,14 +293,14 @@ function MarkAsCompleted(objResultText) {
             if (_currentTest.testName == item.testName) {
                 //also make ajax call and marked static object with is testdone = true
                 //MarkItAsCompleted();
-                
+
                 item.testDone = true;
                 _currentTest.testDone = true;
 
                 item.testResult = objResultText;
                 _currentTest.testResult = objResultText;
 
-                
+
                 SetLable($("#lbl" + _currentTest.testName), objResultText);
                 SetLable($("#lblResult" + _currentTest.testName), objResultText);
 
@@ -327,7 +322,7 @@ function MarkAsCompleted(objResultText) {
                     _currentTest.className = 'form-check-label NotTestedText';
                 }
 
-                setTimeout(MarkItAsCompleted(), 500);                
+                setTimeout(MarkItAsCompleted(), 500);
             }
         });
     }
@@ -338,16 +333,16 @@ function SetLable(InputId, objResult, _listOfTestItem) {
         $(InputId).text(objResult);
         $(InputId).removeClass();
         if (objResult == 'Pass') {
-            $(InputId).addClass('form-check-label PassText');            
+            $(InputId).addClass('form-check-label PassText');
         }
         else if (objResult == 'Fail') {
-            $(InputId).addClass('form-check-label FailText');            
+            $(InputId).addClass('form-check-label FailText');
         }
         else if (objResult == 'NoDevice') {
-            $(InputId).addClass('form-check-label NoDeviceText');            
+            $(InputId).addClass('form-check-label NoDeviceText');
         }
         else if (objResult == 'NotTested') {
-            $(InputId).addClass('form-check-label NotTestedText');            
+            $(InputId).addClass('form-check-label NotTestedText');
         }
     }
 }
@@ -355,32 +350,22 @@ function SetLable(InputId, objResult, _listOfTestItem) {
 
 var Sound = {
 
-    
+
     SpeakerChange() {
-        debugger;
-        //alert('RightSpeakerChange');
         Sound.MarkSoundTested();
     },
     SpeakerTest() {
-        debugger;
-        
         var audio = new Audio('http://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3');
         if (audio.play()) {
             $("#chkSpeakerPass").prop('checked', true);
             Sound.MarkSoundTested();
         }
-
-        
-    },    
+    },
     AudioPortChange() {
         alert('AudioPortChange');
     },
     MarkSoundTested() {
-        debugger;
-        //var SpeakerPass = $("input:radio[name='RightSpeaker']:checked").val();        
-        //if (SpeakerPass) {
-            MarkAsCompleted($("input:radio[name='RightSpeaker']:checked").val());
-        //} 
+        MarkAsCompleted($("input:radio[name='RightSpeaker']:checked").val());
     }
 };
 
@@ -483,9 +468,9 @@ var Dashboard = {
         if (SelectedGrade) {
             _objToBeSaved.Grade = SelectedGrade;
         }
-        
+
         var mdata = {
-            Grade : $("#ddlGrade").val()
+            Grade: $("#ddlGrade").val()
         };
         $.ajax({
             type: 'POST',
@@ -495,7 +480,7 @@ var Dashboard = {
             //async:false,
             success: function (result) {
                 if (result.isSuccess == 1) {
-                    
+
                 } else {
                     alert('Failed to receive the Data');
                 }
