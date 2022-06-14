@@ -30,7 +30,7 @@ namespace EDNIFF.BusinessLogic
                     return 102;
                 }
 
-                    CommonMethods objCommonMethods = new CommonMethods();
+                CommonMethods objCommonMethods = new CommonMethods();
 
                 Device objProcessor = objCommonMethods.GetDevice(ConstantData.Categories.Processor, ConstantData.DeviceNames.Processor);
                 Device objMotherBoard = objCommonMethods.GetDevice(ConstantData.Categories.MotherBoard, ConstantData.DeviceNames.MotherBoard);
@@ -39,108 +39,114 @@ namespace EDNIFF.BusinessLogic
                 Device objDisplay = objCommonMethods.GetDevice(ConstantData.Categories.Display, ConstantData.DeviceNames.Video);
 
                 vwSystemInfoDetail objParam = new vwSystemInfoDetail();
+                var dict = new Dictionary<string, object>();
 
                 objParam.UnitId = 212297;
-                objParam.SerialNumber = MacInfo.devices.Where(x => x.Category == ConstantData.Categories.Processor && x.DeviceName == ConstantData.DeviceNames.Processor).Select(x => x.Serial).FirstOrDefault(); 
-                objParam.InhouseSerialNo = "101601527962";
-                objParam.COA = MacInfo.OSCOA;
-                objParam.Resolution = MacInfo.Resolution;
-                objParam.PartNumber = "";
-                objParam.Manufacturer = "Apple";
-                objParam.Model = objMotherBoard.Info1;
-                objParam.Processor = objProcessor.Model;
-                objParam.ProcSpeed = objProcessor.Speed;
-                objParam.RAM = objProcessor.Size;
-                objParam.StorageSize = MacInfo.StorageSize;
-                objParam.StorageType = MacInfo.StorageType;
+                dict.Add("UnitId", objParam.UnitId);
 
+                objParam.SerialNumber = MacInfo.devices.Where(x => x.Category == ConstantData.Categories.Processor && x.DeviceName == ConstantData.DeviceNames.Processor).Select(x => x.Serial).FirstOrDefault();
+                dict.Add("SerialNumber", objParam.SerialNumber);
+
+                objParam.InhouseSerialNo = "101601527962";
+                dict.Add("InhouseSerialNo", objParam.InhouseSerialNo);
+
+                objParam.COA = MacInfo.OSCOA;
+                dict.Add("COA", objParam.COA);
+
+                objParam.Resolution = MacInfo.Resolution;
+                dict.Add("Resolution", objParam.Resolution);
+
+                objParam.PartNumber = "";
+                dict.Add("PartNumber", objParam.PartNumber);
+
+                objParam.Manufacturer = "Apple";
+                dict.Add("Manufacturer", objParam.Manufacturer);
+
+                objParam.Model = objMotherBoard.Info1;
+                dict.Add("Model", objParam.Model);
+
+                objParam.Processor = objProcessor.Model;
+                dict.Add("Processor", objParam.Processor);
+
+                objParam.ProcSpeed = objProcessor.Speed;
+                dict.Add("ProcSpeed", objParam.ProcSpeed);
+
+                objParam.RAM = objProcessor.Size;
+                dict.Add("RAM", objParam.RAM);
+
+                objParam.StorageSize = MacInfo.StorageSize;
+                dict.Add("StorageSize", objParam.StorageSize);
+
+                objParam.StorageType = MacInfo.StorageType;
+                dict.Add("StorageType", objParam.StorageType);
 
                 objParam.Optical = MacInfo.TestList.Where(x => x.testName == "Optical").Select(x => x.testResult).FirstOrDefault();
+                dict.Add("Optical", objParam.Optical);
 
-                objParam.SpeakerTest = MacInfo.TestList.Where(x => x.testName == "Sound").Select(x => x.testResult).FirstOrDefault();
+                objParam.SpeakerTest = MacInfo.TestList.Where(x => x.testName == "Sound").Select(x => x.testResult).FirstOrDefault(); 
+                dict.Add("Optical", objParam.Optical);
+
                 objParam.Webcam = MacInfo.TestList.Where(x => x.testName == "Camera").Select(x => x.testResult).FirstOrDefault();
+                dict.Add("Webcam", objParam.Webcam);
+
                 objParam.LAN = MacInfo.TestList.Where(x => x.testName == "LanPort").Select(x => x.testResult).FirstOrDefault();
+                dict.Add("LAN", objParam.LAN);
+
                 objParam.Wifi = MacInfo.TestList.Where(x => x.testName == "Wifi").Select(x => x.testResult).FirstOrDefault();
+                dict.Add("Wifi", objParam.Wifi);
+
                 objParam.Keyboard = MacInfo.TestList.Where(x => x.testName == "Keyboard").Select(x => x.testResult).FirstOrDefault();
+                dict.Add("Keyboard", objParam.Keyboard);
+
                 objParam.MACADD = MacInfo.MACAddress;
+                dict.Add("MACADD", objParam.MACADD);
+
                 objParam.Touchpad = MacInfo.TestList.Where(x => x.testName == "Touchpad").Select(x => x.testResult).FirstOrDefault();
+                dict.Add("Touchpad", objParam.Touchpad);
+
                 objParam.BatteryTest = MacInfo.TestList.Where(x => x.testName == "Battery").Select(x => x.testResult).FirstOrDefault();
+                dict.Add("BatteryTest", objParam.BatteryTest);
+
                 objParam.BatteryHealth = objBattery.Info1;
+                dict.Add("BatteryHealth", objParam.BatteryHealth);
+
                 objParam.VideoCard = objDisplay.Model;
+                dict.Add("VideoCard", objParam.VideoCard);
+
                 objParam.GRADE = MacInfo.Grade;
+                dict.Add("GRADE", objParam.GRADE);
+
                 objParam.BoardTest = MacInfo.TestList.Where(x => x.testName == "CMOS").Select(x => x.testResult).FirstOrDefault();
+                dict.Add("BoardTest", objParam.BoardTest);
 
-                objParam.Devices = MacInfo.devices;
+                if (MacInfo.devices != null && MacInfo.devices.Count() > 0)
+                {
+                    var devices = MacInfo.devices.Where(x => x.DevicePresent).Select(x => new
+                    {
+                        Category = x.Category.ToString(),
+                        DeviceName = x.DeviceName.ToString(),
+                        x.Manufacturer,
+                        x.Model,
+                        x.Serial,
+                        x.Size,
+                        x.Speed,
+                        x.Info1,
+                        x.Info2,
+                        x.Caption,
+                        x.Description,
+                        x.Status,
+                        x.boolInfo1,
+                        x.boolInfo2,
+                        x.Comment,
+                        DeviceStatus = x.deviceStatus.ToString()
+                    }).ToList();
+                    dict.Add("devices", devices);
+                }
 
-
-
-                var dict = new Dictionary<string, object>();
-                //foreach (ReportProps prop in Enum.GetValues(typeof(ReportProps)))
-                //{
-                //    //switch (prop)
-                //    //{
-                //    //    case ReportProps.KeyboardLng:
-                //    //        dict.Add(prop.ToString(), KeyboardLanguage);
-                //    //        break;
-                //    //    case ReportProps.MADEIN:
-                //    //        dict.Add(prop.ToString(), Madein);
-                //    //        break;
-                //    //    case ReportProps.COA:
-                //    //        dict.Add(prop.ToString(), OSCOA);
-                //    //        break;
-                //    //    case ReportProps.ObservNotes:
-                //    //        dict.Add(prop.ToString(), ObservationComment);
-                //    //        break;
-                //    //    case ReportProps.UnitId:
-                //    //        dict.Add(prop.ToString(), UnitId);
-                //    //        break;
-                //    //    case ReportProps.Grade:
-                //    //        dict.Add(prop.ToString(), Grade);
-                //    //        break;
-                //    //    case ReportProps.BatteryBackup:
-                //    //        if (!string.IsNullOrEmpty(batterybackupresult))
-                //    //            dict.Add(prop.ToString(), batterybackupresult);
-                //    //        break;
-                //    //    //case ReportProps.RAM:
-                //    //    //    dict.Add(prop.ToString(), UtilityHelper.GetDataSize(PublicVariables.RAMSize));
-                //    //    //    break;
-
-                //    //    case ReportProps.PartNumber:
-                //    //        dict.Add(prop.ToString(), PartNumber);
-                //    //        break;
-                //    //    case ReportProps.RAM:
-                //    //        dict.Add(prop.ToString(), RamSize);
-                //    //        break;
-                //    //    case ReportProps.StorageType:
-                //    //        dict.Add(prop.ToString(), DiskType);
-                //    //        break;
-                //    //    case ReportProps.StorageSize:
-                //    //        dict.Add(prop.ToString(), DiskSize);
-                //    //        break;
-
-                //    //    case ReportProps.Resolution:
-                //    //        dict.Add(prop.ToString(), VideoRes);
-                //    //        break;
-                //    //    case ReportProps.DisplaySize:
-                //    //        dict.Add(prop.ToString(), LCDSize);
-                //    //        break;
-
-                //    //    //case ReportProps.StorageHealth:
-                //    //    //    dict.Add(prop.ToString(), UtilityHelper.GetDataSize(PublicVariables.RAMSize));
-                //    //    //    break;
-                //    //    default:
-                //    //        dict.Add(prop.ToString(), system.getPropertyValue(result, prop));
-                //    //        break;
-                //    //}
-
-                //}
-
-                //dict.Add("NoOfPorts", PublicVariables.noofPorts);
-
-
+                
 
                 HttpAPIRequests httpRequest = new HttpAPIRequests();
-                var response = await httpRequest.PostRequest<long>("Macos/MainSaveMethod", objParam);
+                var response = await httpRequest.PostRequest<long>("Macos/MainSaveMethod", dict);
                 if (response.hasError)
                 {
                     //MessageBox.Show(response.message, "Error");
