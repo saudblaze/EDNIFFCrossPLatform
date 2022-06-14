@@ -84,7 +84,7 @@ namespace EDNIFF.BusinessLogic
                 dict.Add("Optical", objParam.Optical);
 
                 objParam.SpeakerTest = MacInfo.TestList.Where(x => x.testName == "Sound").Select(x => x.testResult).FirstOrDefault(); 
-                dict.Add("Optical", objParam.Optical);
+                dict.Add("SpeakerTest", objParam.SpeakerTest);
 
                 objParam.Webcam = MacInfo.TestList.Where(x => x.testName == "Camera").Select(x => x.testResult).FirstOrDefault();
                 dict.Add("Webcam", objParam.Webcam);
