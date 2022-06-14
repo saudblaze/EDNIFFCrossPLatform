@@ -70,7 +70,7 @@ namespace EDNIFF.BusinessLogic
                 objParam.GRADE = MacInfo.Grade;
                 objParam.BoardTest = MacInfo.TestList.Where(x => x.testName == "CMOS").Select(x => x.testResult).FirstOrDefault();
 
-
+                objParam.Devices = MacInfo.devices;
 
 
 

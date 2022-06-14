@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EDNIFF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -40,6 +41,7 @@ namespace EDNIFF.ViewModel
         public string Bluetooth { get; set; }
         //public string ObservationComment { get; set; }
         //public ICollection<vwSystemDevice> Devices { get; set; }
+        public List<Device> Devices { get; set; }
         public long[] Observations { get; set; }
         public string CreatedBy { get; set; }
         public string UpdatedBy { get; set; }
