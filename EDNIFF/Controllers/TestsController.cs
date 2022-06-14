@@ -97,10 +97,10 @@ namespace EDNIFF.Controllers
                         {
                             item.deviceStatus = DeviceStatus.NotPresent;
                         }
-                        else 
+                        else
                         {
                             item.deviceStatus = DeviceStatus.NotTested;
-                        }                                                
+                        }
                     }
                 }
 
@@ -159,7 +159,7 @@ namespace EDNIFF.Controllers
             }
         }
 
-        
+
         public async Task<JsonResult> MainSaveMethod()
         {
             var objResult = await objTestServices.SaveMethod();
@@ -287,11 +287,11 @@ namespace EDNIFF.Controllers
                         "<td>  </td>" +
                         "<td>" +
                             "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' id='rd"+ objDevice.TestName + "Pass' name='CMOS' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
+                                "<input class='form-check-input' type='radio' id='rd" + objDevice.TestName + "Pass' name='CMOS' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
                                 "<label class='form-check-label'>Pass</label>" +
                             "</div>" +
                             "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' id='rd"+ objDevice.TestName + "Fail' name='CMOS' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
+                                "<input class='form-check-input' type='radio' id='rd" + objDevice.TestName + "Fail' name='CMOS' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
                                 "<label class='form-check-label'>Fail</label>" +
                             "</div>" +
                         "</td>" +
@@ -336,7 +336,7 @@ namespace EDNIFF.Controllers
                             "</tbody>" +
                             "</table>";
             }
-            return strResult;            
+            return strResult;
         }
 
         public void PlayLeftSpeaker()
@@ -354,7 +354,7 @@ namespace EDNIFF.Controllers
             //MMDeviceEnumerator devEnum = new MMDeviceEnumerator();
             //defaultDevice = devEnum.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
             //defaultDevice.AudioEndpointVolume.Mute = false;
-            
+
             //defaultDevice.AudioEndpointVolume.Channels[0].VolumeLevelScalar = 1F;
             //defaultDevice.AudioEndpointVolume.Channels[1].VolumeLevelScalar = 0F;
             //player.SoundLocation = "Files/leftSpeaker.wav";
@@ -365,7 +365,7 @@ namespace EDNIFF.Controllers
             ////this is required bcoz there is a delay on switching channel volume
             //defaultDevice.AudioEndpointVolume.Channels[0].VolumeLevelScalar = 1F;
             //defaultDevice.AudioEndpointVolume.Channels[1].VolumeLevelScalar = 1F;
-            
+
 
         }
 
@@ -383,26 +383,26 @@ namespace EDNIFF.Controllers
                         "<tbody>" +
 
                         "<tr>" +
-                            "<td></td>"+
-                            "<td class='td50 AllignCenter'><img  src='Images/speaker48.png' alt='No image found' /> </td>" +                        
+                            "<td></td>" +
+                            "<td class='td50 AllignCenter'><img  src='Images/speaker48.png' alt='No image found' /> </td>" +
                         "</tr>" +
 
 
                         "<tr>" +
-                            "<td></td>"+
-                            "<td class='td50 Allignleft'> <button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; ' id='btnLeftSpeaker' onclick='Sound.SpeakerTest()'>Play Sound</button> </td>" +                        
+                            "<td></td>" +
+                            "<td class='td50 Allignleft'> <button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; ' id='btnLeftSpeaker' onclick='Sound.SpeakerTest()'>Play Sound</button> </td>" +
                         "</tr>" +
 
                         "<tr>" +
                             "<td class='td50 Allignleft'> " +
-                                //"<div class='form-check form-check-inline'>" +
-                                //    "<input class='form-check-input' type='radio' name='LeftSpeaker' id='chkLeftSpeakerPass' onchange='Sound.LeftSpeakerChange(\"Pass\")' value='Pass' >" +
-                                //    "<label class='form-check-label'>Pass</label>" +
-                                //"</div>" +
-                                //"<div class='form-check form-check-inline'>" +
-                                //    "<input class='form-check-input' type='radio' name='LeftSpeaker' id='chkLeftSpeakerFail' onchange='Sound.LeftSpeakerChange(\"Fail\")' value='Fail' >" +
-                                //    "<label class='form-check-label'>Fail</label>" +
-                                //"</div>" +
+                            //"<div class='form-check form-check-inline'>" +
+                            //    "<input class='form-check-input' type='radio' name='LeftSpeaker' id='chkLeftSpeakerPass' onchange='Sound.LeftSpeakerChange(\"Pass\")' value='Pass' >" +
+                            //    "<label class='form-check-label'>Pass</label>" +
+                            //"</div>" +
+                            //"<div class='form-check form-check-inline'>" +
+                            //    "<input class='form-check-input' type='radio' name='LeftSpeaker' id='chkLeftSpeakerFail' onchange='Sound.LeftSpeakerChange(\"Fail\")' value='Fail' >" +
+                            //    "<label class='form-check-label'>Fail</label>" +
+                            //"</div>" +
                             "</td>" +
                             "<td class='td50 Allignleft'>" +
                                 "<div class='form-check form-check-inline'>" +
@@ -846,7 +846,14 @@ namespace EDNIFF.Controllers
                                     "<option value='US'> US</option>" +
                                 "</select>" +
                             "</div>" +
-                            "<div>" +
+
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td>  </td>" +
+                        "<td>" +
+                        "<div>" +
                                 "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='keyboard.StartTest()'>Start test</button>" +
                             "</div>" +
                         "</td>" +
@@ -874,7 +881,7 @@ namespace EDNIFF.Controllers
                         "<tr>" +
                         "<td> Result </td>" +
                         "<td>" +
-                            "<div class='form-check'>" +
+                            "<div class=''>" +
                                 "<label class='form-check-label' id='lblResult" + objDevice.TestName + "'>Not Tested</label>" +
                             "</div>" +
                         "</td>" +
@@ -883,7 +890,7 @@ namespace EDNIFF.Controllers
                         "<tr>" +
                         "<td> Comments </td>" +
                         "<td>" +
-                            "<div class='form-check'>" +
+                            "<div class=''>" +
                                 "<input type='text' class='form-control' id='txt" + objDevice.TestName + "Comment' placeholder=''>" +
                             "</div>" +
                         "</td>" +

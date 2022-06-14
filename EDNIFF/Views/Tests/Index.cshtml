@@ -269,21 +269,21 @@
             </tr>
 
             @*@foreach (var item in Model.TestList)
-        {
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" value="@item.TestSelected" id="@item.Id">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            @item.TestLable
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label" id="@item.LableId"> @item.TestResultLable </label>
-                </td>
-            </tr>
-        }*@
+                {
+                    <tr>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input singleselect" type="checkbox" value="@item.TestSelected" id="@item.Id">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    @item.TestLable
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <label class="form-check-label" id="@item.LableId"> @item.TestResultLable </label>
+                        </td>
+                    </tr>
+                }*@
 
 
 
@@ -304,12 +304,33 @@
         </table>
     </div>
 
-    <div style="width: 75%; height: 600px; background-color: lightyellow; border: 1px solid gray;" >
+    <div style="width: 75%; height: 600px; background-color: lightyellow; border: 1px solid gray;">
         <div id="divTest">
-            
-        </div>                
+
+        </div>
     </div>
 
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalKeyboard" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 
@@ -317,33 +338,33 @@
 {
     <script>
         $(function () {
-            
+
             //bind data from MACKINFO
             var tt = @temp;
             if (tt && tt.testList) {
 
                 _listOfTest = tt.testList;
-                _objToBeSaved.Grade = tt.grade; // 
+                _objToBeSaved.Grade = tt.grade; //
                 _objToBeSaved.IsTestCompleted = tt.isTestCompleted;
 
                 $.each(tt.testList, function (index, item) {
                     if (item.testSelected) {
                         $("#chk" + item.testName).prop("checked", item.testSelected);
                         $("#lbl" + item.testName).text(item.testResult);
-                        $("#lbl" + item.testName).removeClass().addClass(item.className);                           
-                    }                                                                        
-                });      
+                        $("#lbl" + item.testName).removeClass().addClass(item.className);
+                    }
+                });
 
 
                 if (tt.isTestCompleted) {
                     $("#divTest").html("<p> Test Completed . </p>");
                     $("#btnStart").prop("disabled", true);
                 } else {
-                    //get the test which is not completed yet and bind its html here 
+                    //get the test which is not completed yet and bind its html here
                     var isAnyTest = false;
                     $.each(tt.testList, function (index, item) {
                         if (item.testSelected == true && item.testDone == false && isAnyTest == false) {
-                            //call ajax and bind this test in div                 
+                            //call ajax and bind this test in div
                             _currentTest = item;
                             isAnyTest = true;
                         }
@@ -354,9 +375,9 @@
                         $("#lbl" + _currentTest.testName).text("Running");
                         $("#lblResult" + _currentTest.testName).text("Not Tested");
                     }
-                }                   
-            }                   
-            
+                }
+            }
+
 
             $('#btnStart').click(function () {
                 var tt = @temp;

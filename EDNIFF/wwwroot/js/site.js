@@ -392,7 +392,9 @@ var LCD = {
 
 var keyboard = {
     StartTest() {
+        debugger
         alert('start keyboard test');
+        $("#modalKeyboard").modal("show");
     },
     BacklightKeyboardChecked() {
         alert('BacklightKeyboard');
