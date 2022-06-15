@@ -394,7 +394,14 @@ var keyboard = {
     StartTest() {
         debugger
         alert('start keyboard test');
-        $("#modalKeyboard").modal("show");
+        var KeyboardType = $("#ddlKeyboardType").val();
+        if (KeyboardType == EU) {
+            $("#modalKeyboardEU").modal("show");
+        }
+        else {
+            $("#modalKeyboardUS").modal("show");
+        }
+        
     },
     BacklightKeyboardChecked() {
         alert('BacklightKeyboard');

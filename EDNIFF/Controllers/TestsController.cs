@@ -841,7 +841,7 @@ namespace EDNIFF.Controllers
                                 "<label class='form-check-label'>Numeric Keyboard</label>" +
                             "</div>" +
                             "<div class='form-check form-check-inline'>" +
-                                "<select class='form-select' aria-label='Default select example'> " +
+                                "<select class='form-select' aria-label='Default select example' id='ddlKeyboardType'> " +
                                     "<option value='EU'> EU</option>" +
                                     "<option value='US'> US</option>" +
                                 "</select>" +
