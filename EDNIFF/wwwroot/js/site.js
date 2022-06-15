@@ -393,7 +393,6 @@ var LCD = {
 var keyboard = {
     StartTest() {
         debugger
-        alert('start keyboard test');
         var KeyboardType = $("#ddlKeyboardType").val();
         if (KeyboardType == 'EU') {
             $("#modalKeyboardEU").modal("show");

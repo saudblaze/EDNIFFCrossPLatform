@@ -863,7 +863,7 @@ namespace EDNIFF.Controllers
                         "<td> " +
                             "<div class='form-check form-check-inline'>" +
                                 "<input class='form-check-input' type='checkbox' id='chk" + objDevice.TestName + "Backlight'  onchange='keyboard.BacklightKeyboardChecked()' value='Pass' >" +
-                                "<label class='form-check-label'>Numeric Keyboard</label>" +
+                                "<label class='form-check-label'>Keyboard Backlight</label>" +
                             "</div>" +
                         " </td>" +
                         "<td>" +
