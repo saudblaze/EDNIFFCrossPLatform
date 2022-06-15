@@ -12,363 +12,375 @@
     var temp = @Html.Raw(Json.Serialize(Model));
 }
 
-<h3>Tests</h3>
-
-<div style="width:1200px; display:flex; overflow:scroll; max-height:500px">
-
-    <div style="width:20%; background-color:lightgray; height:600px;">
-        <table style="padding:10px; width:100%;" class="table-bordered">
-            <tr>
-                <td colspan="2">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="AllSelect">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Select All
-                        </label>
-                    </div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkCMOS">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            CMOS
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblCMOS"> Optional </label>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkSound">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Sound
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblSound"> Optional </label>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkUSB">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            USB
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblUSB"> Optional </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkLanPort">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Lan Port
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblLanPort"> Optional </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkOptical">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Optical
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblOptical"> Optional </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkLCD">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            LCD
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblLCD"> Optional </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkKeyboard">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Keyboard
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblKeyboard"> Optional </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkTouchpad">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Touchpad
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblTouchpad"> Optional </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkWifi">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Wifi / Blue
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblWifi"> Optional </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkBattery">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Battery
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblBattery"> Optional </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkCamera">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Camera
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblCamera"> Optional </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkTouchScreen">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            TouchScreen
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblTouchScreen"> Optional </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkMicrophone">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Microphone
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblMicrophone"> Optional </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkSDCard">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            SD Card Test
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblSDCard"> Optional </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkBiometric">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Biometric
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblBiometric"> Optional </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkSmartCard">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Smart Card
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblSmartCard"> Optional </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkDisplay">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Display
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblDisplay"> Optional </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input singleselect" type="checkbox" id="chkPortTest">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Port Test
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <label class="form-check-label NotTestedText" id="lblPortTest"> Optional </label>
-                </td>
-            </tr>
-
-            @*@foreach (var item in Model.TestList)
-                {
-                    <tr>
-                        <td>
-                            <div class="form-check">
-                                <input class="form-check-input singleselect" type="checkbox" value="@item.TestSelected" id="@item.Id">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    @item.TestLable
-                                </label>
-                            </div>
-                        </td>
-                        <td>
-                            <label class="form-check-label" id="@item.LableId"> @item.TestResultLable </label>
-                        </td>
-                    </tr>
-                }*@
-
-
-
-            <tr>
-                <td colspan="2">&nbsp;</td>
-            </tr>
-
-            <tr>
-                <td>
-                    @*<button type="submit" class="btn btn-primary btn-block btn-sm" style="width:110px" onclick="location.href='@Url.Action("DisplaySearchResults", "Tests")'">Start</button>*@
-                    <button type="submit" class="btn btn-primary btn-block btn-sm" style="width:110px" id="btnStart">Start</button>
-                </td>
-                <td>
-                    <button type="submit" class="btn btn-primary btn-block btn-sm" style="width:110px" onclick="testmethod()">Display Report</button>
-                </td>
-            </tr>
-
-        </table>
-    </div>
-
-    <div style="width: 75%; height: 600px; background-color: lightyellow; border: 1px solid gray;">
-        <div id="divTest">
-
-        </div>
-    </div>
-
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="modalKeyboardUS" role="dialog">
-    <div class="modal-dialog modal-lg" style="width: 1000px; height: 100%; padding: 0;">
-
-        <!-- Modal content-->
-        <div class="modal-content" style="height: 100%; border-radius: 0;">
-            <div class="modal-header">
-                <h4 class="modal-title">Keyboard US</h4>
-            </div>
-            <div class="modal-body">
-                <fieldset>
-                    <legend>Keyboard:</legend>
-                    <lable class="KeyboardLable" id="lblESC">ESC</lable>
-                    <lable class="KeyboardLable" style="margin-left:10px" id="lblF1">F1</lable>
-                    <lable class="KeyboardLable" id="lblF2">F2</lable>
-                    <lable class="KeyboardLable" id="lblF3">F3</lable>
-                    <lable class="KeyboardLable" id="lblF4">F4</lable>
-                    <lable class="KeyboardLable" style="margin-left:10px" id="lblF5">F5</lable>
-                    <lable class="KeyboardLable" id="lblF6">F6</lable>
-                    <lable class="KeyboardLable" id="lblF7">F7</lable>
-                    <lable class="KeyboardLable" id="lblF8">F8</lable>
-                    <lable class="KeyboardLable" style="margin-left:10px" id="lblF9">F9</lable>
-                    <lable class="KeyboardLable" id="lblF10">F10</lable>
-                    <lable class="KeyboardLable" id="lblF11">F11</lable>
-                    <lable class="KeyboardLable" id="lblF12">F12</lable>
-                </fieldset>                    
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-<div class="modal fade" id="modalKeyboardEU" role="dialog">
-    <div class="modal-dialog modal-lg">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Keyboard EU</h4>
-            </div>
-            <div class="modal-body">
-                <p>Some text in the modal.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-@section Scripts
+@section Styles
 {
-    <script>
+    <style type="text/css">
+        .KeyboardLable {
+            border: 1px;
+            border-color: lightgray;
+            border-style: dotted;
+            padding: 5px;
+        }
+    </style>
+}
+
+    <h3>Tests</h3>
+
+    <div style="width:1200px; display:flex; overflow:scroll; max-height:500px">
+
+        <div style="width:20%; background-color:lightgray; height:600px;">
+            <table style="padding:10px; width:100%;" class="table-bordered">
+                <tr>
+                    <td colspan="2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="AllSelect">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Select All
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkCMOS">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                CMOS
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblCMOS"> Optional </label>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkSound">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Sound
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblSound"> Optional </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkUSB">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                USB
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblUSB"> Optional </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkLanPort">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Lan Port
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblLanPort"> Optional </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkOptical">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Optical
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblOptical"> Optional </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkLCD">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                LCD
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblLCD"> Optional </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkKeyboard">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Keyboard
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblKeyboard"> Optional </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkTouchpad">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Touchpad
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblTouchpad"> Optional </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkWifi">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Wifi / Blue
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblWifi"> Optional </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkBattery">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Battery
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblBattery"> Optional </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkCamera">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Camera
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblCamera"> Optional </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkTouchScreen">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                TouchScreen
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblTouchScreen"> Optional </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkMicrophone">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Microphone
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblMicrophone"> Optional </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkSDCard">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                SD Card Test
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblSDCard"> Optional </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkBiometric">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Biometric
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblBiometric"> Optional </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkSmartCard">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Smart Card
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblSmartCard"> Optional </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkDisplay">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Display
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblDisplay"> Optional </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input singleselect" type="checkbox" id="chkPortTest">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Port Test
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="form-check-label NotTestedText" id="lblPortTest"> Optional </label>
+                    </td>
+                </tr>
+
+                @*@foreach (var item in Model.TestList)
+                    {
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input singleselect" type="checkbox" value="@item.TestSelected" id="@item.Id">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        @item.TestLable
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <label class="form-check-label" id="@item.LableId"> @item.TestResultLable </label>
+                            </td>
+                        </tr>
+                    }*@
+
+
+
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        @*<button type="submit" class="btn btn-primary btn-block btn-sm" style="width:110px" onclick="location.href='@Url.Action("DisplaySearchResults", "Tests")'">Start</button>*@
+                        <button type="submit" class="btn btn-primary btn-block btn-sm" style="width:110px" id="btnStart">Start</button>
+                    </td>
+                    <td>
+                        <button type="submit" class="btn btn-primary btn-block btn-sm" style="width:110px" onclick="testmethod()">Display Report</button>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div style="width: 75%; height: 600px; background-color: lightyellow; border: 1px solid gray;">
+            <div id="divTest">
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalKeyboardUS" role="dialog">
+        <div class="modal-dialog modal-lg" style="width: 1000px; height: 100%; padding: 0;">
+
+            <!-- Modal content-->
+            <div class="modal-content" style="height: 100%; border-radius: 0;">
+                <div class="modal-header">
+                    <h4 class="modal-title">Keyboard US</h4>
+                </div>
+                <div class="modal-body">
+                    <fieldset>
+                        <legend>Keyboard:</legend>
+                        <lable class="KeyboardLable" id="lblESC">ESC</lable>
+                        <lable class="KeyboardLable" style="margin-left:10px" id="lblF1">F1</lable>
+                        <lable class="KeyboardLable" id="lblF2">F2</lable>
+                        <lable class="KeyboardLable" id="lblF3">F3</lable>
+                        <lable class="KeyboardLable" id="lblF4">F4</lable>
+                        <lable class="KeyboardLable" style="margin-left:10px" id="lblF5">F5</lable>
+                        <lable class="KeyboardLable" id="lblF6">F6</lable>
+                        <lable class="KeyboardLable" id="lblF7">F7</lable>
+                        <lable class="KeyboardLable" id="lblF8">F8</lable>
+                        <lable class="KeyboardLable" style="margin-left:10px" id="lblF9">F9</lable>
+                        <lable class="KeyboardLable" id="lblF10">F10</lable>
+                        <lable class="KeyboardLable" id="lblF11">F11</lable>
+                        <lable class="KeyboardLable" id="lblF12">F12</lable>
+                    </fieldset>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal fade" id="modalKeyboardEU" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Keyboard EU</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    @section Scripts
+{
+        <script>
         $(function () {
 
             //bind data from MACKINFO
@@ -422,5 +434,5 @@
                 }
             });
         });
-    </script>
-}
+        </script>
+    }
