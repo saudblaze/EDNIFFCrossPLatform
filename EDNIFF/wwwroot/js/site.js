@@ -395,7 +395,7 @@ var keyboard = {
         debugger
         alert('start keyboard test');
         var KeyboardType = $("#ddlKeyboardType").val();
-        if (KeyboardType == EU) {
+        if (KeyboardType == 'EU') {
             $("#modalKeyboardEU").modal("show");
         }
         else {

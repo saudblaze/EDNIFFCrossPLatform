@@ -817,21 +817,7 @@ namespace EDNIFF.Controllers
                             "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='NextClick()'>Next</button>" +
                             "</th>" +
                         "</tr></thead> " +
-                        "<tbody>" +
-
-                        "<tr>" +
-                        "<td>  </td>" +
-                        "<td>" +
-                            "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' id='Pass' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
-                                "<label class='form-check-label'>Pass</label>" +
-                            "</div>" +
-                            "<div class='form-check form-check-inline'>" +
-                                "<input class='form-check-input' type='radio' id='Fail' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
-                                "<label class='form-check-label'>Fail</label>" +
-                            "</div>" +
-                        "</td>" +
-                        "</tr>" +
+                        "<tbody>" +                        
 
                         "<tr>" +
                         "<td>  </td>" +
@@ -854,7 +840,21 @@ namespace EDNIFF.Controllers
                         "<td>  </td>" +
                         "<td>" +
                         "<div>" +
-                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; float:right;' id='btnNext' onclick='keyboard.StartTest()'>Start test</button>" +
+                                "<button type='button' class='btn btn-primary btn-block btn-sm' style='width: 110px; ' id='btnNext' onclick='keyboard.StartTest()'>Start test</button>" +
+                            "</div>" +
+                        "</td>" +
+                        "</tr>" +
+
+                        "<tr>" +
+                        "<td>  </td>" +
+                        "<td>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Pass' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Pass\")' value='Pass' >" +
+                                "<label class='form-check-label'>Pass</label>" +
+                            "</div>" +
+                            "<div class='form-check form-check-inline'>" +
+                                "<input class='form-check-input' type='radio' id='Fail' name='" + objDevice.TestName + "' onchange='MarkAsCompleted(\"Fail\")' value='Fail' >" +
+                                "<label class='form-check-label'>Fail</label>" +
                             "</div>" +
                         "</td>" +
                         "</tr>" +
