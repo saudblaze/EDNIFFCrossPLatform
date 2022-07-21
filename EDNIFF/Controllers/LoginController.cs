@@ -40,7 +40,7 @@ namespace EDNIFF.Controllers
                 PublicVariables.WebApiURL = "http://192.168.2.14:91/api";
 
 
-                PublicVariables.WebApiURL = "http://127.0.0.1:8080/api";
+                //PublicVariables.WebApiURL = "http://127.0.0.1:8080/api";
 
                 //PublicVariables.WebApiURL = "https://localhost:44346/api";//Properties.Settings.Default.APIUrls[apiindex];
                 HttpAPIRequests httpRequest = new HttpAPIRequests();
